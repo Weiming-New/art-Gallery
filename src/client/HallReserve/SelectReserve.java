@@ -1,4 +1,4 @@
-package HZZX.customer.placeReserve;
+package client.HallReserve;
 
 import HZZX.utils.DatabaseConnection;
 
@@ -12,17 +12,22 @@ import java.util.Vector;
 
 public class SelectReserve extends JFrame{
 
-    JTable jt;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = -5839113492045560425L;
+	
+	JTable jt;
     JScrollPane js = new JScrollPane();
-    Vector columnNames = null;
-    Vector rowData = null;
+    Vector<String> columnNames = null;
+    Vector<Vector<String>> rowData = null;
     Connection con = null;
     ResultSet rs;
 
     public SelectReserve(){
 
-        columnNames = new Vector();
-        rowData = new Vector();
+        columnNames = new Vector<String>();
+        rowData = new Vector<Vector<String>>();
         columnNames.add("订单编号");
         columnNames.add("展馆名称");
         columnNames.add("姓名");
@@ -37,7 +42,7 @@ public class SelectReserve extends JFrame{
             ps.setString(1,SelectPno.jt1.getText());
             rs = ps.executeQuery();
             while (rs.next()){
-                Vector vector = new Vector();
+                Vector<String> vector = new Vector<String>();
                 vector.add(rs.getString(1));
                 vector.add(rs.getString(2));
                 vector.add(rs.getString(3));

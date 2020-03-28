@@ -1,7 +1,7 @@
 package HZZX.manager.business;
 
 import HZZX.View.ManagerMain;
-import HZZX.customer.placeReserve.InsertReserve;
+import client.HallReserve.InsertReserve;
 
 import javax.swing.*;
 import java.awt.*;

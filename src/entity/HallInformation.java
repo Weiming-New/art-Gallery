@@ -4,29 +4,29 @@ package entity;
 /*
 展馆信息
  */
-public class PlaceInformation {
+public class HallInformation {
 
-    private String p_id;
-    private String p_name;
+    private String h_id;
+    private String h_name;
     private String area;
     private String address;
-    private String people;
+    private String person_in_charge;
     private String num;
 
-    public String getP_id() {
-        return p_id;
+    public String getH_id() {
+        return h_id;
     }
 
-    public void setP_id(String p_id) {
-        this.p_id = p_id;
+    public void setH_id(String h_id) {
+        this.h_id = h_id;
     }
 
-    public String getP_name() {
-        return p_name;
+    public String getH_name() {
+        return h_name;
     }
 
-    public void setP_name(String p_name) {
-        this.p_name = p_name;
+    public void setH_name(String h_name) {
+        this.h_name = h_name;
     }
 
     public String getArea() {
@@ -45,12 +45,12 @@ public class PlaceInformation {
         this.address = address;
     }
 
-    public String getPeople() {
-        return people;
+    public String getPerson_in_charge() {
+        return person_in_charge;
     }
 
-    public void setPeople(String people) {
-        this.people = people;
+    public void setPerson_in_charge(String people) {
+        this.person_in_charge = people;
     }
 
     public String getNum() {

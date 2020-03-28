@@ -123,7 +123,7 @@ public class BuyTicket extends JFrame implements ActionListener {
                     mi.setName(jtf2.getText());
                     mi.setSex(jtf3.getText());
                     mi.setWork(jtf4.getText());
-                    mi.setM_id(jtf5.getText());
+                    mi.setE_name(jtf5.getText());
                     //mi.setPrice(jtf6.getText());
 
 
@@ -131,7 +131,7 @@ public class BuyTicket extends JFrame implements ActionListener {
                     ps.setString(2, mi.getName());
                     ps.setString(3, mi.getSex());
                     ps.setString(4, mi.getWork());
-                    ps.setString(5, mi.getM_id());
+                    ps.setString(5, mi.getE_name());
                     //ps.setString(6,mi.getPrice());
 
                     result = ps.executeUpdate();

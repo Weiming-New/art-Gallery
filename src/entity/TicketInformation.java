@@ -9,7 +9,7 @@ public class TicketInformation {
     private String name;
     private String sex;
     private String work;
-    private String m_id;
+    private String e_name;
     private String price;
 
     public String getId() {
@@ -44,12 +44,12 @@ public class TicketInformation {
         this.work = work;
     }
 
-    public String getM_id() {
-        return m_id;
+    public String getE_name() {
+        return e_name;
     }
 
-    public void setM_id(String m_id) {
-        this.m_id = m_id;
+    public void setE_name(String m_id) {
+        this.e_name = m_id;
     }
 
     public String getPrice() {

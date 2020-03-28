@@ -1,8 +1,8 @@
 package HZZX.manager.place;
 
 import HZZX.utils.DatabaseConnection;
-import entity.PlaceInformation;
-import entity.PlaceReserveInformation;
+import entity.HallInformation;
+import entity.HallReserveInformation;
 
 import javax.swing.*;
 import java.awt.*;
@@ -105,19 +105,19 @@ public class InsertPlace extends JFrame implements ActionListener {
             if (!jt1.getText().isEmpty() && !jt2.getText().isEmpty() && !jt3.getText().isEmpty() && !jt4.getText().isEmpty() && !jt5.getText().isEmpty() && !jt6.getText().isEmpty()) {
                     con = DatabaseConnection.getConnection();
                     PreparedStatement ps = con.prepareStatement("insert into Place values(?,?,?,?,?,?)");
-                    PlaceInformation b = new PlaceInformation();
-                    b.setP_id(jt1.getText());
-                    b.setP_name(jt2.getText());
+                    HallInformation b = new HallInformation();
+                    b.setH_id(jt1.getText());
+                    b.setH_name(jt2.getText());
                     b.setArea(jt3.getText());
                     b.setAddress(jt4.getText());
-                    b.setPeople(jt5.getText());
+                    b.setPerson_in_charge(jt5.getText());
                     b.setNum(jt6.getText());
 
-                    ps.setString(1, b.getP_id());
-                    ps.setString(2, b.getP_name());
+                    ps.setString(1, b.getH_id());
+                    ps.setString(2, b.getH_name());
                     ps.setString(3, b.getArea());
                     ps.setString(4, b.getAddress());
-                    ps.setString(5, b.getPeople());
+                    ps.setString(5, b.getPerson_in_charge());
                     ps.setString(6, b.getNum());
                     result = ps.executeUpdate();
             } else {

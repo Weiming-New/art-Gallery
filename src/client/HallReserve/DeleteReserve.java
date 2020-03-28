@@ -1,4 +1,4 @@
-package HZZX.customer.placeReserve;
+package client.HallReserve;
 
 import HZZX.utils.DatabaseConnection;
 
@@ -13,7 +13,12 @@ import java.sql.SQLException;
 
 public class DeleteReserve extends JFrame implements ActionListener {
 
-    JButton jb1,jb2;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = -6796897621259538149L;
+	
+	JButton jb1,jb2;
     JPanel jp1,jp2,jp3;
     JTextField jt1;
     JLabel jl1,jl2;
@@ -30,7 +35,7 @@ public class DeleteReserve extends JFrame implements ActionListener {
 
         jt1 = new JTextField(8);
         jl1 = new JLabel("预约编号");
-        jl2 = new JLabel("展馆预约系统");
+        jl2 = new JLabel("展厅预约系统");
 
         jb1.addActionListener(this);
         //jb2.addActionListener(this);
@@ -47,7 +52,7 @@ public class DeleteReserve extends JFrame implements ActionListener {
 
         this.setVisible(true);
         this.setBounds(700,300,600,400);
-        this.setTitle("会展中心管理系统");
+        this.setTitle("艺术馆管理系统");
         this.setLayout(new GridLayout(6,4));
     }
 

@@ -1,14 +1,14 @@
 package HZZX.manager.meetingInformation;
 
 import HZZX.View.ManagerMain;
-import HZZX.customer.placeReserve.SelectReserve;
-import HZZX.customer.placeReserve.SelectReserveAll;
 import HZZX.customer.shopping.SelectThings;
 import HZZX.customer.shopping.SelectThingsAll;
 import HZZX.customer.ticket.SelectTicketAll;
 import HZZX.manager.meetingInformation.DeleteInformation;
 import HZZX.manager.meetingInformation.InsertInformations;
 import HZZX.manager.meetingInformation.SelectInformation;
+import client.HallReserve.SelectReserve;
+import client.HallReserve.SelectReserveAll;
 import HZZX.customer.ticket.SelectTicket;
 
 import javax.swing.*;

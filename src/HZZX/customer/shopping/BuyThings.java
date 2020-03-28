@@ -1,7 +1,7 @@
 package HZZX.customer.shopping;
 
 import HZZX.utils.DatabaseConnection;
-import entity.ShopBuyInformation;
+import entity.Trade;
 
 import javax.swing.*;
 import java.awt.*;
@@ -143,15 +143,15 @@ public class BuyThings extends JFrame implements ActionListener {
                 con = DatabaseConnection.getConnection();
                 String sql = "insert into Shop values (?,?,?,?)";
                 PreparedStatement ps = con.prepareStatement(sql);
-                ShopBuyInformation pi = new ShopBuyInformation();
+                Trade pi = new Trade();
                 if ((verify2() == 1)) {
-                    pi.setS_id(jt1.getText());
-                    pi.setS_name(jt2.getText());
-                    pi.setT_id(jt3.getText());
+                    pi.setTi_id(jt1.getText());
+                    pi.setTi_name(jt2.getText());
+                    pi.setAw_id(jt3.getText());
                     pi.setTime(jt5.getText());
-                    ps.setString(1, pi.getS_id());
-                    ps.setString(2, pi.getS_name());
-                    ps.setString(3, pi.getT_id());
+                    ps.setString(1, pi.getTi_id());
+                    ps.setString(2, pi.getTi_name());
+                    ps.setString(3, pi.getAw_id());
                     ps.setString(4, pi.getTime());
                     result = ps.executeUpdate();
                 }

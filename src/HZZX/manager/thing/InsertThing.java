@@ -1,7 +1,7 @@
 package HZZX.manager.thing;
 
 import HZZX.utils.DatabaseConnection;
-import entity.ThingInformation;
+import entity.ArtWork;
 import entity.TicketInformation;
 
 import javax.swing.*;
@@ -91,16 +91,16 @@ public class InsertThing extends JFrame implements ActionListener {
                 con = DatabaseConnection.getConnection();
                 String sql = "insert into Thing values(?,?,?,?,?)";
                 PreparedStatement ps = con.prepareStatement(sql);
-                ThingInformation mi = new ThingInformation();
+                ArtWork mi = new ArtWork();
 
-                mi.setT_id(jtf1.getText());
-                mi.setT_name(jtf2.getText());
+                mi.setAw_id(jtf1.getText());
+                mi.setAw_name(jtf2.getText());
                 mi.setKind(jtf3.getText());
                 mi.setPrice(jtf4.getText());
                 mi.setArea(jtf5.getText());
 
-                ps.setString(1, mi.getT_id());
-                ps.setString(2, mi.getT_name());
+                ps.setString(1, mi.getAw_id());
+                ps.setString(2, mi.getAw_name());
                 ps.setString(3, mi.getKind());
                 ps.setString(4, mi.getPrice());
                 ps.setString(5, mi.getArea());

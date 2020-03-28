@@ -2,8 +2,8 @@ package HZZX.manager.business;
 
 import HZZX.View.Customer;
 import HZZX.utils.DatabaseConnection;
-import entity.BusinessInformation;
-import entity.ShopBuyInformation;
+import entity.Artist;
+import entity.Trade;
 
 import javax.swing.*;
 import java.awt.*;
@@ -107,19 +107,19 @@ public class InsertBusiness extends JFrame implements ActionListener {
                 con = DatabaseConnection.getConnection();
                 String sql = "insert into Business values (?,?,?,?,?,?)";
                 PreparedStatement ps = con.prepareStatement(sql);
-                BusinessInformation pi = new BusinessInformation();
+                Artist pi = new Artist();
 
-                pi.setB_id(jt1.getText());
-                pi.setB_name(jt2.getText());
+                pi.setA_id(jt1.getText());
+                pi.setA_name(jt2.getText());
                 pi.setID(jt3.getText());
-                pi.setWork(jt4.getText());
+                pi.setMajor(jt4.getText());
                 pi.setWorkplace(jt5.getText());
                 pi.setTel((jt6.getText()));
 
-                ps.setString(1, pi.getB_id());
-                ps.setString(2, pi.getB_name());
+                ps.setString(1, pi.getA_id());
+                ps.setString(2, pi.getA_name());
                 ps.setString(3, pi.getID());
-                ps.setString(4, pi.getWork());
+                ps.setString(4, pi.getMajor());
                 ps.setString(5, pi.getWorkplace());
                 ps.setString(6, pi.getTel());
 

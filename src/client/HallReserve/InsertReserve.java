@@ -1,10 +1,6 @@
-package HZZX.customer.placeReserve;
+package client.HallReserve;
 
-import HZZX.utils.DatabaseConnection;
-import entity.PlaceReserveInformation;
-
-import javax.swing.*;
-import java.awt.*;
+import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.Connection;
@@ -12,9 +8,25 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+
+import HZZX.utils.DatabaseConnection;
+import entity.HallReserveInformation;
+
 public class InsertReserve extends JFrame implements ActionListener {
 
-    JTextField jt1,jt2,jt3,jt4,jt5,jt6;
+    
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -1299800042097646249L;
+	
+	JTextField jt1,jt2,jt3,jt4,jt5,jt6;
     JLabel jl1,jl2,jl3,jl4,jl5,jl6,jl7;
     JPanel jp1,jp2,jp3,jp4,jp5,jp6,jp7,jp8;
     JButton jb1,jb2;
@@ -27,10 +39,10 @@ public class InsertReserve extends JFrame implements ActionListener {
         jt5 = new JTextField(8);
         jt6 = new JTextField(8);
 
-        jl1 = new JLabel("展馆预约");
+        jl1 = new JLabel("展厅预约");
         jl2 = new JLabel("预约编号");
-        jl3 = new JLabel("展馆编号");
-        //jl4 = new JLabel("展商编号");
+        jl3 = new JLabel("展厅编号");
+        //jl4 = new JLabel("艺术家编号");
         jl5 = new JLabel("姓名");
         jl6 = new JLabel("时间");
         jl7 = new JLabel("个数");
@@ -77,7 +89,7 @@ public class InsertReserve extends JFrame implements ActionListener {
         this.add(jp5);
 
         this.setVisible(true);
-        this.setTitle("会展中心管理系统");
+        this.setTitle("艺术馆管理系统");
         this.setBounds(700,300,600,400);
         this.setLayout(new GridLayout(6,4));
     }
@@ -98,7 +110,7 @@ public class InsertReserve extends JFrame implements ActionListener {
         int result = 0;
         try {
             con = DatabaseConnection.getConnection();
-            PreparedStatement ps = con.prepareStatement("select * from Place where Pno = ?");
+            PreparedStatement ps = con.prepareStatement("select * from Hall where Hno = ?");
             ps.setString(1,jt2.getText());
             rs = ps.executeQuery();
             if (rs.next()){
@@ -114,14 +126,14 @@ public class InsertReserve extends JFrame implements ActionListener {
         return result;
     }
 
-    //获取展馆展位数
+    //获取展厅展位数
     public int getPnum(){
         Connection con = null;
         ResultSet rs = null;
         int num1 = 0;
         try{
             con = DatabaseConnection.getConnection();
-            String sql = "select Pnum from Place where Pno = ?";
+            String sql = "select Hnum from Hall where Pno = ?";
             PreparedStatement ps = con.prepareStatement(sql);
             ps.setString(1,jt2.getText());
             rs = ps.executeQuery();
@@ -141,7 +153,8 @@ public class InsertReserve extends JFrame implements ActionListener {
         Connection con = null;
         ResultSet rs = null;
         int num2 = 0;
-        PlaceReserveInformation pi = new PlaceReserveInformation();
+        @SuppressWarnings("unused")
+		HallReserveInformation pi = new HallReserveInformation();
         try{
             con = DatabaseConnection.getConnection();
             String sql = "select Rnum from Reserve where RNO = ?";
@@ -159,12 +172,12 @@ public class InsertReserve extends JFrame implements ActionListener {
         return num2;
     }
 
-    public void updatePlace(){
+    public void updateHall(){
         Connection con = null;
         int n1 = 0,n2 = 0,n3 = 0;
         try{
             con = DatabaseConnection.getConnection();
-            String sql = "update Place set Pnum = ? where Pno = ?";
+            String sql = "update Hall set Pnum = ? where Pno = ?";
             PreparedStatement ps = con.prepareStatement(sql);
             n1 = this.getPnum();
             n2 = this.getRnum();
@@ -179,7 +192,7 @@ public class InsertReserve extends JFrame implements ActionListener {
     }
 
 
-    public void placeReserve() {
+    public void HallReserve() {
         Connection con = null;
         int result = 0;
         try{
@@ -187,20 +200,20 @@ public class InsertReserve extends JFrame implements ActionListener {
                 con = DatabaseConnection.getConnection();
                 String sql = "insert into Reserve values (?,?,?,?,?)";
                 PreparedStatement ps = con.prepareStatement(sql);
-                PlaceReserveInformation pi = new PlaceReserveInformation();
+                HallReserveInformation pi = new HallReserveInformation();
 
                 if (verify1() == 1) {
                     pi.setR_id(jt1.getText());
-                    pi.setP_id(jt2.getText());
+                    pi.seth_id(jt2.getText());
                     //pi.setB_id(jt3.getText());
-                    pi.setB_name(jt4.getText());
+                    pi.setA_name(jt4.getText());
                     pi.setTime(jt5.getText());
                     pi.setNum((jt6.getText()));
 
                     ps.setString(1, pi.getR_id());
-                    ps.setString(2, pi.getP_id());
+                    ps.setString(2, pi.geth_id());
                     //ps.setString(3,pi.getB_id());
-                    ps.setString(3, pi.getB_name());
+                    ps.setString(3, pi.getA_name());
                     ps.setString(4, pi.getTime());
                     ps.setString(5, pi.getNum());
 
@@ -231,9 +244,9 @@ public class InsertReserve extends JFrame implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getActionCommand() == "更新"){
-            updatePlace();
+            updateHall();
         }else if (e.getActionCommand() == "预约"){
-            placeReserve();
+            HallReserve();
 
         }
     }

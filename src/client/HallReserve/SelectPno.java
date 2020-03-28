@@ -1,6 +1,5 @@
-package HZZX.customer.placeReserve;
+package client.HallReserve;
 
-import HZZX.manager.place.UpdatePlaceInformation;
 import HZZX.utils.DatabaseConnection;
 
 import javax.swing.*;
@@ -14,7 +13,12 @@ import java.sql.SQLException;
 
 public class SelectPno extends JFrame implements ActionListener {
 
-    JButton jb1,jb2;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 4719928549078459315L;
+	
+	JButton jb1,jb2;
     JPanel jp1,jp2,jp3;
     JLabel jl1,jl2;
     public static JTextField jt1;

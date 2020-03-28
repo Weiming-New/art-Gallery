@@ -1,7 +1,7 @@
 package HZZX.manager.meetingInformation;
 
 import HZZX.utils.DatabaseConnection;
-import entity.MeetingInformation;
+import entity.ExhibitionInformation;
 
 import javax.swing.*;
 import java.awt.*;
@@ -147,24 +147,24 @@ public class InsertInformations extends JFrame implements ActionListener {
             con = DatabaseConnection.getConnection();
             String sql = "insert into Meeting values(?,?,?,?,?,?,?)";
             PreparedStatement ps = con.prepareStatement(sql);
-            MeetingInformation mi = new MeetingInformation();
+            ExhibitionInformation mi = new ExhibitionInformation();
 
             if (!jtf1.getText().isEmpty() && !jtf2.getText().isEmpty() && !jtf3.getText().isEmpty() && !jtf4.getText().isEmpty() && !jtf6.getText().isEmpty() && !jtf7.getText().isEmpty() && !jtf9.getText().isEmpty()) {
                 if ((verifyBno() == 1) && (verifyPno() == 1) && (verifyTno() == 1)) {
-                    mi.setM_id(jtf1.getText());
-                    mi.setM_name(jtf2.getText());
-                    mi.setB_id(jtf3.getText());
-                    mi.setT_id(jtf4.getText());
+                    mi.setE_id(jtf1.getText());
+                    mi.setE_name(jtf2.getText());
+                    mi.setA_id(jtf3.getText());
+                    mi.setAw_id(jtf4.getText());
                     //mi.setT_name(jtf5.getText());
                     mi.setAddress(jtf6.getText());
                     mi.setTime(jtf7.getText());
                     //mi.setKind(jtf8.getText());
                     mi.setPrice(jtf9.getText());
 
-                    ps.setString(1, mi.getM_id());
-                    ps.setString(2, mi.getM_name());
-                    ps.setString(3, mi.getB_id());
-                    ps.setString(4, mi.getT_id());
+                    ps.setString(1, mi.getE_id());
+                    ps.setString(2, mi.getE_name());
+                    ps.setString(3, mi.getA_id());
+                    ps.setString(4, mi.getAw_id());
                     //ps.setString(5,mi.getT_name());
                     ps.setString(5, mi.getAddress());
                     ps.setString(6, mi.getTime());

@@ -2,7 +2,7 @@
 
 import HZZX.manager.place.UpdatePlace;
 import HZZX.utils.DatabaseConnection;
-import entity.MeetingInformation;
+import entity.ExhibitionInformation;
 import sun.applet.Main;
 
 import javax.swing.*;

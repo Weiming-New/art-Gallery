@@ -1,7 +1,7 @@
 package HZZX.customer.shopping;
 
-import HZZX.customer.placeReserve.SelectReserve;
 import HZZX.utils.DatabaseConnection;
+import client.HallReserve.SelectReserve;
 
 import javax.swing.*;
 import java.awt.*;

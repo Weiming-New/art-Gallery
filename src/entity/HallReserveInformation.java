@@ -3,12 +3,12 @@ package entity;
 /*
 展馆预约信息
  */
-public class PlaceReserveInformation {
+public class HallReserveInformation {
 
     private String r_id;
-    private String p_id;
-    private String b_id;
-    private String b_name;
+    private String h_id;
+    private String a_id;
+    private String a_name;
     private String time;
     private String num;
 
@@ -20,28 +20,28 @@ public class PlaceReserveInformation {
         this.r_id = r_id;
     }
 
-    public String getP_id() {
-        return p_id;
+    public String geth_id() {
+        return h_id;
     }
 
-    public void setP_id(String p_id) {
-        this.p_id = p_id;
+    public void seth_id(String h_id) {
+        this.h_id = h_id;
     }
 
-    public String getB_id() {
-        return b_id;
+    public String getA_id() {
+        return a_id;
     }
 
-    public void setB_id(String b_id) {
-        this.b_id = b_id;
+    public void setA_id(String b_id) {
+        this.a_id = b_id;
     }
 
-    public String getB_name() {
-        return b_name;
+    public String getA_name() {
+        return a_name;
     }
 
-    public void setB_name(String b_name) {
-        this.b_name = b_name;
+    public void setA_name(String b_name) {
+        this.a_name = b_name;
     }
 
     public String getTime() {

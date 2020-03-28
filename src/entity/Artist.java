@@ -3,29 +3,29 @@ package entity;
 /*
 展商信息
  */
-public class BusinessInformation {
+public class Artist {
 
-    private String b_id;
-    private String b_name;
+    private String a_id;
+    private String a_name;
     private String ID;
-    private String work;
+    private String major;
     private String workplace;
     private String tel;
 
-    public String getB_id() {
-        return b_id;
+    public String getA_id() {
+        return a_id;
     }
 
-    public void setB_id(String b_id) {
-        this.b_id = b_id;
+    public void setA_id(String a_id) {
+        this.a_id = a_id;
     }
 
-    public String getB_name() {
-        return b_name;
+    public String getA_name() {
+        return a_name;
     }
 
-    public void setB_name(String b_name) {
-        this.b_name = b_name;
+    public void setA_name(String a_name) {
+        this.a_name = a_name;
     }
 
     public String getID() {
@@ -36,12 +36,12 @@ public class BusinessInformation {
         this.ID = ID;
     }
 
-    public String getWork() {
-        return work;
+    public String getMajor() {
+        return major;
     }
 
-    public void setWork(String work) {
-        this.work = work;
+    public void setMajor(String work) {
+        this.major = work;
     }
 
     public String getWorkplace() {
