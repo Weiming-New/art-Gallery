@@ -1,6 +1,5 @@
 package HZZX.manager.meetingInformation;
 
-import HZZX.View.ManagerMain;
 import HZZX.manager.meetingInformation.DeleteInformation;
 import HZZX.manager.meetingInformation.InsertInformations;
 import HZZX.manager.meetingInformation.SelectInformation;
@@ -10,6 +9,7 @@ import client.ticket.SelectTicket;
 import client.ticket.SelectTicketAll;
 import client.trade.SelectThings;
 import client.trade.SelectThingsAll;
+import view.ManagerMain;
 
 import javax.swing.*;
 import java.awt.*;

@@ -1,9 +1,9 @@
-package HZZX.View;
+package view;
 
-
-import HZZX.utils.Facade;
 
 import javax.swing.*;
+
+import function.Verify;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -23,7 +23,7 @@ public class MainView extends JFrame implements ActionListener {
 	
 	private ButtonGroup group;
     //门面模式对象
-    Facade fcd = new Facade();
+    Verify fcd = new Verify();
 
     //定义登录界面的组件
     JButton jb1, jb2, jb3 = null;

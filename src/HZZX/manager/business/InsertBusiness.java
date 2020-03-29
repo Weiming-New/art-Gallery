@@ -1,9 +1,9 @@
 package HZZX.manager.business;
 
-import HZZX.View.Customer;
-import HZZX.utils.DatabaseConnection;
 import entity.Artist;
 import entity.Trade;
+import function.DatabaseConnection;
+import view.Customer;
 
 import javax.swing.*;
 import java.awt.*;

@@ -1,8 +1,8 @@
- package HZZX.View;
+ package view;
 
 import HZZX.manager.place.UpdatePlace;
-import HZZX.utils.DatabaseConnection;
 import entity.ExhibitionInformation;
+import function.DatabaseConnection;
 import sun.applet.Main;
 
 import javax.swing.*;

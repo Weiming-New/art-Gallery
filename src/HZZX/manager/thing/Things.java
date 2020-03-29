@@ -1,8 +1,9 @@
 package HZZX.manager.thing;
 
-import HZZX.View.ManagerMain;
-
 import javax.swing.*;
+
+import view.ManagerMain;
+
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;

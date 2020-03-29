@@ -1,4 +1,4 @@
-package HZZX.View;
+package view;
 
 import HZZX.manager.business.Business;
 import HZZX.manager.meetingInformation.Information;

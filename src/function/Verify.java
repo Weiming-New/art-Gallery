@@ -1,8 +1,8 @@
-package HZZX.utils;
+package function;
 
-import HZZX.View.SQLserver;
+import view.SQLserver;
 
-public class Facade {
+public class Verify {
 
     SQLserver s = new SQLserver();
 

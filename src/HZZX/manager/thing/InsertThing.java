@@ -1,8 +1,8 @@
 package HZZX.manager.thing;
 
-import HZZX.utils.DatabaseConnection;
 import entity.ArtWork;
 import entity.TicketInformation;
+import function.DatabaseConnection;
 
 import javax.swing.*;
 import java.awt.*;

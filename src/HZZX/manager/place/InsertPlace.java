@@ -1,8 +1,8 @@
 package HZZX.manager.place;
 
-import HZZX.utils.DatabaseConnection;
 import entity.HallInformation;
 import entity.HallReserveInformation;
+import function.DatabaseConnection;
 
 import javax.swing.*;
 import java.awt.*;

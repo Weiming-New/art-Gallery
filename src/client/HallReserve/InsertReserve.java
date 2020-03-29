@@ -15,8 +15,8 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-import HZZX.utils.DatabaseConnection;
 import entity.HallReserveInformation;
+import function.DatabaseConnection;
 
 public class InsertReserve extends JFrame implements ActionListener {
 

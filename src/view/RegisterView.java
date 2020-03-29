@@ -1,9 +1,10 @@
-package HZZX.View;
-
-import HZZX.utils.DatabaseConnection;
-import HZZX.utils.Facade;
+package view;
 
 import javax.swing.*;
+
+import function.DatabaseConnection;
+import function.Verify;
+
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -21,7 +22,7 @@ public class RegisterView extends JFrame implements ActionListener {
 	
 
 	//门面类对象
-    Facade fcd = new Facade();
+    Verify fcd = new Verify();
 
     //定义组件
     JFrame jf;

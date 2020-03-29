@@ -1,8 +1,8 @@
 package HZZX.manager.thing;
 
-import HZZX.View.Customer;
 import HZZX.manager.place.Place;
-import HZZX.utils.DatabaseConnection;
+import function.DatabaseConnection;
+import view.Customer;
 
 import javax.swing.*;
 import java.awt.*;

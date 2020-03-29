@@ -1,8 +1,9 @@
 package HZZX.manager.business;
 
-import HZZX.utils.DatabaseConnection;
-
 import javax.swing.*;
+
+import function.DatabaseConnection;
+
 import java.awt.*;
 import java.sql.Connection;
 import java.sql.PreparedStatement;

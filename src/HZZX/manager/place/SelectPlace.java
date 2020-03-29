@@ -1,7 +1,7 @@
 package HZZX.manager.place;
 
-import HZZX.utils.DatabaseConnection;
 import client.HallReserve.InsertReserve;
+import function.DatabaseConnection;
 
 import javax.swing.*;
 import java.awt.*;

@@ -1,8 +1,9 @@
 package client.trade;
 
-import HZZX.utils.DatabaseConnection;
-
 import javax.swing.*;
+
+import function.DatabaseConnection;
+
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;

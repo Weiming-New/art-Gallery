@@ -1,7 +1,7 @@
 package client.trade;
 
-import HZZX.utils.DatabaseConnection;
 import entity.Trade;
+import function.DatabaseConnection;
 
 import javax.swing.*;
 import java.awt.*;

@@ -1,4 +1,4 @@
-package HZZX.View;
+package view;
 
 import HZZX.manager.business.SelectBusiness;
 import HZZX.manager.place.SelectPlace;

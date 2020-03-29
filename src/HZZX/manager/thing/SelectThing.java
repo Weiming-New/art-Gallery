@@ -1,7 +1,7 @@
 package HZZX.manager.thing;
 
-import HZZX.utils.DatabaseConnection;
 import client.trade.BuyArtWorks;
+import function.DatabaseConnection;
 
 import javax.swing.*;
 import java.awt.*;

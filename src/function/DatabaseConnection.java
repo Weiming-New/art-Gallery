@@ -1,4 +1,4 @@
-package HZZX.utils;
+package function;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

@@ -1,7 +1,7 @@
 package client.ticket;
 
-import HZZX.utils.DatabaseConnection;
 import entity.TicketInformation;
+import function.DatabaseConnection;
 
 import javax.swing.*;
 import java.awt.*;
