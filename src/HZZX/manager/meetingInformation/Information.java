@@ -3,11 +3,11 @@ package HZZX.manager.meetingInformation;
 import HZZX.manager.meetingInformation.DeleteInformation;
 import HZZX.manager.meetingInformation.InsertInformations;
 import HZZX.manager.meetingInformation.SelectInformation;
-import client.HallReserve.SelectReserve;
+
 import client.HallReserve.SelectReserveAll;
-import client.ticket.SelectTicket;
+
 import client.ticket.SelectTicketAll;
-import client.trade.SelectThings;
+
 import client.trade.SelectThingsAll;
 import view.ManagerMain;
 
@@ -19,7 +19,12 @@ import java.sql.*;
 
 public class Information extends JFrame implements ActionListener {
 
-    JPanel jp1, jp2 ,jp3,jp4 = null;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 7864382819018546499L;
+	
+	JPanel jp1, jp2 ,jp3,jp4 = null;
     JButton jb1, jb2, jb3,jb4,jb5,jb6,jb7 = null;
     ResultSet rs;
     Statement st;

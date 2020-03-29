@@ -17,7 +17,12 @@ import java.util.Vector;
 
 public class SelectInformation extends JFrame implements ActionListener{
 
-    JTable jt;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = -5683897398789016711L;
+	
+	JTable jt;
     JScrollPane js = new JScrollPane();
     Vector columnNames = null;
     Vector rowData = null;

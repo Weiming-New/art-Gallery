@@ -16,7 +16,13 @@ import java.sql.SQLException;
 删除会展信息
  */
 public class DeleteInformation extends JFrame implements ActionListener {
-    JButton jb1,jb2;
+   
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -5691386351618361094L;
+	
+	JButton jb1,jb2;
     JPanel jp1,jp2,jp3;
     JTextField jt1;
     JLabel jl1,jl2;
