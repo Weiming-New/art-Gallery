@@ -1,10 +1,10 @@
 package view;
 
-import HZZX.manager.business.SelectBusiness;
 import HZZX.manager.place.SelectPlace;
 import HZZX.manager.meetingInformation.SelectInformation;
 import HZZX.manager.thing.SelectThing;
 import client.HallReserve.*;
+import client.artist.SelectArtist;
 import client.ticket.BuyTicket;
 import client.ticket.DeleteTicket;
 import client.ticket.SelectTicket;
@@ -196,7 +196,7 @@ public class Customer extends JFrame  {
         jmt15.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                new SelectBusiness();
+                new SelectArtist();
             }
         });
 

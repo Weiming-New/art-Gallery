@@ -1,4 +1,4 @@
-package HZZX.manager.business;
+package client.artist;
 
 import javax.swing.*;
 
@@ -11,7 +11,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Vector;
 
-public class SelectBusiness extends JFrame{
+public class SelectArtist extends JFrame{
 
     JTable jt;
     JScrollPane js = new JScrollPane();
@@ -20,7 +20,7 @@ public class SelectBusiness extends JFrame{
     Connection con = null;
     ResultSet rs;
 
-    public SelectBusiness(){
+    public SelectArtist(){
 
         columnNames = new Vector();
         rowData = new Vector();

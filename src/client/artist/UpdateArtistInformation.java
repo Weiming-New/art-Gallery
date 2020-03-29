@@ -1,4 +1,4 @@
-package HZZX.manager.business;
+package client.artist;
 
 import javax.swing.*;
 
@@ -12,7 +12,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class UpdateBusinessInformation extends JFrame implements ActionListener {
+public class UpdateArtistInformation extends JFrame implements ActionListener {
 
 
     JTextField jt1, jt2, jt3, jt4, jt5, jt6;
@@ -21,7 +21,7 @@ public class UpdateBusinessInformation extends JFrame implements ActionListener 
     JButton jb1, jb2;
     JLabel jLabel;
 
-    public UpdateBusinessInformation() {
+    public UpdateArtistInformation() {
 
         jt1 = new JTextField(8);
         jt2 = new JTextField(8);
@@ -37,7 +37,7 @@ public class UpdateBusinessInformation extends JFrame implements ActionListener 
         jl5 = new JLabel("职业");
         jl6 = new JLabel("工作单位");
         jl7 = new JLabel("手机号");
-        jLabel = new JLabel(UpdateBusiness.jt1.getText());
+        jLabel = new JLabel(UpdateArtist.jt1.getText());
 
         jp1 = new JPanel();
         jp2 = new JPanel();
@@ -93,7 +93,7 @@ public class UpdateBusinessInformation extends JFrame implements ActionListener 
         try {
             if (!jt2.getText().isEmpty() && !jt3.getText().isEmpty() && !jt4.getText().isEmpty() && !jt5.getText().isEmpty() && !jt6.getText().isEmpty()) {
                 con = DatabaseConnection.getConnection();
-                PreparedStatement ps = con.prepareStatement("update Business set Bname = ?,Bid = ?, Bwork = ?,Bworkplace = ?,Btel = ? where Bno = " + UpdateBusiness.jt1.getText());
+                PreparedStatement ps = con.prepareStatement("update Business set Bname = ?,Bid = ?, Bwork = ?,Bworkplace = ?,Btel = ? where Bno = " + UpdateArtist.jt1.getText());
                 ps.setString(1, jt2.getText());
                 ps.setString(2, jt3.getText());
                 ps.setString(3, jt4.getText());
@@ -122,7 +122,7 @@ public class UpdateBusinessInformation extends JFrame implements ActionListener 
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getActionCommand() == "返回") {
-            new UpdateBusiness();
+            new UpdateArtist();
             dispose();
 
         } else if (e.getActionCommand() == "确定") {

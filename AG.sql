@@ -24,7 +24,7 @@ DROP VIEW IF EXISTS `v_TradeInfo`;
 
 -- 艺术家表
 CREATE TABLE Artist(
-Ano INT PRIMARY KEY,-- 展商编号
+Ano INT PRIMARY KEY,-- 艺术家编号
 Aname CHAR(20) NOT NULL,-- 姓名
 Aid CHAR(18) NOT NULL UNIQUE,-- 身份证号
 Amajor CHAR(20),-- 专业
@@ -75,7 +75,7 @@ Ename CHAR(20),-- 展会名称
 Ano INT,-- 艺术家编号
 AWno INT,-- 艺术品编号
 Hno INT,-- 展馆编号
-Mtime DATE,-- 时间
+Etime DATE,-- 时间
 FOREIGN KEY(Ano) REFERENCES Artist(Ano),
 FOREIGN KEY(AWno) REFERENCES ArtWork(AWno));
 
