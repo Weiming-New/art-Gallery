@@ -1,4 +1,4 @@
-package artist;
+package client.artist;
 
 import javax.swing.*;
 
@@ -12,31 +12,33 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class DeleteBusiness extends JFrame implements ActionListener {
+public class UpdateArtist extends JFrame implements ActionListener {
 
     JButton jb1,jb2;
     JPanel jp1,jp2,jp3;
-    JTextField jt1;
     JLabel jl1,jl2;
+    public static JTextField jt1;
 
-    public DeleteBusiness(){
-        jb1 = new JButton("取消");
+    public UpdateArtist(){
+        jb1 = new JButton("确定");
         //jb2 = new JButton("返回");
 
         jp1 = new JPanel();
         jp2 = new JPanel();
         jp3 = new JPanel();
 
+        jl1 = new JLabel("展商信息修改系统");
+        jl2 = new JLabel("展商号");
+
         jt1 = new JTextField(8);
-        jl1 = new JLabel("展商编号");
-        jl2 = new JLabel("展商管理系统");
 
         jb1.addActionListener(this);
         //jb2.addActionListener(this);
 
-        jp1.add(jl2);
-        jp2.add(jl1);
+        jp1.add(jl1);
+        jp2.add(jl2);
         jp2.add(jt1);
+
         jp3.add(jb1);
         //jp3.add(jb2);
 
@@ -45,9 +47,9 @@ public class DeleteBusiness extends JFrame implements ActionListener {
         this.add(jp3);
 
         this.setVisible(true);
+        this.setLayout(new GridLayout(4,3));
         this.setBounds(720,320,600,400);
         this.setTitle("会展中心管理系统");
-        this.setLayout(new GridLayout(6,4));
     }
 
     public int verify(){
@@ -55,32 +57,17 @@ public class DeleteBusiness extends JFrame implements ActionListener {
         ResultSet rs;
         int result = 0;
         try {
-            con = DatabaseConnection.getConnection();
-            PreparedStatement ps = con.prepareStatement("select * from Business where Bno = ?");
-            ps.setString(1,jt1.getText());
-            rs = ps.executeQuery();
-            if (rs.next()){
-                result = 1;
-            }
-        }catch (SQLException e){
-            e.printStackTrace();
-        }
-        return result;
-    }
-
-    public void delete(){
-        Connection con = null;
-        try {
             if (!jt1.getText().isEmpty()) {
                 con = DatabaseConnection.getConnection();
-                PreparedStatement ps = con.prepareStatement("delete from Business where Bno = ?");
+                PreparedStatement ps = con.prepareStatement("select * from Business where Bno = ?");
                 ps.setString(1, jt1.getText());
-                ps.executeUpdate();
-                System.out.println("数据删除成功");
-                JOptionPane.showMessageDialog(null, "取消成功", "提示消息", JOptionPane.WARNING_MESSAGE);
-                jt1.setText("");
-                con.close();
-                System.out.println("数据库关闭成功");
+                rs = ps.executeQuery();
+                if (rs.next()) {
+                    JOptionPane.showMessageDialog(null, "该编号存在", "提示消息", JOptionPane.WARNING_MESSAGE);
+                    result = 1;
+                } else {
+                    JOptionPane.showMessageDialog(null, "该编号不存在，请重新输入", "提示消息", JOptionPane.WARNING_MESSAGE);
+                }
             }else {
                 JOptionPane.showMessageDialog(null, "请输入完整信息", "提示消息", JOptionPane.WARNING_MESSAGE);
 
@@ -88,15 +75,17 @@ public class DeleteBusiness extends JFrame implements ActionListener {
         }catch (SQLException e){
             e.printStackTrace();
         }
+        return result;
     }
+
 
     @Override
     public void actionPerformed(ActionEvent e) {
-       if (e.getActionCommand() == "取消"){
+        if (e.getActionCommand() == "确定") {
             if (verify() == 1) {
-                delete();
+                new UpdateArtistInformation();
+                dispose();
             }else {
-                JOptionPane.showMessageDialog(null,"该编号不存在，请重新输入","提示消息",JOptionPane.WARNING_MESSAGE);
                 jt1.setText("");
             }
         }

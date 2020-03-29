@@ -1,4 +1,4 @@
-package artist;
+package client.artist;
 
 import entity.Artist;
 import entity.Trade;
@@ -14,7 +14,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class InsertBusiness extends JFrame implements ActionListener {
+public class InsertArtist extends JFrame implements ActionListener {
 
     /**
 	 * 
@@ -26,7 +26,7 @@ public class InsertBusiness extends JFrame implements ActionListener {
     JButton jb1,jb2;
     private int result1 =0;
 
-    public InsertBusiness(){
+    public InsertArtist(){
 
         jt1 = new JTextField(8);
         jt2 = new JTextField(8);
