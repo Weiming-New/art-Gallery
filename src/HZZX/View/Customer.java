@@ -1,18 +1,18 @@
 package HZZX.View;
 
-import HZZX.customer.shopping.BuyThings;
-import HZZX.customer.shopping.DeleteThings;
-import HZZX.customer.shopping.SelectSno;
-import HZZX.customer.shopping.SelectThings;
-import HZZX.customer.ticket.BuyTicket;
-import HZZX.customer.ticket.DeleteTicket;
-import HZZX.customer.ticket.SelectTicket;
-import HZZX.customer.ticket.SelectTno;
 import HZZX.manager.business.SelectBusiness;
 import HZZX.manager.place.SelectPlace;
 import HZZX.manager.meetingInformation.SelectInformation;
 import HZZX.manager.thing.SelectThing;
 import client.HallReserve.*;
+import client.ticket.BuyTicket;
+import client.ticket.DeleteTicket;
+import client.ticket.SelectTicket;
+import client.ticket.SelectTno;
+import client.trade.BuyThings;
+import client.trade.DeleteThings;
+import client.trade.SelectSno;
+import client.trade.SelectThings;
 
 import com.sun.org.apache.bcel.internal.generic.Select;
 
@@ -125,7 +125,7 @@ public class Customer extends JFrame  {
         jmt2.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                new SelectPno();
+                new SelectRno();
             }
         });
 

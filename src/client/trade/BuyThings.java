@@ -1,4 +1,4 @@
-package HZZX.customer.shopping;
+package client.trade;
 
 import HZZX.utils.DatabaseConnection;
 import entity.Trade;
@@ -16,7 +16,12 @@ import java.util.Date;
 
 public class BuyThings extends JFrame implements ActionListener {
 
-    JTextField jt1,jt2,jt3,jt4,jt5,jt6;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 4154065579756517915L;
+	
+	JTextField jt1,jt2,jt3,jt4,jt5,jt6;
     JLabel jl1,jl2,jl3,jl4,jl5,jl6,jl7;
     JPanel jp1,jp2,jp3,jp4,jp5,jp6,jp7,jp8;
     JButton jb1,jb2;

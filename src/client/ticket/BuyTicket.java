@@ -1,6 +1,5 @@
-package HZZX.customer.ticket;
+package client.ticket;
 
-import HZZX.View.Customer;
 import HZZX.utils.DatabaseConnection;
 import entity.TicketInformation;
 
@@ -15,7 +14,12 @@ import java.sql.SQLException;
 
 public class BuyTicket extends JFrame implements ActionListener {
 
-    JTextField jtf1, jtf2, jtf3, jtf4, jtf5, jtf6 = null;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 193079251155291697L;
+	
+	JTextField jtf1, jtf2, jtf3, jtf4, jtf5, jtf6 = null;
     JLabel jl1, jl2, jl3, jl4, jl5, jl6, jl7 = null;
     JPanel jp1, jp2, jp3, jp4, jp5, jp6, jp7, jp8 = null;
     JButton jb1, jb2;
@@ -27,7 +31,7 @@ public class BuyTicket extends JFrame implements ActionListener {
         jl2 = new JLabel(" 姓名：");
         jl3 = new JLabel(" 性别：");
         jl4 = new JLabel(" 职业：");
-        jl5 = new JLabel(" 会展编号：");
+        jl5 = new JLabel(" 会展名称：");
         //jl6 = new JLabel(" 售价：");
 
         jb1 = new JButton("购票");
@@ -92,14 +96,14 @@ public class BuyTicket extends JFrame implements ActionListener {
         int result = 0;
         try {
             con = DatabaseConnection.getConnection();
-            PreparedStatement ps = con.prepareStatement("select * from Meeting where Mno = ?");
+            PreparedStatement ps = con.prepareStatement("select * from Meeting where Ename = ?");
             ps.setString(1,jtf5.getText());
             rs = ps.executeQuery();
             if (rs.next()){
-                JOptionPane.showMessageDialog(null,"该会展编号存在","提示消息",JOptionPane.WARNING_MESSAGE);
+                JOptionPane.showMessageDialog(null,"该会展存在","提示消息",JOptionPane.WARNING_MESSAGE);
                 result = 1;
             }else {
-                JOptionPane.showMessageDialog(null,"该会展编号不存在，请重新输入","提示消息",JOptionPane.WARNING_MESSAGE);
+                JOptionPane.showMessageDialog(null,"该会展不存在，请重新输入","提示消息",JOptionPane.WARNING_MESSAGE);
                 result = 0;
             }
         }catch (SQLException e){

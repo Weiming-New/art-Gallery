@@ -55,7 +55,7 @@ Hperpson CHAR(20),-- 负责人
 Hnum INT-- 展位数
 );
 
-INSERT INTO `Hall` VALUES (1,'梅',50,'画廊1楼东','Adam',10),(2,'兰',50,'画廊1楼西','张六',10);
+INSERT INTO `Hall` VALUES (1,'梅',50,'黄河路1号','Adam',10),(2,'兰',50,'黄河路3号','张六',10);
 
 
 -- 门票预定表

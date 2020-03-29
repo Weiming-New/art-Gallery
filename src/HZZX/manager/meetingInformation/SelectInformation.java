@@ -1,7 +1,7 @@
 package HZZX.manager.meetingInformation;
 
-import HZZX.customer.ticket.BuyTicket;
 import HZZX.utils.DatabaseConnection;
+import client.ticket.BuyTicket;
 
 import javax.swing.*;
 import java.awt.*;

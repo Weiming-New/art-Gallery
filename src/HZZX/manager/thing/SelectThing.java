@@ -1,7 +1,7 @@
 package HZZX.manager.thing;
 
-import HZZX.customer.shopping.BuyThings;
 import HZZX.utils.DatabaseConnection;
+import client.trade.BuyThings;
 
 import javax.swing.*;
 import java.awt.*;

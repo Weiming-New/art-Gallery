@@ -1,4 +1,4 @@
-package HZZX.customer.shopping;
+package client.ticket;
 
 import HZZX.utils.DatabaseConnection;
 
@@ -10,39 +10,47 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Vector;
 
-public class SelectThingsAll extends JFrame{
+public class SelectTicketAll extends JFrame{
 
-    JTable jt;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 7302623150339552008L;
+	
+	JTable jt;
     JScrollPane js = new JScrollPane();
-    Vector columnNames = null;
-    Vector rowData = null;
+    Vector<String> columnNames = null;
+    Vector<Vector<String>> rowData = null;
     Connection con = null;
     ResultSet rs;
 
-    public SelectThingsAll(){
+    public SelectTicketAll(){
 
-        columnNames = new Vector();
-        rowData = new Vector();
+        columnNames = new Vector<String>();
+        rowData = new Vector<Vector<String>>();
         columnNames.add("订单编号");
         columnNames.add("姓名");
-        columnNames.add("展品名称");
-        columnNames.add("类别");
-        columnNames.add("采购时间");
-        columnNames.add("售价");
+        columnNames.add("性别");
+        columnNames.add("职业");
+        columnNames.add("会展名称");
+        columnNames.add("展馆名称");
+        columnNames.add("门票价格");
+
 
         try{
             con = DatabaseConnection.getConnection();
             PreparedStatement ps;
-            ps = con.prepareStatement("select no,s_name,t_name,kind,time,price from v_shop");
+            ps = con.prepareStatement("select no,t_name,sex,work,e_name,H_name,price from v_ticket");
             rs = ps.executeQuery();
             while (rs.next()){
-                Vector vector = new Vector();
+                Vector<String> vector = new Vector<String>();
                 vector.add(rs.getString(1));
                 vector.add(rs.getString(2));
                 vector.add(rs.getString(3));
                 vector.add(rs.getString(4));
                 vector.add(rs.getString(5));
                 vector.add(rs.getString(6));
+                vector.add(rs.getString(7));
                 rowData.add(vector);
             }
             System.out.println("OK");

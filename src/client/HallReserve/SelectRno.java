@@ -1,6 +1,5 @@
-package HZZX.customer.ticket;
+package client.HallReserve;
 
-import HZZX.customer.shopping.SelectThings;
 import HZZX.utils.DatabaseConnection;
 
 import javax.swing.*;
@@ -12,21 +11,26 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class SelectTno extends JFrame implements ActionListener {
+public class SelectRno extends JFrame implements ActionListener {
 
-    JButton jb1,jb2;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 4719928549078459315L;
+	
+	JButton jb1,jb2;
     JPanel jp1,jp2,jp3;
     JLabel jl1,jl2;
     public static JTextField jt1;
 
-    public SelectTno(){
+    public SelectRno(){
         jb1 = new JButton("确定");
 
         jp1 = new JPanel();
         jp2 = new JPanel();
         jp3 = new JPanel();
 
-        jl1 = new JLabel("门票预定订单查询系统");
+        jl1 = new JLabel("预约展厅订单查询系统");
         jl2 = new JLabel("订单号");
 
         jt1 = new JTextField(8);
@@ -56,7 +60,7 @@ public class SelectTno extends JFrame implements ActionListener {
         try {
             if (!jt1.getText().isEmpty()) {
                 con = DatabaseConnection.getConnection();
-                PreparedStatement ps = con.prepareStatement("select * from Ticket where Ano = ?");
+                PreparedStatement ps = con.prepareStatement("select * from Reserve where RNO = ?");
                 ps.setString(1, jt1.getText());
                 rs = ps.executeQuery();
                 if (rs.next()) {
@@ -67,6 +71,7 @@ public class SelectTno extends JFrame implements ActionListener {
                 }
             }else {
                 JOptionPane.showMessageDialog(null, "请输入完整信息", "提示消息", JOptionPane.WARNING_MESSAGE);
+
             }
         }catch (SQLException e){
             e.printStackTrace();
@@ -78,7 +83,7 @@ public class SelectTno extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if (e.getActionCommand() == "确定") {
             if (verify() == 1) {
-                new SelectTicket();
+                new SelectReserve();
                 dispose();
 
             }else {

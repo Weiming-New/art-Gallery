@@ -39,7 +39,7 @@ public class SelectReserve extends JFrame{
             con = DatabaseConnection.getConnection();
             PreparedStatement ps;
             ps = con.prepareStatement("select no,p_name,name,time,num from v_reserve where no = ?");
-            ps.setString(1,SelectPno.jt1.getText());
+            ps.setString(1,SelectRno.jt1.getText());
             rs = ps.executeQuery();
             while (rs.next()){
                 Vector<String> vector = new Vector<String>();

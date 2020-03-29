@@ -1,4 +1,4 @@
-package HZZX.customer.shopping;
+package client.trade;
 
 import HZZX.utils.DatabaseConnection;
 import client.HallReserve.SelectReserve;

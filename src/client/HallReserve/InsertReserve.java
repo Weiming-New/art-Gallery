@@ -89,7 +89,7 @@ public class InsertReserve extends JFrame implements ActionListener {
         this.add(jp5);
 
         this.setVisible(true);
-        this.setTitle("艺术馆管理系统");
+        this.setTitle("艺术展管理系统");
         this.setBounds(700,300,600,400);
         this.setLayout(new GridLayout(6,4));
     }
@@ -133,7 +133,7 @@ public class InsertReserve extends JFrame implements ActionListener {
         int num1 = 0;
         try{
             con = DatabaseConnection.getConnection();
-            String sql = "select Hnum from Hall where Pno = ?";
+            String sql = "select Hnum from Hall where Hno = ?";
             PreparedStatement ps = con.prepareStatement(sql);
             ps.setString(1,jt2.getText());
             rs = ps.executeQuery();
@@ -177,7 +177,7 @@ public class InsertReserve extends JFrame implements ActionListener {
         int n1 = 0,n2 = 0,n3 = 0;
         try{
             con = DatabaseConnection.getConnection();
-            String sql = "update Hall set Pnum = ? where Pno = ?";
+            String sql = "update Hall set Hnum = ? where Hno = ?";
             PreparedStatement ps = con.prepareStatement(sql);
             n1 = this.getPnum();
             n2 = this.getRnum();
