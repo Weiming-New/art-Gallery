@@ -1,7 +1,7 @@
 package HZZX.manager.thing;
 
 import HZZX.utils.DatabaseConnection;
-import client.trade.BuyThings;
+import client.trade.BuyArtWorks;
 
 import javax.swing.*;
 import java.awt.*;
@@ -85,7 +85,7 @@ public class SelectThing extends JFrame implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getActionCommand() == "购买"){
-            new BuyThings();
+            new BuyArtWorks();
             dispose();
         }
     }

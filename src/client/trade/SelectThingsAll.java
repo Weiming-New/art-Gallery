@@ -12,31 +12,36 @@ import java.util.Vector;
 
 public class SelectThingsAll extends JFrame{
 
-    JTable jt;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = -373545255515657173L;
+	
+	JTable jt;
     JScrollPane js = new JScrollPane();
-    Vector columnNames = null;
-    Vector rowData = null;
+    Vector<String> columnNames = null;
+    Vector<Vector<String>> rowData = null;
     Connection con = null;
     ResultSet rs;
 
     public SelectThingsAll(){
 
-        columnNames = new Vector();
-        rowData = new Vector();
+        columnNames = new Vector<String>();
+        rowData = new Vector<Vector<String>>();
         columnNames.add("订单编号");
         columnNames.add("姓名");
-        columnNames.add("展品名称");
+        columnNames.add("艺术品名称");
         columnNames.add("类别");
-        columnNames.add("采购时间");
+        columnNames.add("购买时间");
         columnNames.add("售价");
 
         try{
             con = DatabaseConnection.getConnection();
             PreparedStatement ps;
-            ps = con.prepareStatement("select no,s_name,t_name,kind,time,price from v_shop");
+            ps = con.prepareStatement("select no,t_name,aw_name,kind,time,price from v_TradeInfo");
             rs = ps.executeQuery();
             while (rs.next()){
-                Vector vector = new Vector();
+                Vector<String> vector = new Vector<String>();
                 vector.add(rs.getString(1));
                 vector.add(rs.getString(2));
                 vector.add(rs.getString(3));

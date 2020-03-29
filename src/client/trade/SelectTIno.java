@@ -1,7 +1,6 @@
 package client.trade;
 
 import HZZX.utils.DatabaseConnection;
-import client.HallReserve.SelectReserve;
 
 import javax.swing.*;
 import java.awt.*;
@@ -12,21 +11,26 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class SelectSno extends JFrame implements ActionListener {
+public class SelectTIno extends JFrame implements ActionListener {
 
-    JButton jb1,jb2;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 6765732200341327722L;
+	
+	JButton jb1,jb2;
     JPanel jp1,jp2,jp3;
     JLabel jl1,jl2;
     public static JTextField jt1;
 
-    public SelectSno(){
+    public SelectTIno(){
         jb1 = new JButton("确定");
 
         jp1 = new JPanel();
         jp2 = new JPanel();
         jp3 = new JPanel();
 
-        jl1 = new JLabel("展品采购订单查询系统");
+        jl1 = new JLabel("艺术品采购订单查询系统");
         jl2 = new JLabel("订单号");
 
         jt1 = new JTextField(8);
@@ -46,7 +50,7 @@ public class SelectSno extends JFrame implements ActionListener {
         this.setVisible(true);
         this.setLayout(new GridLayout(3,1));
         this.setBounds(720,350,510,280);
-        this.setTitle("会展中心管理系统");
+        this.setTitle("艺术画廊管理系统");
     }
 
     public int verify(){
@@ -56,7 +60,7 @@ public class SelectSno extends JFrame implements ActionListener {
         try {
             if (!jt1.getText().isEmpty()) {
                 con = DatabaseConnection.getConnection();
-                PreparedStatement ps = con.prepareStatement("select * from Shop where Sno = ?");
+                PreparedStatement ps = con.prepareStatement("select * from TradeInfo where TIno = ?");
                 ps.setString(1, jt1.getText());
                 rs = ps.executeQuery();
                 if (rs.next()) {

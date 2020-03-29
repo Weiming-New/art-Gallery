@@ -9,9 +9,9 @@ import client.ticket.BuyTicket;
 import client.ticket.DeleteTicket;
 import client.ticket.SelectTicket;
 import client.ticket.SelectTno;
-import client.trade.BuyThings;
-import client.trade.DeleteThings;
-import client.trade.SelectSno;
+import client.trade.BuyArtWorks;
+import client.trade.DeleteTrade;
+import client.trade.SelectTIno;
 import client.trade.SelectThings;
 
 import com.sun.org.apache.bcel.internal.generic.Select;
@@ -161,21 +161,21 @@ public class Customer extends JFrame  {
         jmt9.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                new BuyThings();
+                new BuyArtWorks();
             }
         });
 
         jmt10.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                new SelectSno();
+                new SelectTIno();
             }
         });
 
         jmt11.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                new DeleteThings();
+                new DeleteTrade();
             }
         });
 

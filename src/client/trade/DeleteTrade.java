@@ -11,14 +11,19 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class DeleteThings extends JFrame implements ActionListener {
+public class DeleteTrade extends JFrame implements ActionListener {
 
-    JButton jb1,jb2;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 6966931113394085856L;
+	
+	JButton jb1,jb2;
     JPanel jp1,jp2,jp3;
     JTextField jt1;
     JLabel jl1,jl2;
 
-    public DeleteThings(){
+    public DeleteTrade(){
         jb1 = new JButton("取消");
         //jb2 = new JButton("返回");
 
@@ -28,7 +33,7 @@ public class DeleteThings extends JFrame implements ActionListener {
 
         jt1 = new JTextField(8);
         jl1 = new JLabel("订单编号");
-        jl2 = new JLabel("展品采购系统");
+        jl2 = new JLabel("艺术品采购系统");
 
         jb1.addActionListener(this);
         //jb2.addActionListener(this);
@@ -45,7 +50,7 @@ public class DeleteThings extends JFrame implements ActionListener {
 
         this.setVisible(true);
         this.setBounds(700,300,600,400);
-        this.setTitle("会展中心管理系统");
+        this.setTitle("艺术画廊管理系统");
         this.setLayout(new GridLayout(6,4));
     }
 
@@ -55,7 +60,7 @@ public class DeleteThings extends JFrame implements ActionListener {
         int result = 0;
         try {
             con = DatabaseConnection.getConnection();
-            PreparedStatement ps = con.prepareStatement("select * from Shop where Sno = ?");
+            PreparedStatement ps = con.prepareStatement("select * from TradeInfo where TIno = ?");
             ps.setString(1,jt1.getText());
             rs = ps.executeQuery();
             if (rs.next()){
@@ -71,7 +76,7 @@ public class DeleteThings extends JFrame implements ActionListener {
         Connection con = null;
         try {
             con = DatabaseConnection.getConnection();
-            PreparedStatement ps = con.prepareStatement("delete from Shop where Sno = ?");
+            PreparedStatement ps = con.prepareStatement("delete from TradeInfo where TIno = ?");
             ps.setString(1,jt1.getText());
             ps.executeUpdate();
             System.out.println("数据删除成功");

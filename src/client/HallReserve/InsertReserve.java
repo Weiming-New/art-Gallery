@@ -89,7 +89,7 @@ public class InsertReserve extends JFrame implements ActionListener {
         this.add(jp5);
 
         this.setVisible(true);
-        this.setTitle("艺术展管理系统");
+        this.setTitle("艺术画廊管理系统");
         this.setBounds(700,300,600,400);
         this.setLayout(new GridLayout(6,4));
     }

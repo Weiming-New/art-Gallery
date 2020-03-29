@@ -50,7 +50,7 @@ public class SelectRno extends JFrame implements ActionListener {
         this.setVisible(true);
         this.setLayout(new GridLayout(3,1));
         this.setBounds(720,350,510,280);
-        this.setTitle("会展中心管理系统");
+        this.setTitle("艺术画廊管理系统");
     }
 
     public int verify(){

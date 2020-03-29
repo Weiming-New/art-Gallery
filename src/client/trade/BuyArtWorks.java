@@ -11,10 +11,9 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
-public class BuyThings extends JFrame implements ActionListener {
+
+public class BuyArtWorks extends JFrame implements ActionListener {
 
     /**
 	 * 
@@ -25,9 +24,9 @@ public class BuyThings extends JFrame implements ActionListener {
     JLabel jl1,jl2,jl3,jl4,jl5,jl6,jl7;
     JPanel jp1,jp2,jp3,jp4,jp5,jp6,jp7,jp8;
     JButton jb1,jb2;
-    private int result1 =0;
+    
 
-    public BuyThings(){
+    public BuyArtWorks(){
 
 
         jt1 = new JTextField(8);
@@ -37,10 +36,10 @@ public class BuyThings extends JFrame implements ActionListener {
         jt5 = new JTextField(8);
         //jt6 = new JTextField(8);
 
-        jl1 = new JLabel("展品采购");
-        jl2 = new JLabel("采购商编号");
+        jl1 = new JLabel("艺术品采购");
+        jl2 = new JLabel("订单编号");
         jl3 = new JLabel("姓名");
-        jl4 = new JLabel("展品编号");
+        jl4 = new JLabel("艺术品编号");
         //jl5 = new JLabel("展品名称");
         jl6 = new JLabel("采购时间");
         //jl7 = new JLabel("价格");
@@ -87,7 +86,7 @@ public class BuyThings extends JFrame implements ActionListener {
         this.add(jp5);
 
         this.setVisible(true);
-        this.setTitle("会展中心管理系统");
+        this.setTitle("艺术画廊管理系统");
         this.setBounds(700,300,600,400);
         this.setLayout(new GridLayout(6,4));
     }
@@ -109,7 +108,7 @@ public class BuyThings extends JFrame implements ActionListener {
         int result = 0;
         try {
             con = DatabaseConnection.getConnection();
-            PreparedStatement ps = con.prepareStatement("select * from Thing where Tno = ?");
+            PreparedStatement ps = con.prepareStatement("select * from ArtWork where AWno = ?");
             ps.setString(1,jt3.getText());
             rs = ps.executeQuery();
             if (rs.next()){
@@ -130,7 +129,7 @@ public class BuyThings extends JFrame implements ActionListener {
         Connection con = null;
         try {
             con = DatabaseConnection.getConnection();
-            String sql = "update Thing set IsBuy = '是' where Tno = ?";
+            String sql = "update ArtWork set IsBuy = '1' where Tno = ?";
             PreparedStatement ps = con.prepareStatement(sql);
             ps.setString(1,jt3.getText());
             ps.executeUpdate();
@@ -139,14 +138,14 @@ public class BuyThings extends JFrame implements ActionListener {
         }
     }
 
-    public void buythings() {
+    public void buyArtworks() {
         Connection con = null;
-        String is = null;
+        
         int result = 0;
         try{
             if (!jt1.getText().isEmpty() && !jt2.getText().isEmpty() && !jt3.getText().isEmpty() && !jt5.getText().isEmpty()) {
                 con = DatabaseConnection.getConnection();
-                String sql = "insert into Shop values (?,?,?,?)";
+                String sql = "insert into TradeInfo values (?,?,?,?)";
                 PreparedStatement ps = con.prepareStatement(sql);
                 Trade pi = new Trade();
                 if ((verify2() == 1)) {
@@ -190,7 +189,7 @@ public class BuyThings extends JFrame implements ActionListener {
 
         }else if (e.getActionCommand() == "购买") {
             if (verify2() == 1) {
-                buythings();
+                buyArtworks();
             }else {
                 clear();
             }
