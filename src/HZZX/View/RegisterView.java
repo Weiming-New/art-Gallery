@@ -14,7 +14,13 @@ import java.awt.event.ActionListener;
 
 public class RegisterView extends JFrame implements ActionListener {
 
-    //门面类对象
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = -6395739873845291346L;
+	
+
+	//门面类对象
     Facade fcd = new Facade();
 
     //定义组件
@@ -30,7 +36,7 @@ public class RegisterView extends JFrame implements ActionListener {
         Font font = new Font("alias", Font.PLAIN, 22);
 
         //加载图片
-        ImageIcon icon=new ImageIcon("image5.png");
+        ImageIcon icon=new ImageIcon("lfg_main.jpg");
 //
 //        //将图片放入label中
         JLabel label=new JLabel(icon);
@@ -111,7 +117,7 @@ public class RegisterView extends JFrame implements ActionListener {
         this.add(jp2);
         this.add(jp5);
         this.add(jp3);
-        this.setTitle("会展中心管理系统");
+        this.setTitle("艺术画廊管理系统");
         this.setLayout(new GridLayout(5, 2));
         this.setBounds(400, 150, icon.getIconWidth(), icon.getIconHeight());
         this.setVisible(true);

@@ -16,7 +16,12 @@ import java.awt.event.ActionListener;
 
 public class ManagerMain extends JFrame implements ActionListener {
 
-    JButton jb1, jb2, jb3 ,jb4,jb5;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = -6227226956418602689L;
+	
+	JButton jb1, jb2, jb3 ,jb4,jb5;
     JPanel jp1,jp2,jp3,jp4,jp5;
     JLabel jl1;
 
@@ -42,16 +47,16 @@ public class ManagerMain extends JFrame implements ActionListener {
         JPanel j=(JPanel)this.getContentPane();
         j.setOpaque(false);
 
-        jb1 = new JButton("会展信息管理");
+        jb1 = new JButton("展览信息管理");
         jb1.setBackground(Color.WHITE);
         jb1.setFont(font);
-        jb2 = new JButton("展商管理");
+        jb2 = new JButton("艺术家管理");
         jb2.setBackground(Color.WHITE);
         jb2.setFont(font);
-        jb3 = new JButton("展馆管理");
+        jb3 = new JButton("展厅管理");
         jb3.setBackground(Color.WHITE);
         jb3.setFont(font);
-        jb4 = new JButton("展品管理");
+        jb4 = new JButton("艺术品管理");
         jb4.setBackground(Color.WHITE);
         jb4.setFont(font);
         jb5 = new JButton("退出");
@@ -94,7 +99,7 @@ public class ManagerMain extends JFrame implements ActionListener {
         this.add(jp4);
 
         this.setVisible(true);
-        this.setTitle("会展中心管理系统");
+        this.setTitle("艺术画廊管理系统");
         this.setLayout(new GridLayout(4, 1));
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setBounds(530, 200, icon.getIconWidth(), icon.getIconHeight());
@@ -104,16 +109,16 @@ public class ManagerMain extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if (e.getActionCommand() == "退出"){
             System.exit(0);
-        }else if (e.getActionCommand() == "会展信息管理"){
+        }else if (e.getActionCommand() == "艺术展览信息管理"){
             new Information();
             this.dispose();
-        }else if (e.getActionCommand() == "展商管理"){
+        }else if (e.getActionCommand() == "艺术家管理"){
             new Business();
             this.dispose();
-        }else if (e.getActionCommand() == "展品管理"){
+        }else if (e.getActionCommand() == "艺术品品管理"){
             new Things();
             this.dispose();
-        }else if (e.getActionCommand() == "展馆管理"){
+        }else if (e.getActionCommand() == "展厅管理"){
             new Place();
             this.dispose();
         }

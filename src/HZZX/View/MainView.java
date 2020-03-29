@@ -1,14 +1,14 @@
 package HZZX.View;
 
-import HZZX.utils.DatabaseConnection;
+
 import HZZX.utils.Facade;
 
 import javax.swing.*;
-import javax.swing.plaf.FontUIResource;
+
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.Enumeration;
+
 
 /*
 登录主界面
@@ -38,7 +38,8 @@ public class MainView extends JFrame implements ActionListener {
 
     public static void main(String[] args) {
         //InitGloalFont.InitglobalFont(new Font("alias", Font.PLAIN, 22));
-        MainView mainView = new MainView();
+        @SuppressWarnings("unused")
+		MainView mainView = new MainView();
     }
 
     public MainView() {
@@ -156,7 +157,8 @@ public class MainView extends JFrame implements ActionListener {
         this.setBounds(600,280,icon.getIconWidth(),icon.getIconHeight());
     }
 
-    @Override
+    @SuppressWarnings("deprecation")
+	@Override
     public void actionPerformed(ActionEvent e) {
 
         //监听各个按钮
@@ -199,7 +201,8 @@ public class MainView extends JFrame implements ActionListener {
     }
 
     //管理员登录方法
-    public void login1() {//DatabaseConnection.getConnection();
+    @SuppressWarnings("deprecation")
+	public void login1() {//DatabaseConnection.getConnection();
         fcd.SQLverify1(jtf.getText(), jpf.getText());
         jtf.setText("");
         jpf.setText("");
@@ -207,7 +210,8 @@ public class MainView extends JFrame implements ActionListener {
     }
 
     //客户登录方法
-    public void login2() {
+    @SuppressWarnings("deprecation")
+	public void login2() {
 
         fcd.SQLverify2(jtf.getText(), jpf.getText());
         jtf.setText("");
