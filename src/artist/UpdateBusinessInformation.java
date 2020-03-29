@@ -1,4 +1,4 @@
-package HZZX.manager.business;
+package artist;
 
 import javax.swing.*;
 

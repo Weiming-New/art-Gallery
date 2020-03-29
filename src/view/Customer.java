@@ -1,9 +1,9 @@
 package view;
 
-import HZZX.manager.business.SelectBusiness;
 import HZZX.manager.place.SelectPlace;
 import HZZX.manager.meetingInformation.SelectInformation;
 import HZZX.manager.thing.SelectThing;
+import artist.SelectBusiness;
 import client.HallReserve.*;
 import client.ticket.BuyTicket;
 import client.ticket.DeleteTicket;

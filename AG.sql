@@ -75,7 +75,7 @@ Ename CHAR(20),-- 展会名称
 Ano INT,-- 艺术家编号
 AWno INT,-- 艺术品编号
 Hno INT,-- 展馆编号
-Mtime DATE,-- 时间
+Etime DATE,-- 时间
 FOREIGN KEY(Ano) REFERENCES Artist(Ano),
 FOREIGN KEY(AWno) REFERENCES ArtWork(AWno));
 

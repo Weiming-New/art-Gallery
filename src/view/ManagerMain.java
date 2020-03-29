@@ -1,9 +1,9 @@
 package view;
 
-import HZZX.manager.business.Business;
 import HZZX.manager.meetingInformation.Information;
 import HZZX.manager.place.Place;
 import HZZX.manager.thing.Things;
+import artist.Business;
 
 import javax.swing.*;
 import java.awt.*;

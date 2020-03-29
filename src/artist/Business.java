@@ -1,4 +1,4 @@
-package HZZX.manager.business;
+package artist;
 
 import client.HallReserve.InsertReserve;
 import view.ManagerMain;
@@ -35,16 +35,16 @@ public class Business extends JFrame implements ActionListener {
         j.setOpaque(false);
 
 
-        jb1 = new JButton("添加展商");
+        jb1 = new JButton("添加艺术家");
         jb1.setBackground(Color.WHITE);
         jb1.setFont(font);
-        jb2 = new JButton("删除展商");
+        jb2 = new JButton("删除艺术家");
         jb2.setBackground(Color.WHITE);
         jb2.setFont(font);
-        jb3 = new JButton("查询展商信息");
+        jb3 = new JButton("查询艺术家信息");
         jb3.setBackground(Color.WHITE);
         jb3.setFont(font);
-        jb4 = new JButton("修改展商信息");
+        jb4 = new JButton("修改艺术家信息");
         jb4.setBackground(Color.WHITE);
         jb4.setFont(font);
         jb5 = new JButton("返回");
@@ -93,16 +93,16 @@ public class Business extends JFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if (e.getActionCommand() == "添加展商"){
+        if (e.getActionCommand() == "添加艺术家"){
             //dispose();
             new InsertBusiness();
-        }else if (e.getActionCommand() == "删除展商"){
+        }else if (e.getActionCommand() == "删除艺术家"){
             //dispose();
             new DeleteBusiness();
-        }else if (e.getActionCommand() == "修改展商信息"){
+        }else if (e.getActionCommand() == "修改艺术家信息"){
             //dispose();
             new UpdateBusiness();
-        }else if (e.getActionCommand() == "查询展商信息"){
+        }else if (e.getActionCommand() == "查询艺术家信息"){
             new SelectBusiness();
         }else if (e.getActionCommand() == "返回"){
             new ManagerMain();

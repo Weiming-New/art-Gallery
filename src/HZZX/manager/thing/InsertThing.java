@@ -14,7 +14,12 @@ import java.sql.SQLException;
 
 public class InsertThing extends JFrame implements ActionListener {
 
-    JTextField jtf1, jtf2, jtf3, jtf4, jtf5, jtf6 = null;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = -359275414194995401L;
+	
+	JTextField jtf1, jtf2, jtf3, jtf4, jtf5, jtf6 = null;
     JLabel jl1, jl2, jl3, jl4, jl5, jl6, jl7 = null;
     JPanel jp1, jp2, jp3, jp4, jp5, jp6, jp7, jp8 = null;
     JButton jb1, jb2;
@@ -22,8 +27,8 @@ public class InsertThing extends JFrame implements ActionListener {
     public InsertThing() {
 
 
-        jl7 = new JLabel(" 会展中心购票系统");
-        jl1 = new JLabel(" 展品编号：");
+        jl7 = new JLabel(" 艺术画廊购票系统");
+        jl1 = new JLabel(" 艺术品编号：");
         jl2 = new JLabel(" 名称：");
         jl3 = new JLabel(" 类别：");
         jl4 = new JLabel(" 售价：");
@@ -77,7 +82,7 @@ public class InsertThing extends JFrame implements ActionListener {
         this.add(jp5);
 
         this.setVisible(true);;
-        this.setTitle("会展中心管理系统");
+        this.setTitle("艺术画廊管理系统");
         this.setLayout(new GridLayout(5, 4));
         this.setBounds(670, 300, 700, 500);
     }
