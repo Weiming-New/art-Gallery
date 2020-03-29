@@ -32,8 +32,8 @@ public class SelectTicketAll extends JFrame{
         columnNames.add("姓名");
         columnNames.add("性别");
         columnNames.add("职业");
-        columnNames.add("会展名称");
-        columnNames.add("展馆名称");
+        columnNames.add("艺术展名称");
+        columnNames.add("展厅名称");
         columnNames.add("门票价格");
 
 

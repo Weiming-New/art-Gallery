@@ -27,7 +27,7 @@ public class ManagerMain extends JFrame implements ActionListener {
 
 
         //加载图片
-        ImageIcon icon=new ImageIcon("image6.png");
+        ImageIcon icon=new ImageIcon("manage.jpg");
 //
 //        //将图片放入label中
         JLabel label=new JLabel(icon);
@@ -58,8 +58,9 @@ public class ManagerMain extends JFrame implements ActionListener {
         jb5.setBackground(Color.WHITE);
         jb5.setFont(font);
 
-        jl1 = new JLabel("管理员主菜单");
+        jl1 = new JLabel("管理员菜单");
         jl1.setFont(font1);
+        jl1.setForeground(new Color(255,255,0));
 
         jb1.addActionListener(this);
         jb2.addActionListener(this);

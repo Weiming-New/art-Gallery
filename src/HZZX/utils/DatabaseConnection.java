@@ -13,7 +13,7 @@ public class DatabaseConnection {
     public static Connection getConnection() {
         try {
 
-            String URL = "jdbc:mysql://localhost:3306/hz?serverTimezone=UTC";
+            String URL = "jdbc:mysql://localhost:3306/ag?serverTimezone=UTC";
             String USERNAME = "root";
             String PASSWORD = "niuweiming";
             Class.forName("com.mysql.cj.jdbc.Driver"); //加载驱动

@@ -26,7 +26,7 @@ public class BuyTicket extends JFrame implements ActionListener {
 
     public BuyTicket() {
 
-        jl7 = new JLabel(" 会展中心购票系统");
+        jl7 = new JLabel(" 艺术画廊购票系统");
         jl1 = new JLabel(" 订单号：");
         jl2 = new JLabel(" 姓名：");
         jl3 = new JLabel(" 性别：");
@@ -85,7 +85,7 @@ public class BuyTicket extends JFrame implements ActionListener {
 
         this.setVisible(true);
 //        this.setResizable(false);
-        this.setTitle("会展中心管理系统");
+        this.setTitle("艺术画廊管理系统");
         this.setLayout(new GridLayout(5, 4));
         this.setBounds(700,300,600,400);
     }
@@ -100,10 +100,10 @@ public class BuyTicket extends JFrame implements ActionListener {
             ps.setString(1,jtf5.getText());
             rs = ps.executeQuery();
             if (rs.next()){
-                JOptionPane.showMessageDialog(null,"该会展存在","提示消息",JOptionPane.WARNING_MESSAGE);
+                JOptionPane.showMessageDialog(null,"该展览存在","提示消息",JOptionPane.WARNING_MESSAGE);
                 result = 1;
             }else {
-                JOptionPane.showMessageDialog(null,"该会展不存在，请重新输入","提示消息",JOptionPane.WARNING_MESSAGE);
+                JOptionPane.showMessageDialog(null,"该展览不存在，请重新输入","提示消息",JOptionPane.WARNING_MESSAGE);
                 result = 0;
             }
         }catch (SQLException e){

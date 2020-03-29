@@ -16,7 +16,12 @@ import java.util.Enumeration;
 
 public class MainView extends JFrame implements ActionListener {
 
-    private ButtonGroup group;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = -6498329542920525856L;
+	
+	private ButtonGroup group;
     //门面模式对象
     Facade fcd = new Facade();
 
@@ -42,7 +47,7 @@ public class MainView extends JFrame implements ActionListener {
 
         //加载图片
         //ImageIcon icon = new ImageIcon("image5.png");
-        ImageIcon icon = new ImageIcon("11.jpg");
+        ImageIcon icon = new ImageIcon("lfg_main.jpg");
 //
 //        //将图片放入label中
         JLabel label = new JLabel(icon);
@@ -77,12 +82,15 @@ public class MainView extends JFrame implements ActionListener {
         jb2.addActionListener(this);
         jb3.addActionListener(this);
 
-        jlb3 = new JLabel("欢迎使用会展中心管理系统");
+        jlb3 = new JLabel("欢迎使用艺术画廊管理系统");
+        jlb3.setFont(font);
+        jlb3.setForeground(new Color(255,255,100));
 
+        Font font2 = new Font("楷体", Font.PLAIN, 20);
         jrb1 = new JRadioButton("管理员");
-        jrb1.setFont(font);
+        jrb1.setFont(font2);
         jrb2 = new JRadioButton("客户");
-        jrb2.setFont(font);
+        jrb2.setFont(font2);
 
         group = new ButtonGroup();
         group.add(jrb1);
@@ -93,11 +101,13 @@ public class MainView extends JFrame implements ActionListener {
         jtf = new JTextField(10);
         //jtf.setBounds(150,120,150,30);
         jlb1.setFont(font);
+        jlb1.setForeground(new Color(255,255,0));
         jtf.setFont(font);
 
         jlb2 = new JLabel("密    码：");
         //jlb2.setBounds(100,180,200,30);
         jlb2.setFont(font);
+        jlb2.setForeground(new Color(255,255,0));
         jpf = new JPasswordField(10);
         //jpf.setBounds(150,180,150,30);
         jpf.setFont(font);
@@ -140,7 +150,7 @@ public class MainView extends JFrame implements ActionListener {
         this.add(jp3);
 
         this.setVisible(true);
-        this.setTitle("会展中心管理系统");
+        this.setTitle("艺术画廊管理系统");
         this.setLayout(new GridLayout(5, 1));
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setBounds(600,280,icon.getIconWidth(),icon.getIconHeight());

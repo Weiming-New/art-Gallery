@@ -35,7 +35,7 @@ public class Customer extends JFrame  {
     public Customer() {
 
         //加载图片
-        ImageIcon icon=new ImageIcon("image1.png");
+        ImageIcon icon=new ImageIcon("client1.jpg");
 
         //将图片放入label中
         JLabel label=new JLabel(icon);
@@ -50,20 +50,20 @@ public class Customer extends JFrame  {
         JPanel j=(JPanel)this.getContentPane();
         j.setOpaque(false);
         jMenuBar = new JMenuBar();
-        jm1 = new JMenu("展馆预约");
+        jm1 = new JMenu("展厅预约");
         jm1.addSeparator();
-        jm2 = new JMenu("展会门票");
+        jm2 = new JMenu("艺术展门票");
         jm2.addSeparator();
         jm3 = new JMenu("展品采购");
         jm3.addSeparator();
-        jm4 = new JMenu("会展信息查询");
+        jm4 = new JMenu("展览信息查询");
 
         jmt5 = new JMenuItem("预定门票");
         jmt6 = new JMenuItem("查询门票");
         jmt7 = new JMenuItem("取消订单");
         //jmt8 = new JMenuItem("修改门票信息");
 
-        jmt1 = new JMenuItem("预约展馆");
+        jmt1 = new JMenuItem("预约展厅");
         jmt2 = new JMenuItem("查询预约信息");
         jmt3 = new JMenuItem("取消预约");
         //jmt4 = new JMenuItem("修改预约信息");
@@ -73,10 +73,10 @@ public class Customer extends JFrame  {
         jmt11 = new JMenuItem("取消订单");
         //jmt12 = new JMenuItem("修改订单信息");
 
-        jmt13  =new JMenuItem("会展信息查询");
-        jmt14 = new JMenuItem("展馆查询");
-        jmt15 = new JMenuItem("展商查询");
-        jmt16 = new JMenuItem("展品查询");
+        jmt13  =new JMenuItem("展览信息查询");
+        jmt14 = new JMenuItem("展厅查询");
+        jmt15 = new JMenuItem("艺术家查询");
+        jmt16 = new JMenuItem("艺术品查询");
 
         jm1.add(jmt1);
         jm1.add(jmt2);
@@ -107,7 +107,7 @@ public class Customer extends JFrame  {
         click();
         //this.add(jp1);
         this.setVisible(true);
-        this.setTitle("会展中心管理系统");
+        this.setTitle("艺术画廊管理系统");
         this.setLayout(null);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         //this.setBounds(300, 200, 800, 500);

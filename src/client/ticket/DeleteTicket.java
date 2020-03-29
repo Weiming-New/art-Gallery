@@ -50,7 +50,7 @@ public class DeleteTicket extends JFrame implements ActionListener {
 
         this.setVisible(true);
         this.setBounds(700,300,600,400);
-        this.setTitle("艺术展管理系统");
+        this.setTitle("艺术画廊管理系统");
         this.setLayout(new GridLayout(6,4));
     }
     public int verify(){
