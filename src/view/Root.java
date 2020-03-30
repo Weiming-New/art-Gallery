@@ -23,7 +23,7 @@ public class Root extends JFrame implements ActionListener {
 	 */
 	private static final long serialVersionUID = -6227226956418602689L;
 	
-	JButton jb1, jb2, jb3 ,jb4,jb5;
+	JButton jb1, jb2, jb3 ,jb4,jb5,jb6;
     JPanel jp1,jp2,jp3,jp4,jp5;
     JLabel jl1;
 
@@ -64,6 +64,9 @@ public class Root extends JFrame implements ActionListener {
         jb5 = new JButton("退出");
         jb5.setBackground(Color.WHITE);
         jb5.setFont(font);
+        jb6 = new JButton("艺术展管理");
+        jb6.setBackground(Color.WHITE);
+        jb6.setFont(font);
 
         jl1 = new JLabel("管理员菜单");
         jl1.setFont(font1);
@@ -74,7 +77,7 @@ public class Root extends JFrame implements ActionListener {
         jb3.addActionListener(this);
         jb4.addActionListener(this);
         jb5.addActionListener(this);
-
+        jb6.addActionListener(this);
 
         jp1 = new JPanel();
         jp2 = new JPanel();
@@ -85,6 +88,7 @@ public class Root extends JFrame implements ActionListener {
 
         jp1.add(jb1);
         jp1.add(jb2);
+        jp1.add(jb6);
         jp2.add(jb3);
         jp2.add(jb4);
         jp4.add(jb5);
@@ -121,6 +125,9 @@ public class Root extends JFrame implements ActionListener {
             new Artwork();
             this.dispose();
         }else if (e.getActionCommand() == "展厅管理"){
+            new Hall();
+            this.dispose();
+        }else if (e.getActionCommand() == "艺术展管理"){
             new Hall();
             this.dispose();
         }
