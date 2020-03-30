@@ -57,52 +57,61 @@ Hnum INT-- 展位数
 
 INSERT INTO `Hall` VALUES (1,'梅',50,'黄河路1号','Adam',10),(2,'兰',50,'黄河路3号','张六',10);
 
+CREATE TABLE Exhibition(
+Eno INT PRIMARY KEY,-- 展会编号
+Ename CHAR(20),-- 展会名称
+Etime DATE-- 举办时间
+);
+
+INSERT INTO `Exhibition` VALUES (1,'哈尔滨书法绘画大会','2020-04-10');
+
+-- 展会信息表
+CREATE TABLE ExhibitionInfo(
+EIno INT PRIMARY KEY,-- 信息编号
+Ano INT,-- 艺术家编号
+AWno INT,-- 艺术品编号
+Hno INT,-- 展馆编号
+Eno INT,-- 展会编号
+EItime DATE,-- 时间
+FOREIGN KEY(Ano) REFERENCES Artist(Ano),
+FOREIGN KEY(AWno) REFERENCES ArtWork(AWno),
+FOREIGN KEY(Hno) REFERENCES Hall(Hno),
+FOREIGN KEY(Eno) REFERENCES Exhibition(Eno)
+);
 
 -- 门票预定表
-CREATE TABLE Ticket
-(Tno CHAR(6) PRIMARY KEY,-- 取票码
+CREATE TABLE Ticket(
+Tno CHAR(6) PRIMARY KEY,-- 取票码
 Tname CHAR(20),-- 姓名
 Tsex CHAR(5) CHECK (Tsex IN ('男','女')),-- 性别
 Twork CHAR(10),-- 职业
 Tprice INT, -- 价格
-Ename CHAR(10)-- 展会名称
+Eno INT-- 展会编号
 );
 
--- 展会信息表
-CREATE TABLE ExhibitionInfo
-(EIno INT PRIMARY KEY,-- 信息编号
-Ename CHAR(20),-- 展会名称
-Ano INT,-- 艺术家编号
-AWno INT,-- 艺术品编号
-Hno INT,-- 展馆编号
-Etime DATE,-- 时间
-FOREIGN KEY(Ano) REFERENCES Artist(Ano),
-FOREIGN KEY(AWno) REFERENCES ArtWork(AWno));
-
-INSERT INTO `ExhibitionInfo` VALUES (1,'书法大展',1,1,1,'2019-06-01');
-
 -- 购买信息表
-CREATE TABLE TradeInfo
-(TIno INT PRIMARY KEY,-- 订单编号
+CREATE TABLE TradeInfo(
+TIno INT PRIMARY KEY,-- 订单编号
 TIname CHAR(20),-- 姓名
-AWno INT,-- 艺术品编号
 TItime DATE,-- 采购时间
-FOREIGN KEY(AWno) REFERENCES ArtWork(AWno));
+AWno INT,-- 艺术品编号
+FOREIGN KEY(AWno) REFERENCES Artwork(AWno)
+);
 
 -- 展馆预定表
-CREATE TABLE Reserve
-(Rno INT PRIMARY KEY,-- 订单编号
-Hno INT,-- 展馆编号
-Ano INT,-- 艺术家编号
-Aname CHAR(20),-- 艺术家姓名
+CREATE TABLE Reserve(
+Rno INT PRIMARY KEY,-- 订单编号
 Rtime DATE NOT NULL,-- 时间
 Rnum INT NOT NULL,-- 展位数
+Ano INT,-- 艺术家编号
+Hno INT,-- 展馆编号
 FOREIGN KEY(Hno) REFERENCES Hall(Hno),
-FOREIGN KEY(Ano) REFERENCES Artist(Ano));
+FOREIGN KEY(Ano) REFERENCES Artist(Ano)
+);
 
 -- 创建视图
-CREATE VIEW v_reserve(no,h_name,name,time,num) AS SELECT Reserve.Rno,Hall.Hname,Reserve.Aname,Reserve.Rtime,Reserve.Rnum FROM Reserve,Hall WHERE Hall.Hno = Reserve.Hno;
+CREATE VIEW v_ticket(Tno,Tname,Tsex,Twork,Ename,Tprice) AS SELECT Tno,Tname,Tsex,Twork,ExhibitionInfo.Ename,Ticket.Tprice FROM Ticket,ExhibitionInfo WHERE Ticket.Eno = ExhibitionInfo.Eno;
 
-CREATE VIEW v_ticket(no,t_name,sex,work,e_name,H_name,price) AS SELECT Tno,Tname,Tsex,Twork,ExhibitionInfo.Ename,Hname,Ticket.Tprice FROM Ticket,ExhibitionInfo,Hall WHERE Ticket.Ename = ExhibitionInfo.Ename and ExhibitionInfo.Hno = Hall.Hno;
+CREATE VIEW v_TradeInfo (TIno,TIname,TItime,AWname,AWkind,AWprice) AS SELECT TradeInfo.TIno,TradeInfo.TIname,TradeInfo.TItime,Artwork.AWname,Artwork.AWkind,Artwork.AWprice FROM  TradeInfo,Artwork WHERE TradeInfo.AWno = Artwork.AWno;
 
-CREATE VIEW v_TradeInfo (no,T_name,aw_name,kind,time,price) AS SELECT TradeInfo.TIno,TradeInfo.TIname,Artwork.AWname,Artwork.AWkind,TradeInfo.TItime,Artwork.AWprice FROM  TradeInfo,Artwork WHERE TradeInfo.AWno = Artwork.AWno;
+CREATE VIEW v_reserve(Rno,Hname,Aname,Rtime,Rnum) AS SELECT Reserve.Rno,Hall.Hname,Artist.Aname,Reserve.Rtime,Reserve.Rnum FROM Artist,Hall,Reserve WHERE Artist.Ano = Reserve.Ano and Hall.Hno = Reserve.Hno;
