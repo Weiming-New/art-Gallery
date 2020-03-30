@@ -38,7 +38,7 @@ public class SelectInfo extends JFrame implements ActionListener{
         rowData = new Vector();
         columnNames.add("展会编号");
         columnNames.add("展会名称");
-        columnNames.add("展品名称");
+        columnNames.add("艺术品名称");
         columnNames.add("艺术家姓名");
         columnNames.add("地址");
         columnNames.add("时间");
@@ -48,7 +48,7 @@ public class SelectInfo extends JFrame implements ActionListener{
         try {
             con = DatabaseConnection.getConnection();
             PreparedStatement ps;
-            String sql = "select Mno,Mname,Thing.Tname,Artist.Aname,Place.Pname,Mtime,Thing.Tkind,Mprice from Meeting,Thing,Place,Artist where Meeting.Tno = Thing.Tno and Meeting.Pno = Place.Pno and Meeting.Ano = Artist.Ano";
+            String sql = "select Mno,Mname,Artwork.Tname,Artist.Aname,Place.Hname,Mtime,Artwork.Tkind,Mprice from Meeting,Artwork,Place,Artist where Meeting.AWno = Artwork.AWno and Meeting.Hno = Place.Hno and Meeting.Ano = Artist.Ano";
             ps = con.prepareStatement(sql);
             rs = ps.executeQuery();
             while (rs.next()) {

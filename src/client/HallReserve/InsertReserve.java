@@ -110,7 +110,7 @@ public class InsertReserve extends JFrame implements ActionListener {
         int result = 0;
         try {
             con = DatabaseConnection.getConnection();
-            PreparedStatement ps = con.prepareStatement("select * from Hall where Hno = ?");
+            PreparedStatement ps = con.prepareStatement("select * from client.Hall where Hno = ?");
             ps.setString(1,jt2.getText());
             rs = ps.executeQuery();
             if (rs.next()){
@@ -127,13 +127,13 @@ public class InsertReserve extends JFrame implements ActionListener {
     }
 
     //获取展厅展位数
-    public int getPnum(){
+    public int getHnum(){
         Connection con = null;
         ResultSet rs = null;
         int num1 = 0;
         try{
             con = DatabaseConnection.getConnection();
-            String sql = "select Hnum from Hall where Hno = ?";
+            String sql = "select Hnum from client.Hall where Hno = ?";
             PreparedStatement ps = con.prepareStatement(sql);
             ps.setString(1,jt2.getText());
             rs = ps.executeQuery();
@@ -177,9 +177,9 @@ public class InsertReserve extends JFrame implements ActionListener {
         int n1 = 0,n2 = 0,n3 = 0;
         try{
             con = DatabaseConnection.getConnection();
-            String sql = "update Hall set Hnum = ? where Hno = ?";
+            String sql = "update client.Hall set Hnum = ? where Hno = ?";
             PreparedStatement ps = con.prepareStatement(sql);
-            n1 = this.getPnum();
+            n1 = this.getHnum();
             n2 = this.getRnum();
             n3 = n1-n2;
             ps.setInt(1,n3);

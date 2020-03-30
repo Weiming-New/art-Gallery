@@ -42,7 +42,7 @@ public class SelectTicket extends JFrame {
             con = DatabaseConnection.getConnection();
             PreparedStatement ps;
             ps = con.prepareStatement("select no,t_name,sex,work,e_name,H_name,price from v_ticket where no = ?");
-            ps.setString(1,SelectTno.jt1.getText());
+            ps.setString(1,SelectAWno.jt1.getText());
             rs = ps.executeQuery();
             while (rs.next()){
                 Vector<String> vector = new Vector<String>();

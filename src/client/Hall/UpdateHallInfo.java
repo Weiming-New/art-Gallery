@@ -1,4 +1,4 @@
-package Hall;
+package client.Hall;
 
 import javax.swing.*;
 
@@ -15,7 +15,12 @@ import java.sql.SQLException;
 public class UpdateHallInfo extends JFrame implements ActionListener {
 
 
-    JTextField jt1, jt2, jt3, jt4, jt5, jt6;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = -6412503574252256714L;
+	
+	JTextField jt1, jt2, jt3, jt4, jt5, jt6;
     JLabel jl1, jl2, jl3, jl4, jl5, jl6, jl7,jLabel;
     JPanel jp1, jp2, jp3, jp4, jp5, jp6, jp7, jp8;
     JButton jb1, jb2;
@@ -32,9 +37,9 @@ public class UpdateHallInfo extends JFrame implements ActionListener {
         jt5 = new JTextField(8);
         jt6 = new JTextField(8);
 
-        jl1 = new JLabel("展馆信息修改系统");
-        jl2 = new JLabel("展馆编号");
-        jl3 = new JLabel("展馆名称");
+        jl1 = new JLabel("展厅信息修改系统");
+        jl2 = new JLabel("展厅编号");
+        jl3 = new JLabel("展厅名称");
         jl4 = new JLabel("面积");
         jl5 = new JLabel("地址");
         jl6 = new JLabel("负责人");
@@ -94,7 +99,7 @@ public class UpdateHallInfo extends JFrame implements ActionListener {
         try {
             if (!jt2.getText().isEmpty() && !jt3.getText().isEmpty() && !jt4.getText().isEmpty() && !jt5.getText().isEmpty() && !jt6.getText().isEmpty()) {
                 con = DatabaseConnection.getConnection();
-                PreparedStatement ps = con.prepareStatement("update Place set Pname = ?,Parea = ?, Padd = ?,Ppeo = ?,Pnum = ? where Pno = " + UpdateHall.jt1.getText());
+                PreparedStatement ps = con.prepareStatement("update Hall set Hname = ?,Harea = ?, Hadd = ?,Hperson = ?,Hnum = ? where Hno = " + UpdateHall.jt1.getText());
                 ps.setString(1, jt2.getText());
                 ps.setString(2, jt3.getText());
                 ps.setString(3, jt4.getText());

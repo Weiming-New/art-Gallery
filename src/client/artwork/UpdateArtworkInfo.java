@@ -28,8 +28,8 @@ public class UpdateArtworkInfo extends JFrame implements ActionListener {
         jt4 = new JTextField(8);
         jt5 = new JTextField(8);
 
-        jl1 = new JLabel("展品信息修改系统");
-        jl2 = new JLabel("展品编号");
+        jl1 = new JLabel("艺术品信息修改系统");
+        jl2 = new JLabel("艺术品编号");
         jl3 = new JLabel("名称");
         jl4 = new JLabel("类型");
         jl5 = new JLabel("售价");
@@ -88,7 +88,7 @@ public class UpdateArtworkInfo extends JFrame implements ActionListener {
         try {
             if (!jt2.getText().isEmpty() && !jt3.getText().isEmpty() && !jt4.getText().isEmpty() && !jt5.getText().isEmpty()) {
                 con = DatabaseConnection.getConnection();
-                PreparedStatement ps = con.prepareStatement("update Thing set Tname = ?,Tkind = ?, Tprice = ?,Tarea = ? where Tno = " + UpdateArtwork.jt1.getText());
+                PreparedStatement ps = con.prepareStatement("update Artwork set Tname = ?,Tkind = ?, Tprice = ?,Tarea = ? where AWno = " + UpdateArtwork.jt1.getText());
                 ps.setString(1, jt2.getText());
                 ps.setString(2, jt3.getText());
                 ps.setString(3, jt4.getText());

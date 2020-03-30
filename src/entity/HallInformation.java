@@ -2,7 +2,7 @@ package entity;
 
 
 /*
-展馆信息
+展厅信息
  */
 public class HallInformation {
 

@@ -12,7 +12,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class SelectTno extends JFrame implements ActionListener {
+public class SelectAWno extends JFrame implements ActionListener {
 
     /**
 	 * 
@@ -24,7 +24,7 @@ public class SelectTno extends JFrame implements ActionListener {
     JLabel jl1,jl2;
     public static JTextField jt1;
 
-    public SelectTno(){
+    public SelectAWno(){
         jb1 = new JButton("确定");
 
         jp1 = new JPanel();
@@ -61,7 +61,7 @@ public class SelectTno extends JFrame implements ActionListener {
         try {
             if (!jt1.getText().isEmpty()) {
                 con = DatabaseConnection.getConnection();
-                PreparedStatement ps = con.prepareStatement("select * from Ticket where Tno = ?");
+                PreparedStatement ps = con.prepareStatement("select * from Ticket where AWno = ?");
                 ps.setString(1, jt1.getText());
                 rs = ps.executeQuery();
                 if (rs.next()) {

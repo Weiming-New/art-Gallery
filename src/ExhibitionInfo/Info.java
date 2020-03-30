@@ -4,7 +4,7 @@ import client.HallReserve.SelectReserveAll;
 
 import client.ticket.SelectTicketAll;
 
-import client.trade.SelectThingsAll;
+import client.trade.SelectArtworksAll;
 import view.ManagerMain;
 
 import javax.swing.*;
@@ -34,7 +34,7 @@ public class Info extends JFrame implements ActionListener {
         Font font = new Font("alias", Font.PLAIN, 22);
 
         //加载图片
-        ImageIcon icon = new ImageIcon("image7.png");
+        ImageIcon icon = new ImageIcon("lfg_main.jpg");
 //
 //        //将图片放入label中
         JLabel label = new JLabel(icon);
@@ -67,10 +67,10 @@ public class Info extends JFrame implements ActionListener {
         jb5 = new JButton("购票信息查询");
         jb5.setBackground(Color.WHITE);
         jb5.setFont(font);
-        jb6 = new JButton("展品采购信息查询");
+        jb6 = new JButton("艺术品采购信息查询");
         jb6.setBackground(Color.WHITE);
         jb6.setFont(font);
-        jb7 = new JButton("展馆预定信息查询");
+        jb7 = new JButton("展厅预定信息查询");
         jb7.setBackground(Color.WHITE);
         jb7.setFont(font);
 
@@ -135,10 +135,10 @@ public class Info extends JFrame implements ActionListener {
         }else if (e.getActionCommand() == "购票信息查询"){
             //this.dispose();
             new SelectTicketAll();
-        }else if (e.getActionCommand() == "展品采购信息查询"){
-            new SelectThingsAll();
+        }else if (e.getActionCommand() == "艺术品采购信息查询"){
+            new SelectArtworksAll();
         }
-        else if (e.getActionCommand() == "展馆预定信息查询"){
+        else if (e.getActionCommand() == "展厅预定信息查询"){
             new SelectReserveAll();
         }
     }

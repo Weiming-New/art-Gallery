@@ -1,7 +1,7 @@
 package entity;
 
 /*
-展品信息
+艺术品信息
  */
 public class ArtWork {
 

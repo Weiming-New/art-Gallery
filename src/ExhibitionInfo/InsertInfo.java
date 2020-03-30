@@ -24,8 +24,8 @@ public class InsertInfo extends JFrame implements ActionListener {
         jl1 = new JLabel(" 展会编号：");
         jl2 = new JLabel(" 展会名称：");
         jl3 = new JLabel(" 艺术家编号：");
-        jl4 = new JLabel(" 展品编号：");
-        jl6 = new JLabel(" 展馆编号：");
+        jl4 = new JLabel(" 艺术品编号：");
+        jl6 = new JLabel(" 展厅编号：");
         jl7 = new JLabel(" 时间：");
         jl9 = new JLabel(" 门票价格");
 
@@ -83,14 +83,14 @@ public class InsertInfo extends JFrame implements ActionListener {
         this.setBounds(700, 300, 752, 471);
     }
 
-    //展馆编号验证
-    public int verifyPno() {
+    //展厅编号验证
+    public int verifyHno() {
         Connection con = null;
         ResultSet rs;
         int result = 0;
         try {
             con = DatabaseConnection.getConnection();
-            PreparedStatement ps = con.prepareStatement("select * from Place where Pno = ?");
+            PreparedStatement ps = con.prepareStatement("select * from Place where Hno = ?");
             ps.setString(1, jtf6.getText());
             rs = ps.executeQuery();
             if (rs.next()) {
@@ -121,14 +121,14 @@ public class InsertInfo extends JFrame implements ActionListener {
         return result;
     }
 
-    //展品编号验证
-    public int verifyTno() {
+    //艺术品编号验证
+    public int verifyAWno() {
         Connection con = null;
         ResultSet rs;
         int result = 0;
         try {
             con = DatabaseConnection.getConnection();
-            PreparedStatement ps = con.prepareStatement("select * from Thing where Tno = ?");
+            PreparedStatement ps = con.prepareStatement("select * from Artwork where AWno = ?");
             ps.setString(1, jtf4.getText());
             rs = ps.executeQuery();
             if (rs.next()) {
@@ -150,7 +150,7 @@ public class InsertInfo extends JFrame implements ActionListener {
             ExhibitionInformation mi = new ExhibitionInformation();
 
             if (!jtf1.getText().isEmpty() && !jtf2.getText().isEmpty() && !jtf3.getText().isEmpty() && !jtf4.getText().isEmpty() && !jtf6.getText().isEmpty() && !jtf7.getText().isEmpty() && !jtf9.getText().isEmpty()) {
-                if ((verifyAno() == 1) && (verifyPno() == 1) && (verifyTno() == 1)) {
+                if ((verifyAno() == 1) && (verifyHno() == 1) && (verifyAWno() == 1)) {
                     mi.setE_id(jtf1.getText());
                     mi.setE_name(jtf2.getText());
                     mi.setA_id(jtf3.getText());

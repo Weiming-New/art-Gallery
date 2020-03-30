@@ -98,7 +98,7 @@ public class InsertArtist extends JFrame implements ActionListener {
         jt6.setText("");
     }
 
-    public void buythings() {
+    public void buyArtworks() {
         Connection con = null;
         int result = 0;
         try{
@@ -149,7 +149,7 @@ public class InsertArtist extends JFrame implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getActionCommand() == "添加") {
-                buythings();
+                buyArtworks();
         }
     }
 }

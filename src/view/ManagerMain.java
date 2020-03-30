@@ -1,6 +1,6 @@
 package view;
 
-import Hall.Hall;
+import client.Hall.Hall;
 import client.artist.Artist;
 import client.artwork.Artwork;
 

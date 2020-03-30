@@ -1,7 +1,7 @@
 package entity;
 
 /*
-展品采购信息
+艺术品采购信息
  */
 public class Trade {
 

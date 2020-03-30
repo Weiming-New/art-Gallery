@@ -1,4 +1,4 @@
-package Hall;
+package client.Hall;
 
 import javax.swing.*;
 
@@ -14,7 +14,13 @@ import java.sql.SQLException;
 
 public class UpdateHall extends JFrame implements ActionListener {
 
-    JButton jb1, jb2;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 8274955911070765454L;
+	
+	
+	JButton jb1, jb2;
     JPanel jp1, jp2, jp3;
     JLabel jl1, jl2;
     public static JTextField jt1;
@@ -27,8 +33,8 @@ public class UpdateHall extends JFrame implements ActionListener {
         jp2 = new JPanel();
         jp3 = new JPanel();
 
-        jl1 = new JLabel("展馆信息修改系统");
-        jl2 = new JLabel("展馆号");
+        jl1 = new JLabel("展厅信息修改系统");
+        jl2 = new JLabel("展厅号");
 
         jt1 = new JTextField(8);
 
@@ -63,7 +69,7 @@ public class UpdateHall extends JFrame implements ActionListener {
         try {
             if (!jt1.getText().isEmpty()) {
                 con = DatabaseConnection.getConnection();
-                PreparedStatement ps = con.prepareStatement("select * from Place where Pno = ?");
+                PreparedStatement ps = con.prepareStatement("select * from Hall where Hno = ?");
                 ps.setString(1, jt1.getText());
                 rs = ps.executeQuery();
                 if (rs.next()) {

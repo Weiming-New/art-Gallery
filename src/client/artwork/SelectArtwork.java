@@ -15,10 +15,15 @@ import java.util.Vector;
 
 public class SelectArtwork extends JFrame implements ActionListener {
 
-    JTable jt;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 5579901699753711581L;
+	
+	JTable jt;
     JScrollPane js = new JScrollPane();
-    Vector columnNames = null;
-    Vector rowData = null;
+    Vector<String> columnNames = null;
+    Vector<Vector<String>> rowData = null;
     Connection con = null;
     ResultSet rs;
 
@@ -29,7 +34,7 @@ public class SelectArtwork extends JFrame implements ActionListener {
 
         columnNames = new Vector();
         rowData = new Vector();
-        columnNames.add("展品编号");
+        columnNames.add("艺术品编号");
         columnNames.add("名称");
         columnNames.add("类别");
         columnNames.add("售价");
@@ -39,7 +44,7 @@ public class SelectArtwork extends JFrame implements ActionListener {
         try{
             con = DatabaseConnection.getConnection();
             PreparedStatement ps;
-            ps = con.prepareStatement("select * from Thing");
+            ps = con.prepareStatement("select * from Artwork");
             rs = ps.executeQuery();
             while (rs.next()){
                 Vector vector = new Vector();

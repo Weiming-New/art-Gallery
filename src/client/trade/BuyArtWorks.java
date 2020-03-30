@@ -40,7 +40,7 @@ public class BuyArtWorks extends JFrame implements ActionListener {
         jl2 = new JLabel("订单编号");
         jl3 = new JLabel("姓名");
         jl4 = new JLabel("艺术品编号");
-        //jl5 = new JLabel("展品名称");
+        //jl5 = new JLabel("艺术品名称");
         jl6 = new JLabel("采购时间");
         //jl7 = new JLabel("价格");
 
@@ -101,7 +101,7 @@ public class BuyArtWorks extends JFrame implements ActionListener {
         //jt6.setText("");
     }
 
-    //判断展品编号是否存在
+    //判断艺术品编号是否存在
     public int verify2(){
         Connection con = null;
         ResultSet rs;
@@ -124,12 +124,12 @@ public class BuyArtWorks extends JFrame implements ActionListener {
         return result;
     }
 
-    //设置该展品的状态
+    //设置该艺术品的状态
     public void isBuy(){
         Connection con = null;
         try {
             con = DatabaseConnection.getConnection();
-            String sql = "update ArtWork set IsBuy = '1' where Tno = ?";
+            String sql = "update ArtWork set IsBuy = '1' where AWno = ?";
             PreparedStatement ps = con.prepareStatement(sql);
             ps.setString(1,jt3.getText());
             ps.executeUpdate();
@@ -177,7 +177,7 @@ public class BuyArtWorks extends JFrame implements ActionListener {
             System.out.println("购买成功");
             clear();
         }else if (result == 0){
-            JOptionPane.showMessageDialog(null,"购买失败，展品已售出","提示消息",JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null,"购买失败，艺术品已售出","提示消息",JOptionPane.WARNING_MESSAGE);
             System.out.println("购买失败");
             clear();
         }

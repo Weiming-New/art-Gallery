@@ -1,17 +1,17 @@
 package view;
 
-import Hall.SelectHall;
+import client.Hall.SelectHall;
 import client.HallReserve.*;
 import client.artist.SelectArtist;
 import client.artwork.SelectArtwork;
 import client.ticket.BuyTicket;
 import client.ticket.DeleteTicket;
 import client.ticket.SelectTicket;
-import client.ticket.SelectTno;
+import client.ticket.SelectAWno;
 import client.trade.BuyArtWorks;
 import client.trade.DeleteTrade;
 import client.trade.SelectTIno;
-import client.trade.SelectThings;
+import client.trade.SelectArtworks;
 
 import com.sun.org.apache.bcel.internal.generic.Select;
 
@@ -55,7 +55,7 @@ public class Customer extends JFrame  {
         jm1.addSeparator();
         jm2 = new JMenu("艺术展门票");
         jm2.addSeparator();
-        jm3 = new JMenu("展品采购");
+        jm3 = new JMenu("艺术品采购");
         jm3.addSeparator();
         jm4 = new JMenu("展览信息查询");
 
@@ -69,7 +69,7 @@ public class Customer extends JFrame  {
         jmt3 = new JMenuItem("取消预约");
         //jmt4 = new JMenuItem("修改预约信息");
 
-        jmt9 = new JMenuItem("展品采购");
+        jmt9 = new JMenuItem("艺术品采购");
         jmt10 = new JMenuItem("查询采购信息");
         jmt11 = new JMenuItem("取消订单");
         //jmt12 = new JMenuItem("修改订单信息");
@@ -148,7 +148,7 @@ public class Customer extends JFrame  {
         jmt6.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                new SelectTno();
+                new SelectAWno();
             }
         });
 

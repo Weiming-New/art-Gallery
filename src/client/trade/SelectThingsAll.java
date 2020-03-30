@@ -11,7 +11,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Vector;
 
-public class SelectThingsAll extends JFrame{
+public class SelectArtworksAll extends JFrame{
 
     /**
 	 * 
@@ -25,7 +25,7 @@ public class SelectThingsAll extends JFrame{
     Connection con = null;
     ResultSet rs;
 
-    public SelectThingsAll(){
+    public SelectArtworksAll(){
 
         columnNames = new Vector<String>();
         rowData = new Vector<Vector<String>>();

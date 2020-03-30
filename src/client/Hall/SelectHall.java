@@ -1,4 +1,4 @@
-package Hall;
+package client.Hall;
 
 import client.HallReserve.InsertReserve;
 import function.DatabaseConnection;
@@ -15,10 +15,15 @@ import java.util.Vector;
 
 public class SelectHall extends JFrame implements ActionListener {
 
-    JTable jt;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 8880033999558813738L;
+	
+	JTable jt;
     JScrollPane js = new JScrollPane();
-    Vector columnNames = null;
-    Vector rowData = null;
+    Vector<String> columnNames = null;
+    Vector<Vector<String>> rowData = null;
     Connection con = null;
     ResultSet rs;
 
@@ -27,9 +32,9 @@ public class SelectHall extends JFrame implements ActionListener {
 
     public SelectHall(){
 
-        columnNames = new Vector();
-        rowData = new Vector();
-        columnNames.add("展馆编号");
+        columnNames = new Vector<String>();
+        rowData = new Vector<Vector<String>>();
+        columnNames.add("展厅编号");
         columnNames.add("名称");
         columnNames.add("面积");
         columnNames.add("地址");
@@ -40,10 +45,10 @@ public class SelectHall extends JFrame implements ActionListener {
         try{
             con = DatabaseConnection.getConnection();
             PreparedStatement ps;
-            ps = con.prepareStatement("select * from Place");
+            ps = con.prepareStatement("select * from Hall");
             rs = ps.executeQuery();
             while (rs.next()){
-                Vector vector = new Vector();
+                Vector<String> vector = new Vector<String>();
                 vector.add(rs.getString(1));
                 vector.add(rs.getString(2));
                 vector.add(rs.getString(3));

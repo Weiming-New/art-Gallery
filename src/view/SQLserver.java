@@ -5,7 +5,7 @@ import function.DatabaseConnection;
 
 import javax.swing.*;
 
-import Hall.UpdateHall;
+import client.Hall.UpdateHall;
 
 import java.sql.*;
 

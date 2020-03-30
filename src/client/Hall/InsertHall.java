@@ -1,7 +1,6 @@
-package Hall;
+package client.Hall;
 
 import entity.HallInformation;
-import entity.HallReserveInformation;
 import function.DatabaseConnection;
 
 import javax.swing.*;
@@ -10,19 +9,23 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class InsertHall extends JFrame implements ActionListener {
 
-    JPanel jp1, jp2, jp3, jp4, jp5, jp6, jp7;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = -2332549319017710645L;
+	
+	JPanel jp1, jp2, jp3, jp4, jp5, jp6, jp7;
     JButton jb1, jb2;
     JTextField jt1, jt2, jt3, jt4, jt5, jt6;
 
 
     public InsertHall() {
 
-        jb1 = new JButton("开放展馆");
+        jb1 = new JButton("开放展厅");
         //jb2 = new JButton("返回");
 
         jb1.addActionListener(this);
@@ -36,9 +39,9 @@ public class InsertHall extends JFrame implements ActionListener {
         jp6 = new JPanel();
 
 
-        JLabel jl1 = new JLabel("展馆信息管理");
-        JLabel jl2 = new JLabel("展馆编号");
-        JLabel jl3 = new JLabel("展馆名称");
+        JLabel jl1 = new JLabel("展厅信息管理");
+        JLabel jl2 = new JLabel("展厅编号");
+        JLabel jl3 = new JLabel("展厅名称");
         JLabel jl4 = new JLabel("面积");
         JLabel jl5 = new JLabel("地址");
         JLabel jl6 = new JLabel("负责人");
@@ -104,7 +107,7 @@ public class InsertHall extends JFrame implements ActionListener {
         try {
             if (!jt1.getText().isEmpty() && !jt2.getText().isEmpty() && !jt3.getText().isEmpty() && !jt4.getText().isEmpty() && !jt5.getText().isEmpty() && !jt6.getText().isEmpty()) {
                     con = DatabaseConnection.getConnection();
-                    PreparedStatement ps = con.prepareStatement("insert into Place values(?,?,?,?,?,?)");
+                    PreparedStatement ps = con.prepareStatement("insert into Hall values(?,?,?,?,?,?)");
                     HallInformation b = new HallInformation();
                     b.setH_id(jt1.getText());
                     b.setH_name(jt2.getText());
@@ -143,7 +146,7 @@ public class InsertHall extends JFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if (e.getActionCommand() == "开放展馆") {
+        if (e.getActionCommand() == "开放展厅") {
             insert();
         }
     }

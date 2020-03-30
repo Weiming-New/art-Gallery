@@ -1,4 +1,4 @@
-package Hall;
+package client.Hall;
 
 import javax.swing.*;
 
@@ -10,7 +10,12 @@ import java.awt.event.ActionListener;
 
 public class Hall extends JFrame implements ActionListener {
 
-    JButton jb1,jb2,jb3,jb4,jb5;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1973280694545805945L;
+	
+	JButton jb1,jb2,jb3,jb4,jb5;
     JPanel jp1,jp2,jp3 = null;
 
     public Hall() {
@@ -18,7 +23,7 @@ public class Hall extends JFrame implements ActionListener {
         Font font = new Font("alias", Font.PLAIN, 22);
 
         //加载图片
-        ImageIcon icon = new ImageIcon("image7.png");
+        ImageIcon icon = new ImageIcon("lfg_main.jpg");
 //
 //        //将图片放入label中
         JLabel label = new JLabel(icon);
@@ -37,16 +42,16 @@ public class Hall extends JFrame implements ActionListener {
         JPanel jp4 = new JPanel();
         jl1.setFont(font);
 
-        jb1 = new JButton("添加展馆");
+        jb1 = new JButton("添加展厅");
         jb1.setFont(font);
         jb1.setBackground(Color.WHITE);
-        jb2 = new JButton("删除展馆");
+        jb2 = new JButton("删除展厅");
         jb2.setFont(font);
         jb2.setBackground(Color.WHITE);
-        jb3 = new JButton("查询展馆信息");
+        jb3 = new JButton("查询展厅信息");
         jb3.setFont(font);
         jb3.setBackground(Color.WHITE);
-        jb4 = new JButton("修改展馆信息");
+        jb4 = new JButton("修改展厅信息");
         jb4.setFont(font);
         jb4.setBackground(Color.WHITE);
         jb5 = new JButton("返回");
@@ -89,15 +94,15 @@ public class Hall extends JFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if (e.getActionCommand() == "添加展馆"){
+        if (e.getActionCommand() == "添加展厅"){
             //dispose();
             new InsertHall();
-        }else if (e.getActionCommand() == "删除展馆"){
+        }else if (e.getActionCommand() == "删除展厅"){
             //dispose();
             new DeleteHall();
-        }else if (e.getActionCommand() == "查询展馆信息"){
+        }else if (e.getActionCommand() == "查询展厅信息"){
             new SelectHall();
-        }else if (e.getActionCommand() == "修改展馆信息"){
+        }else if (e.getActionCommand() == "修改展厅信息"){
             //dispose();
             new UpdateHall();
         }else if (e.getActionCommand() == "返回"){

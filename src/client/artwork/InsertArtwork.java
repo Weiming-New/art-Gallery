@@ -13,19 +13,26 @@ import java.sql.SQLException;
 
 public class InsertArtwork extends JFrame implements ActionListener {
 
-	JTextField jtf1, jtf2, jtf3, jtf4, jtf5, jtf6 = null;
-	JLabel jl1, jl2, jl3, jl4, jl5, jl6, jl7 = null;
-	JPanel jp1, jp2, jp3, jp4, jp5, jp6, jp7, jp8 = null;
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1575659872387695114L;
+	
+	
+	JTextField jtf1, jtf2, jtf3, jtf4,  jtf6 = null;
+	JLabel jl1, jl2, jl3, jl4, jl6, jl7 = null;
+	JPanel jp1, jp2,  jp4, jp5, jp6, jp7, jp8 = null;
 	JButton jb1, jb2;
 
 	public InsertArtwork() {
 
-		jl7 = new JLabel(" 艺术画廊购票系统");
-		jl1 = new JLabel(" 展品编号：");
+		jl7 = new JLabel(" 艺术画廊管理系统");
+		
+		jl1 = new JLabel(" 艺术品编号：");
 		jl2 = new JLabel(" 名称：");
 		jl3 = new JLabel(" 类别：");
 		jl4 = new JLabel(" 售价：");
-		jl5 = new JLabel(" 规格：");
+		//jl5 = new JLabel(" 规格：");
 
 		jb1 = new JButton("添加");
 		// jb2 = new JButton("返回");
@@ -37,11 +44,11 @@ public class InsertArtwork extends JFrame implements ActionListener {
 		jtf2 = new JTextField(6);
 		jtf3 = new JTextField(6);
 		jtf4 = new JTextField(6);
-		jtf5 = new JTextField(6);
+		//jtf5 = new JTextField(6);
 
 		jp1 = new JPanel();
 		jp2 = new JPanel();
-		jp3 = new JPanel();
+		//jp3 = new JPanel();
 		jp4 = new JPanel();
 		jp5 = new JPanel();
 		jp6 = new JPanel();
@@ -58,8 +65,8 @@ public class InsertArtwork extends JFrame implements ActionListener {
 		jp2.add(jl4);
 		jp2.add(jtf4);
 
-		jp3.add(jl5);
-		jp3.add(jtf5);
+		//jp3.add(jl5);
+		//jp3.add(jtf5);
 
 		jp5.add(jb1);
 		// jp5.add(jb2);
@@ -69,7 +76,7 @@ public class InsertArtwork extends JFrame implements ActionListener {
 		this.add(jp6);
 		this.add(jp1);
 		this.add(jp2);
-		this.add(jp3);
+		//this.add(jp3);
 		this.add(jp5);
 
 		this.setVisible(true);
@@ -84,9 +91,9 @@ public class InsertArtwork extends JFrame implements ActionListener {
 		int result = 0;
 		try {
 			if (!jtf1.getText().isEmpty() && !jtf2.getText().isEmpty() && !jtf3.getText().isEmpty()
-					&& !jtf4.getText().isEmpty() && !jtf5.getText().isEmpty()) {
+					&& !jtf4.getText().isEmpty()) {
 				con = DatabaseConnection.getConnection();
-				String sql = "insert into Thing values(?,?,?,?,?)";
+				String sql = "insert into Artwork values(?,?,?,?,?)";
 				PreparedStatement ps = con.prepareStatement(sql);
 				ArtWork aw = new ArtWork();
 
@@ -128,7 +135,7 @@ public class InsertArtwork extends JFrame implements ActionListener {
 		jtf2.setText("");
 		jtf3.setText("");
 		jtf4.setText("");
-		jtf5.setText("");
+		//jtf5.setText("");
 	}
 
 	@Override

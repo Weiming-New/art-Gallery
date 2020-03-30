@@ -1,4 +1,4 @@
-package Hall;
+package client.Hall;
 
 import javax.swing.*;
 
@@ -14,7 +14,12 @@ import java.sql.SQLException;
 
 public class DeleteHall extends JFrame implements ActionListener {
 
-    JButton jb1,jb2;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 7797590163583535674L;
+	
+	JButton jb1,jb2;
     JPanel jp1,jp2,jp3;
     JTextField jt1;
     JLabel jl1,jl2;
@@ -28,8 +33,8 @@ public class DeleteHall extends JFrame implements ActionListener {
         jp3 = new JPanel();
 
         jt1 = new JTextField(8);
-        jl1 = new JLabel("展馆编号");
-        jl2 = new JLabel("展馆信息系统");
+        jl1 = new JLabel("展厅编号");
+        jl2 = new JLabel("展厅信息系统");
 
         jb1.addActionListener(this);
         //jb2.addActionListener(this);
@@ -56,7 +61,7 @@ public class DeleteHall extends JFrame implements ActionListener {
         int result = 0;
         try {
             con = DatabaseConnection.getConnection();
-            PreparedStatement ps = con.prepareStatement("select * from Place where Pno = ?");
+            PreparedStatement ps = con.prepareStatement("select * from Hall where Hno = ?");
             ps.setString(1,jt1.getText());
             rs = ps.executeQuery();
             if (rs.next()){
@@ -73,7 +78,7 @@ public class DeleteHall extends JFrame implements ActionListener {
         try {
             if (!jt1.getText().isEmpty()) {
                 con = DatabaseConnection.getConnection();
-                PreparedStatement ps = con.prepareStatement("delete from Place where Pno = ?");
+                PreparedStatement ps = con.prepareStatement("delete from Hall where Hno = ?");
                 ps.setString(1, jt1.getText());
                 ps.executeUpdate();
                 System.out.println("数据删除成功");

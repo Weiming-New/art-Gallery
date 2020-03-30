@@ -1,7 +1,7 @@
 package entity;
 
 /*
-展馆预约信息
+展厅预约信息
  */
 public class HallReserveInformation {
 
