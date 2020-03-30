@@ -82,7 +82,7 @@ public class InsertHall extends JFrame implements ActionListener {
 
         this.setVisible(true);
 //        this.setResizable(false);
-        this.setTitle("会展中心管理系统");
+        this.setTitle("艺术画廊管理系统");
         this.setLayout(new GridLayout(5, 4));
         this.setBounds(660, 280, 700, 500);
     }

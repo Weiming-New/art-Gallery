@@ -14,7 +14,12 @@ import java.sql.SQLException;
 
 public class DeleteArtist extends JFrame implements ActionListener {
 
-    JButton jb1,jb2;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = -8059612679390774011L;
+	
+	JButton jb1,jb2;
     JPanel jp1,jp2,jp3;
     JTextField jt1;
     JLabel jl1,jl2;
@@ -73,7 +78,7 @@ public class DeleteArtist extends JFrame implements ActionListener {
         try {
             if (!jt1.getText().isEmpty()) {
                 con = DatabaseConnection.getConnection();
-                PreparedStatement ps = con.prepareStatement("delete from Business where Bno = ?");
+                PreparedStatement ps = con.prepareStatement("delete from Artist where Ano = ?");
                 ps.setString(1, jt1.getText());
                 ps.executeUpdate();
                 System.out.println("数据删除成功");

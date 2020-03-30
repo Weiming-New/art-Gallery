@@ -9,6 +9,11 @@ import java.awt.event.ActionListener;
 
 public class Artist extends JFrame implements ActionListener {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -7582317366900809626L;
+	
 	JButton jb1, jb2, jb3, jb4, jb5;
 	JLabel jl1;
 	JPanel jp1, jp2, jp3, jp4 = null;
@@ -18,7 +23,7 @@ public class Artist extends JFrame implements ActionListener {
 		Font font = new Font("alias", Font.PLAIN, 22);
 
 		// 加载图片
-		ImageIcon icon = new ImageIcon("image7.png");
+		ImageIcon icon = new ImageIcon("lfg_main.png");
 //
 //        //将图片放入label中
 		JLabel label = new JLabel(icon);

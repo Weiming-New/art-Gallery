@@ -13,18 +13,23 @@ import java.util.Vector;
 
 public class SelectArtist extends JFrame{
 
-    JTable jt;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 2442551114083693386L;
+	
+	JTable jt;
     JScrollPane js = new JScrollPane();
-    Vector columnNames = null;
-    Vector rowData = null;
+    Vector<String> columnNames = null;
+    Vector<Vector<String>> rowData = null;
     Connection con = null;
     ResultSet rs;
 
     public SelectArtist(){
 
-        columnNames = new Vector();
-        rowData = new Vector();
-        columnNames.add("展商编号");
+        columnNames = new Vector<String>();
+        rowData = new Vector<Vector<String>>();
+        columnNames.add("艺术家编号");
         columnNames.add("姓名");
         columnNames.add("身份证号");
         columnNames.add("职业");
@@ -35,10 +40,10 @@ public class SelectArtist extends JFrame{
         try{
             con = DatabaseConnection.getConnection();
             PreparedStatement ps;
-            ps = con.prepareStatement("select * from Business");
+            ps = con.prepareStatement("select * from Artist");
             rs = ps.executeQuery();
             while (rs.next()){
-                Vector vector = new Vector();
+                Vector<String> vector = new Vector<String>();
                 vector.add(rs.getString(1));
                 vector.add(rs.getString(2));
                 vector.add(rs.getString(3));

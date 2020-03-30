@@ -80,7 +80,7 @@ public class Artwork extends JFrame implements ActionListener {
         this.add(jp2);
         this.add(jp3);
 
-        this.setTitle("会展中心管理系统");
+        this.setTitle("艺术画廊管理系统");
         this.setVisible(true);
         this.setLayout(new GridLayout(5, 4));
         this.setBounds(630, 260, 752, 471);

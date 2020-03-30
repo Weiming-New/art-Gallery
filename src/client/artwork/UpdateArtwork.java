@@ -49,7 +49,7 @@ public class UpdateArtwork extends JFrame implements ActionListener {
         this.setVisible(true);
         this.setLayout(new GridLayout(4,3));
         this.setBounds(720,320,600,400);
-        this.setTitle("会展中心管理系统");
+        this.setTitle("艺术画廊管理系统");
     }
 
     public int verify(){

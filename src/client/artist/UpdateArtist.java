@@ -14,7 +14,11 @@ import java.sql.SQLException;
 
 public class UpdateArtist extends JFrame implements ActionListener {
 
-    JButton jb1,jb2;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 3351905201710633265L;
+	JButton jb1,jb2;
     JPanel jp1,jp2,jp3;
     JLabel jl1,jl2;
     public static JTextField jt1;
@@ -27,8 +31,8 @@ public class UpdateArtist extends JFrame implements ActionListener {
         jp2 = new JPanel();
         jp3 = new JPanel();
 
-        jl1 = new JLabel("展商信息修改系统");
-        jl2 = new JLabel("展商号");
+        jl1 = new JLabel("艺术家信息修改系统");
+        jl2 = new JLabel("艺术家号");
 
         jt1 = new JTextField(8);
 
@@ -49,7 +53,7 @@ public class UpdateArtist extends JFrame implements ActionListener {
         this.setVisible(true);
         this.setLayout(new GridLayout(4,3));
         this.setBounds(720,320,600,400);
-        this.setTitle("会展中心管理系统");
+        this.setTitle("艺术画廊管理系统");
     }
 
     public int verify(){
@@ -59,7 +63,7 @@ public class UpdateArtist extends JFrame implements ActionListener {
         try {
             if (!jt1.getText().isEmpty()) {
                 con = DatabaseConnection.getConnection();
-                PreparedStatement ps = con.prepareStatement("select * from Business where Bno = ?");
+                PreparedStatement ps = con.prepareStatement("select * from Artist where Ano = ?");
                 ps.setString(1, jt1.getText());
                 rs = ps.executeQuery();
                 if (rs.next()) {

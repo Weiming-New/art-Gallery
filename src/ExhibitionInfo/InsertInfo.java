@@ -23,7 +23,7 @@ public class InsertInfo extends JFrame implements ActionListener {
 
         jl1 = new JLabel(" 展会编号：");
         jl2 = new JLabel(" 展会名称：");
-        jl3 = new JLabel(" 展商编号：");
+        jl3 = new JLabel(" 艺术家编号：");
         jl4 = new JLabel(" 展品编号：");
         jl6 = new JLabel(" 展馆编号：");
         jl7 = new JLabel(" 时间：");
@@ -78,7 +78,7 @@ public class InsertInfo extends JFrame implements ActionListener {
         this.add(jp5);
 
         this.setVisible(true);
-        this.setTitle("会展中心管理系统");
+        this.setTitle("艺术画廊管理系统");
         this.setLayout(new GridLayout(6, 4));
         this.setBounds(700, 300, 752, 471);
     }
@@ -102,14 +102,14 @@ public class InsertInfo extends JFrame implements ActionListener {
         return result;
     }
 
-    //展商编号验证
-    public int verifyBno() {
+    //艺术家编号验证
+    public int verifyAno() {
         Connection con = null;
         ResultSet rs;
         int result = 0;
         try {
             con = DatabaseConnection.getConnection();
-            PreparedStatement ps = con.prepareStatement("select * from Business where Bno = ?");
+            PreparedStatement ps = con.prepareStatement("select * from Artist where Ano = ?");
             ps.setString(1, jtf3.getText());
             rs = ps.executeQuery();
             if (rs.next()) {
@@ -150,7 +150,7 @@ public class InsertInfo extends JFrame implements ActionListener {
             ExhibitionInformation mi = new ExhibitionInformation();
 
             if (!jtf1.getText().isEmpty() && !jtf2.getText().isEmpty() && !jtf3.getText().isEmpty() && !jtf4.getText().isEmpty() && !jtf6.getText().isEmpty() && !jtf7.getText().isEmpty() && !jtf9.getText().isEmpty()) {
-                if ((verifyBno() == 1) && (verifyPno() == 1) && (verifyTno() == 1)) {
+                if ((verifyAno() == 1) && (verifyPno() == 1) && (verifyTno() == 1)) {
                     mi.setE_id(jtf1.getText());
                     mi.setE_name(jtf2.getText());
                     mi.setA_id(jtf3.getText());

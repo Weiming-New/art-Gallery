@@ -46,7 +46,7 @@ public class DeleteHall extends JFrame implements ActionListener {
 
         this.setVisible(true);
         this.setBounds(720,350,600,400);
-        this.setTitle("会展中心管理系统");
+        this.setTitle("艺术画廊管理系统");
         this.setLayout(new GridLayout(6,4));
     }
 

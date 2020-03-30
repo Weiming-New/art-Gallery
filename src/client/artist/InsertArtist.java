@@ -1,9 +1,9 @@
 package client.artist;
 
 import entity.Artist;
-import entity.Trade;
+
 import function.DatabaseConnection;
-import view.Customer;
+
 
 import javax.swing.*;
 import java.awt.*;
@@ -11,7 +11,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class InsertArtist extends JFrame implements ActionListener {
@@ -35,8 +34,8 @@ public class InsertArtist extends JFrame implements ActionListener {
         jt5 = new JTextField(8);
         jt6 = new JTextField(8);
 
-        jl1 = new JLabel("展商管理");
-        jl2 = new JLabel("展商编号");
+        jl1 = new JLabel("艺术家管理");
+        jl2 = new JLabel("艺术家编号");
         jl3 = new JLabel("姓名");
         jl4 = new JLabel("身份证号");
         jl5 = new JLabel("职业");
@@ -84,7 +83,7 @@ public class InsertArtist extends JFrame implements ActionListener {
         this.add(jp5);
 
         this.setVisible(true);
-        this.setTitle("会展中心管理系统");
+        this.setTitle("艺术画廊管理系统");
         this.setBounds(660,300,700,450);
         this.setLayout(new GridLayout(6,4));
     }
@@ -105,7 +104,7 @@ public class InsertArtist extends JFrame implements ActionListener {
         try{
             if (!jt1.getText().isEmpty() && !jt2.getText().isEmpty() && !jt3.getText().isEmpty() && !jt4.getText().isEmpty() && !jt5.getText().isEmpty() && !jt6.getText().isEmpty()) {
                 con = DatabaseConnection.getConnection();
-                String sql = "insert into Business values (?,?,?,?,?,?)";
+                String sql = "insert into Artist values (?,?,?,?,?,?)";
                 PreparedStatement ps = con.prepareStatement(sql);
                 Artist pi = new Artist();
 

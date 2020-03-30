@@ -1,7 +1,7 @@
 package entity;
 
 /*
-展商信息
+艺术家信息
  */
 public class Artist {
 

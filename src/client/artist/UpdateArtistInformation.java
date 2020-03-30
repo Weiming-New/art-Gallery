@@ -15,7 +15,12 @@ import java.sql.SQLException;
 public class UpdateArtistInformation extends JFrame implements ActionListener {
 
 
-    JTextField jt1, jt2, jt3, jt4, jt5, jt6;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 3211693917468550190L;
+	
+	JTextField jt1, jt2, jt3, jt4, jt5, jt6;
     JLabel jl1, jl2, jl3, jl4, jl5, jl6, jl7;
     JPanel jp1, jp2, jp3, jp4, jp5, jp6, jp7, jp8;
     JButton jb1, jb2;
@@ -30,8 +35,8 @@ public class UpdateArtistInformation extends JFrame implements ActionListener {
         jt5 = new JTextField(8);
         jt6 = new JTextField(8);
 
-        jl1 = new JLabel("展商信息修改系统");
-        jl2 = new JLabel("展商编号");
+        jl1 = new JLabel("艺术家信息修改系统");
+        jl2 = new JLabel("艺术家编号");
         jl3 = new JLabel("姓名");
         jl4 = new JLabel("身份证号");
         jl5 = new JLabel("职业");
@@ -81,7 +86,7 @@ public class UpdateArtistInformation extends JFrame implements ActionListener {
         this.add(jp5);
 
         this.setVisible(true);
-        this.setTitle("会展中心管理系统");
+        this.setTitle("艺术画廊管理系统");
         this.setBounds(720, 320, 600, 400);
         this.setLayout(new GridLayout(6, 4));
     }
@@ -93,7 +98,7 @@ public class UpdateArtistInformation extends JFrame implements ActionListener {
         try {
             if (!jt2.getText().isEmpty() && !jt3.getText().isEmpty() && !jt4.getText().isEmpty() && !jt5.getText().isEmpty() && !jt6.getText().isEmpty()) {
                 con = DatabaseConnection.getConnection();
-                PreparedStatement ps = con.prepareStatement("update Business set Bname = ?,Bid = ?, Bwork = ?,Bworkplace = ?,Btel = ? where Bno = " + UpdateArtist.jt1.getText());
+                PreparedStatement ps = con.prepareStatement("update Artist set Aname = ?,Aid = ?, Awork = ?,Aworkplace = ?,Atel = ? where Ano = " + UpdateArtist.jt1.getText());
                 ps.setString(1, jt2.getText());
                 ps.setString(2, jt3.getText());
                 ps.setString(3, jt4.getText());

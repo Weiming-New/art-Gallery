@@ -20,7 +20,7 @@ public class InsertArtwork extends JFrame implements ActionListener {
 
 	public InsertArtwork() {
 
-		jl7 = new JLabel(" 会展中心购票系统");
+		jl7 = new JLabel(" 艺术画廊购票系统");
 		jl1 = new JLabel(" 展品编号：");
 		jl2 = new JLabel(" 名称：");
 		jl3 = new JLabel(" 类别：");
@@ -74,7 +74,7 @@ public class InsertArtwork extends JFrame implements ActionListener {
 
 		this.setVisible(true);
 		;
-		this.setTitle("会展中心管理系统");
+		this.setTitle("艺术画廊管理系统");
 		this.setLayout(new GridLayout(5, 4));
 		this.setBounds(670, 300, 700, 500);
 	}

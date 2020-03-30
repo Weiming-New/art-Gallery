@@ -83,7 +83,7 @@ public class UpdateHallInfo extends JFrame implements ActionListener {
         this.add(jp5);
 
         this.setVisible(true);
-        this.setTitle("会展中心管理系统");
+        this.setTitle("艺术画廊管理系统");
         this.setBounds(200, 200, 640, 450);
         this.setLayout(new GridLayout(6, 4));
     }
