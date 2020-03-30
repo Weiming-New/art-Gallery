@@ -1,4 +1,4 @@
-package client.artwork;
+package client.exhibition;
 
 import javax.swing.*;
 
@@ -8,17 +8,17 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class Artwork extends JFrame implements ActionListener {
+public class Exhibition extends JFrame implements ActionListener {
+
 
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = 8245115661658448861L;
-
+	private static final long serialVersionUID = -1343925323134082689L;
 	JButton jb1, jb2, jb3, jb4, jb5;
 	JPanel jp1, jp2, jp3 = null;
 
-	public Artwork() {
+	public Exhibition() {
 
 		Font font = new Font("alias", Font.PLAIN, 22);
 
@@ -38,16 +38,16 @@ public class Artwork extends JFrame implements ActionListener {
 		JPanel j = (JPanel) this.getContentPane();
 		j.setOpaque(false);
 
-		jb1 = new JButton("添加艺术品");
+		jb1 = new JButton("添加展会");
 		jb1.setBackground(Color.WHITE);
 		jb1.setFont(font);
-		jb2 = new JButton("删除艺术品");
+		jb2 = new JButton("删除展会");
 		jb2.setBackground(Color.WHITE);
 		jb2.setFont(font);
-		jb3 = new JButton("查询艺术品信息");
+		jb3 = new JButton("查询展会信息");
 		jb3.setBackground(Color.WHITE);
 		jb3.setFont(font);
-		jb4 = new JButton("修改艺术品信息");
+		jb4 = new JButton("修改展会信息");
 		jb4.setBackground(Color.WHITE);
 		jb4.setFont(font);
 		jb5 = new JButton("返回");
@@ -92,17 +92,17 @@ public class Artwork extends JFrame implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		if (e.getActionCommand() == "添加艺术品") {
+		if (e.getActionCommand() == "添加展会") {
 			// dispose();
-			new InsertArtwork();
-		} else if (e.getActionCommand() == "删除艺术品") {
+			new InsertExhibition();
+		} else if (e.getActionCommand() == "删除展会") {
 			// dispose();
-			new DeleteArtwork();
-		} else if (e.getActionCommand() == "查询艺术品信息") {
-			new SelectArtwork();
-		} else if (e.getActionCommand() == "修改艺术品信息") {
+			new DeleteExhibition();
+		} else if (e.getActionCommand() == "查询展会信息") {
+			new SelectExhibition();
+		} else if (e.getActionCommand() == "修改展会信息") {
 			// dispose();
-			new UpdateArtwork();
+			new UpdateExhibition();
 		} else if (e.getActionCommand() == "返回") {
 			new Root();
 			dispose();

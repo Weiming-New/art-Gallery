@@ -1,6 +1,6 @@
-package client.artwork;
+package client.exhibition;
 
-import entity.ArtWork;
+import entity.Exhibition;
 import function.DatabaseConnection;
 
 import javax.swing.*;
@@ -11,7 +11,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-public class InsertArtwork extends JFrame implements ActionListener {
+public class InsertExhibition extends JFrame implements ActionListener {
 
 	/**
 	 * 
@@ -23,15 +23,13 @@ public class InsertArtwork extends JFrame implements ActionListener {
 	JPanel jp1, jp2, jp4, jp5, jp6, jp7, jp8 = null;
 	JButton jb1, jb2;
 
-	public InsertArtwork() {
+	public InsertExhibition() {
 
 		jl7 = new JLabel(" 艺术画廊管理系统");
 
-		jl1 = new JLabel(" 艺术品编号：");
+		jl1 = new JLabel(" 展会编号：");
 		jl2 = new JLabel(" 名称：");
-		jl3 = new JLabel(" 类别：");
-		jl4 = new JLabel(" 售价：");
-		// jl5 = new JLabel(" 规格：");
+		jl3 = new JLabel(" 时间：");
 
 		jb1 = new JButton("添加");
 		// jb2 = new JButton("返回");
@@ -42,7 +40,7 @@ public class InsertArtwork extends JFrame implements ActionListener {
 		jtf1 = new JTextField(6);
 		jtf2 = new JTextField(6);
 		jtf3 = new JTextField(6);
-		jtf4 = new JTextField(6);
+//		jtf4 = new JTextField(6);
 		// jtf5 = new JTextField(6);
 
 		jp1 = new JPanel();
@@ -61,8 +59,8 @@ public class InsertArtwork extends JFrame implements ActionListener {
 
 		jp2.add(jl3);
 		jp2.add(jtf3);
-		jp2.add(jl4);
-		jp2.add(jtf4);
+//		jp2.add(jl4);
+//		jp2.add(jtf4);
 
 		// jp3.add(jl5);
 		// jp3.add(jtf5);
@@ -92,21 +90,17 @@ public class InsertArtwork extends JFrame implements ActionListener {
 			if (!jtf1.getText().isEmpty() && !jtf2.getText().isEmpty() && !jtf3.getText().isEmpty()
 					&& !jtf4.getText().isEmpty()) {
 				con = DatabaseConnection.getConnection();
-				String sql = "insert into Artwork values(?,?,?,?,?)";
+				String sql = "insert into Exhibition values(?,?,?)";
 				PreparedStatement ps = con.prepareStatement(sql);
-				ArtWork aw = new ArtWork();
+				Exhibition ex = new Exhibition();
 
-				aw.setAw_no(jtf1.getText());
-				aw.setAw_name(jtf2.getText());
-				aw.setAw_kind(jtf3.getText());
-				aw.setAw_price(jtf4.getText());
-				aw.setAw_sold("0");
+				ex.setE_no(jtf1.getText());
+				ex.setE_name(jtf2.getText());
+				ex.setE_time(jtf3.getText());
 
-				ps.setString(1, aw.getAw_no());
-				ps.setString(2, aw.getAw_name());
-				ps.setString(3, aw.getAw_kind());
-				ps.setString(4, aw.getAw_price());
-				ps.setString(5, aw.getAw_sold());
+				ps.setString(1, ex.getE_no());
+				ps.setString(2, ex.getE_name());
+				ps.setString(3, ex.getE_time());
 				result = ps.executeUpdate();
 
 			} else {
@@ -135,7 +129,7 @@ public class InsertArtwork extends JFrame implements ActionListener {
 		jtf1.setText("");
 		jtf2.setText("");
 		jtf3.setText("");
-		jtf4.setText("");
+//		jtf4.setText("");
 		// jtf5.setText("");
 	}
 

@@ -159,7 +159,6 @@ public class InsertInfo extends JFrame implements ActionListener {
                     mi.setAddress(jtf6.getText());
                     mi.setTime(jtf7.getText());
                     //mi.setKind(jtf8.getText());
-                    mi.setPrice(jtf9.getText());
 
                     ps.setString(1, mi.getE_id());
                     ps.setString(2, mi.getE_name());
@@ -169,7 +168,6 @@ public class InsertInfo extends JFrame implements ActionListener {
                     ps.setString(5, mi.getAddress());
                     ps.setString(6, mi.getTime());
                     //ps.setString(8,mi.getKind());
-                    ps.setString(7, mi.getPrice());
                     result = ps.executeUpdate();
                     JOptionPane.showMessageDialog(null, "发布成功", "提示消息", JOptionPane.WARNING_MESSAGE);
                     System.out.println("插入数据成功");

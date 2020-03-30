@@ -12,7 +12,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class UpdateArtworkInfo extends JFrame implements ActionListener {
+public class UpdateArtworkInformation extends JFrame implements ActionListener {
 
 
     JTextField jt1, jt2, jt3, jt4, jt5, jt6;
@@ -20,7 +20,7 @@ public class UpdateArtworkInfo extends JFrame implements ActionListener {
     JPanel jp1, jp2, jp3, jp4, jp5, jp6, jp7, jp8;
     JButton jb1, jb2;
 
-    public UpdateArtworkInfo() {
+    public UpdateArtworkInformation() {
 
         jt1 = new JTextField(8);
         jt2 = new JTextField(8);

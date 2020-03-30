@@ -1,6 +1,5 @@
 package view;
 
-//import entity.ExhibitionInformation;
 import function.DatabaseConnection;
 
 import javax.swing.*;

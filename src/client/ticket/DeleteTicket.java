@@ -60,7 +60,7 @@ public class DeleteTicket extends JFrame implements ActionListener {
         int result = 0;
         try {
             con = DatabaseConnection.getConnection();
-            PreparedStatement ps = con.prepareStatement("select * from Ticket where AWno = ?");
+            PreparedStatement ps = con.prepareStatement("select * from Ticket where Tno = ?");
             ps.setString(1,jt1.getText());
             rs = ps.executeQuery();
             if (rs.next()){
@@ -76,7 +76,7 @@ public class DeleteTicket extends JFrame implements ActionListener {
         Connection con = null;
         try {
             con = DatabaseConnection.getConnection();
-            PreparedStatement ps = con.prepareStatement("delete from Ticket where AWno = ?");
+            PreparedStatement ps = con.prepareStatement("delete from Ticket where Tno = ?");
             ps.setString(1,jt1.getText());
             ps.executeUpdate();
             System.out.println("数据删除成功");

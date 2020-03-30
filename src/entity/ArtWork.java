@@ -9,7 +9,7 @@ public class ArtWork {
 	private String aw_name;
 	private String aw_kind;
 	private String aw_price;
-	private Boolean aw_sold;
+	private String aw_sold;
 
 	public String getAw_no() {
 		return aw_no;
@@ -43,11 +43,11 @@ public class ArtWork {
 		aw_price = aWprice;
 	}
 
-	public Boolean getAw_sold() {
+	public String getAw_sold() {
 		return aw_sold;
 	}
 
-	public void setAw_sold(Boolean aWsold) {
+	public void setAw_sold(String aWsold) {
 		aw_sold = aWsold;
 	}
 

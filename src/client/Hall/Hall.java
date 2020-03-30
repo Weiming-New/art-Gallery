@@ -32,7 +32,7 @@ public class Hall extends JFrame implements ActionListener {
         label.setBounds(0, 0, icon.getIconWidth(), icon.getIconHeight());
 //
 //        //获取窗口的第二层，将label放入
-        this.getLayeredPane().add(label, new Integer(Integer.MIN_VALUE));
+        this.getLayeredPane().add(label, Integer.valueOf(Integer.MIN_VALUE));
 //
 //        //获取frame的顶层容器,并设置为透明
         JPanel j = (JPanel) this.getContentPane();

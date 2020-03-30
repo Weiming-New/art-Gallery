@@ -1,4 +1,4 @@
-package client.artwork;
+package client.exhibition;
 
 import function.DatabaseConnection;
 
@@ -13,20 +13,19 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class DeleteArtwork extends JFrame implements ActionListener {
-
-    /**
+public class DeleteExhibition extends JFrame implements ActionListener {
+	
+	/**
 	 * 
 	 */
-	private static final long serialVersionUID = -1139291348552244010L;
-	
+	private static final long serialVersionUID = 6856830382340338113L;
 	JButton jb1,jb2;
     JPanel jp1,jp2,jp3;
     JTextField jt1;
     JLabel jl1,jl2;
 
-    public DeleteArtwork(){
-        jb1 = new JButton("取消");
+    public DeleteExhibition(){
+        jb1 = new JButton("确定");
         //jb2 = new JButton("返回");
 
         jp1 = new JPanel();
@@ -34,7 +33,7 @@ public class DeleteArtwork extends JFrame implements ActionListener {
         jp3 = new JPanel();
 
         jt1 = new JTextField(8);
-        jl1 = new JLabel("艺术品编号");
+        jl1 = new JLabel("展会编号");
         jl2 = new JLabel("艺术品管理系统");
 
         jb1.addActionListener(this);
@@ -62,7 +61,7 @@ public class DeleteArtwork extends JFrame implements ActionListener {
         int result = 0;
         try {
             con = DatabaseConnection.getConnection();
-            PreparedStatement ps = con.prepareStatement("select * from Artwork where AWno = ?");
+            PreparedStatement ps = con.prepareStatement("select * from Exhibition where Eno = ?");
             ps.setString(1,jt1.getText());
             rs = ps.executeQuery();
             if (rs.next()){
@@ -79,7 +78,7 @@ public class DeleteArtwork extends JFrame implements ActionListener {
         try {
             if (!jt1.getText().isEmpty()) {
                 con = DatabaseConnection.getConnection();
-                PreparedStatement ps = con.prepareStatement("delete from Artwork where AWno = ?");
+                PreparedStatement ps = con.prepareStatement("delete from Exhibition where Eno = ?");
                 ps.setString(1, jt1.getText());
                 ps.executeUpdate();
                 System.out.println("数据删除成功");
@@ -98,7 +97,7 @@ public class DeleteArtwork extends JFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-       if (e.getActionCommand() == "取消"){
+       if (e.getActionCommand() == "确定"){
             if (verify() == 1) {
                 delete();
             }else {

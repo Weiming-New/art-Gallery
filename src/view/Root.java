@@ -3,6 +3,7 @@ package view;
 import client.Hall.Hall;
 import client.artist.Artist;
 import client.artwork.Artwork;
+import client.exhibition.Exhibition;
 
 import javax.swing.*;
 
@@ -128,7 +129,7 @@ public class Root extends JFrame implements ActionListener {
             new Hall();
             this.dispose();
         }else if (e.getActionCommand() == "艺术展管理"){
-            new Hall();
+            new Exhibition();
             this.dispose();
         }
     }
