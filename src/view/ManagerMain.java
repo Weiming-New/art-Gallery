@@ -2,10 +2,10 @@ package view;
 
 import Hall.Hall;
 import client.artist.Artist;
+import client.artwork.Artwork;
 
 import javax.swing.*;
 
-import Artwork.Artwork;
 import ExhibitionInfo.Info;
 
 import java.awt.*;

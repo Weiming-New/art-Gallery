@@ -5,41 +5,50 @@ package entity;
  */
 public class ArtWork {
 
-    private String aw_id;
-    private String aw_name;
-    private String kind;
-    private String price;
+	private String aw_no;
+	private String aw_name;
+	private String aw_kind;
+	private String aw_price;
+	private Boolean aw_sold;
 
-    public String getAw_id() {
-        return aw_id;
-    }
+	public String getAw_no() {
+		return aw_no;
+	}
 
-    public void setAw_id(String aw) {
-        this.aw_id = aw;
-    }
+	public void setAw_no(String aWno) {
+		aw_no = aWno;
+	}
 
-    public String getAw_name() {
-        return aw_name;
-    }
+	public String getAw_name() {
+		return aw_name;
+	}
 
-    public void setAw_name(String aw_name) {
-        this.aw_name = aw_name;
-    }
+	public void setAw_name(String aWname) {
+		aw_name = aWname;
+	}
 
-    public String getKind() {
-        return kind;
-    }
+	public String getAw_kind() {
+		return aw_kind;
+	}
 
-    public void setKind(String kind) {
-        this.kind = kind;
-    }
+	public void setAw_kind(String aWkind) {
+		aw_kind = aWkind;
+	}
 
-    public String getPrice() {
-        return price;
-    }
+	public String getAw_price() {
+		return aw_price;
+	}
 
-    public void setPrice(String price) {
-        this.price = price;
-    }
+	public void setAw_price(String aWprice) {
+		aw_price = aWprice;
+	}
+
+	public Boolean getAw_sold() {
+		return aw_sold;
+	}
+
+	public void setAw_sold(Boolean aWsold) {
+		aw_sold = aWsold;
+	}
 
 }

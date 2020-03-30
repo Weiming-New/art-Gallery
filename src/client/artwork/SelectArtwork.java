@@ -1,4 +1,4 @@
-package Artwork;
+package client.artwork;
 
 import client.trade.BuyArtWorks;
 import function.DatabaseConnection;

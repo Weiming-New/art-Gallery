@@ -5,19 +5,19 @@ package entity;
  */
 public class Artist {
 
-    private String a_id;
+    private String a_no;
     private String a_name;
-    private String ID;
-    private String major;
-    private String workplace;
+    private String a_ID;
+    private String a_major;
+    private String a_workplace;
     private String tel;
 
-    public String getA_id() {
-        return a_id;
+    public String getA_no() {
+        return a_no;
     }
 
     public void setA_id(String a_id) {
-        this.a_id = a_id;
+        this.a_no = a_id;
     }
 
     public String getA_name() {
@@ -29,27 +29,27 @@ public class Artist {
     }
 
     public String getID() {
-        return ID;
+        return a_ID;
     }
 
     public void setID(String ID) {
-        this.ID = ID;
+        this.a_ID = ID;
     }
 
     public String getMajor() {
-        return major;
+        return a_major;
     }
 
     public void setMajor(String work) {
-        this.major = work;
+        this.a_major = work;
     }
 
     public String getWorkplace() {
-        return workplace;
+        return a_workplace;
     }
 
     public void setWorkplace(String workplace) {
-        this.workplace = workplace;
+        this.a_workplace = workplace;
     }
 
     public String getTel() {

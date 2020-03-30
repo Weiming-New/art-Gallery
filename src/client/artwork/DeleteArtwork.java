@@ -1,4 +1,4 @@
-package Artwork;
+package client.artwork;
 
 import function.DatabaseConnection;
 import view.Customer;

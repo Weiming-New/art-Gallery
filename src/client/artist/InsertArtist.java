@@ -116,7 +116,7 @@ public class InsertArtist extends JFrame implements ActionListener {
                 pi.setWorkplace(jt5.getText());
                 pi.setTel((jt6.getText()));
 
-                ps.setString(1, pi.getA_id());
+                ps.setString(1, pi.getA_no());
                 ps.setString(2, pi.getA_name());
                 ps.setString(3, pi.getID());
                 ps.setString(4, pi.getMajor());
