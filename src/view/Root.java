@@ -16,7 +16,7 @@ import java.awt.event.ActionListener;
 管理员主界面
  */
 
-public class ManagerMain extends JFrame implements ActionListener {
+public class Root extends JFrame implements ActionListener {
 
     /**
 	 * 
@@ -27,7 +27,7 @@ public class ManagerMain extends JFrame implements ActionListener {
     JPanel jp1,jp2,jp3,jp4,jp5;
     JLabel jl1;
 
-    public ManagerMain(){
+    public Root(){
 
         Font font = new Font("alias", Font.PLAIN, 22);
         Font font1 = new Font("alias", Font.PLAIN, 30);
@@ -43,7 +43,7 @@ public class ManagerMain extends JFrame implements ActionListener {
         label.setBounds(0,0,icon.getIconWidth(),icon.getIconHeight());
 //
 //        //获取窗口的第二层，将label放入
-        this.getLayeredPane().add(label,new Integer(Integer.MIN_VALUE));
+        this.getLayeredPane().add(label,Integer.valueOf(Integer.MIN_VALUE));
 //
 //        //获取frame的顶层容器,并设置为透明
         JPanel j=(JPanel)this.getContentPane();
@@ -117,7 +117,7 @@ public class ManagerMain extends JFrame implements ActionListener {
         }else if (e.getActionCommand() == "艺术家管理"){
             new Artist();
             this.dispose();
-        }else if (e.getActionCommand() == "艺术品品管理"){
+        }else if (e.getActionCommand() == "艺术品管理"){
             new Artwork();
             this.dispose();
         }else if (e.getActionCommand() == "展厅管理"){

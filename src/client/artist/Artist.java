@@ -1,6 +1,6 @@
 package client.artist;
 
-import view.ManagerMain;
+import view.Root;
 
 import javax.swing.*;
 import java.awt.*;
@@ -105,7 +105,7 @@ public class Artist extends JFrame implements ActionListener {
 		} else if (e.getActionCommand() == "查询艺术家信息") {
 			new SelectArtist();
 		} else if (e.getActionCommand() == "返回") {
-			new ManagerMain();
+			new Root();
 			dispose();
 		}
 	}

@@ -9,7 +9,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
+//import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class UpdateArtistInformation extends JFrame implements ActionListener {
@@ -93,8 +93,8 @@ public class UpdateArtistInformation extends JFrame implements ActionListener {
 
     private void update() {
         Connection con = null;
-        ResultSet rs;
-        int result = 0;
+//        ResultSet rs;
+//        int result = 0;
         try {
             if (!jt2.getText().isEmpty() && !jt3.getText().isEmpty() && !jt4.getText().isEmpty() && !jt5.getText().isEmpty() && !jt6.getText().isEmpty()) {
                 con = DatabaseConnection.getConnection();

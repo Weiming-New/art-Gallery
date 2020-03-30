@@ -1,7 +1,7 @@
 package client.artwork;
 
 import function.DatabaseConnection;
-import view.Customer;
+import view.User;
 
 import javax.swing.*;
 

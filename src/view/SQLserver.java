@@ -1,11 +1,11 @@
 package view;
 
-import entity.ExhibitionInformation;
+//import entity.ExhibitionInformation;
 import function.DatabaseConnection;
 
 import javax.swing.*;
 
-import client.Hall.UpdateHall;
+//import client.Hall.UpdateHall;
 
 import java.sql.*;
 
@@ -48,7 +48,7 @@ public class SQLserver {
 	}
 
 	// 管理员登录验证方法
-	public void SQLverify1(String a, String b) {
+	public void verifyRootWithSQL(String a, String b) {
 		try {
 			ct = DatabaseConnection.getConnection();
 			ps = ct.prepareStatement("select * from user where Sacc=? and Spwd=?");
@@ -63,7 +63,7 @@ public class SQLserver {
 				pwd = rs.getString(2);
 				JOptionPane.showMessageDialog(null, "登录成功！！！", "提示消息", JOptionPane.WARNING_MESSAGE);
 				System.out.println("登录成功");
-				new ManagerMain();
+				new Root();
 				MainView m = new MainView();
 				m.dispose();
 			} else {
@@ -78,7 +78,7 @@ public class SQLserver {
 	}
 
 	// 客户登录验证方法
-	public void SQLverify2(String a, String b) {
+	public void verifyUserWithSQL(String a, String b) {
 		try {
 			ct = DatabaseConnection.getConnection();
 			ps = ct.prepareStatement("select * from user where Sacc=? and Spwd=?");
@@ -93,7 +93,7 @@ public class SQLserver {
 				pwd = rs.getString(2);
 				JOptionPane.showMessageDialog(null, "登录成功！！！", "提示消息", JOptionPane.WARNING_MESSAGE);
 				System.out.println("登录成功");
-				new Customer();
+				new User();
 				MainView m = new MainView();
 				m.dispose();
 			} else {
@@ -107,7 +107,7 @@ public class SQLserver {
 	}
 
 	// 注册验证方法，判断用户名是否已经存在
-	public void ZhuceVerify1(String a) {
+	public void verifyRegisterWithSQL(String a) {
 		try {
 			ct = DatabaseConnection.getConnection();
 			ps = ct.prepareStatement("select * from user where Sacc=?");

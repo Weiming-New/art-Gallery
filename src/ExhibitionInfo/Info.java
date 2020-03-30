@@ -4,8 +4,7 @@ import client.HallReserve.SelectReserveAll;
 
 import client.ticket.SelectTicketAll;
 
-import client.trade.SelectArtworksAll;
-import view.ManagerMain;
+import view.Root;
 
 import javax.swing.*;
 
@@ -43,7 +42,7 @@ public class Info extends JFrame implements ActionListener {
         label.setBounds(0, 0, icon.getIconWidth(), icon.getIconHeight());
 //
 //        //获取窗口的第二层，将label放入
-        this.getLayeredPane().add(label, new Integer(Integer.MIN_VALUE));
+        this.getLayeredPane().add(label, Integer.valueOf(Integer.MIN_VALUE));
 //
 //        //获取frame的顶层容器,并设置为透明
         JPanel j = (JPanel) this.getContentPane();
@@ -121,7 +120,7 @@ public class Info extends JFrame implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getActionCommand() == "返回") {
-            new ManagerMain();
+            new Root();
             dispose();
 
         } else if (e.getActionCommand() == "查询会展信息") {

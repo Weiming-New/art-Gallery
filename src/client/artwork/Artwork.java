@@ -2,7 +2,7 @@ package client.artwork;
 
 import javax.swing.*;
 
-import view.ManagerMain;
+import view.Root;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -106,7 +106,7 @@ public class Artwork extends JFrame implements ActionListener {
             //dispose();
             new UpdateArtwork();
         }else if (e.getActionCommand() == "返回"){
-            new ManagerMain();
+            new Root();
             dispose();
 
         }

@@ -2,7 +2,7 @@ package client.Hall;
 
 import javax.swing.*;
 
-import view.ManagerMain;
+import view.Root;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -106,7 +106,7 @@ public class Hall extends JFrame implements ActionListener {
             //dispose();
             new UpdateHall();
         }else if (e.getActionCommand() == "返回"){
-            new ManagerMain();
+            new Root();
             dispose();
 
         }

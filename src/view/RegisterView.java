@@ -161,7 +161,7 @@ public class RegisterView extends JFrame implements ActionListener {
             jtf2.setText("");
         } else {
             DatabaseConnection.getConnection();
-            fcd.zhuceverify1(jtf1.getText());
+            fcd.verifyRegister(jtf1.getText());
 
             this.jtf1.setText("");
             this.jtf2.setText("");
@@ -184,7 +184,7 @@ public class RegisterView extends JFrame implements ActionListener {
             jtf2.setText("");
         } else {
             DatabaseConnection.getConnection();
-            fcd.zhuceverify1(jtf1.getText());
+            fcd.verifyRegister(jtf1.getText());
             this.jtf1.setText("");
             this.jrb2.setText("");
         }
