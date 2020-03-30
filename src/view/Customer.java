@@ -1,8 +1,6 @@
 package view;
 
-import HZZX.manager.place.SelectPlace;
-import HZZX.manager.meetingInformation.SelectInformation;
-import HZZX.manager.thing.SelectThing;
+import Hall.SelectHall;
 import client.HallReserve.*;
 import client.artist.SelectArtist;
 import client.ticket.BuyTicket;
@@ -15,6 +13,9 @@ import client.trade.SelectTIno;
 import client.trade.SelectThings;
 
 import com.sun.org.apache.bcel.internal.generic.Select;
+
+import Artwork.SelectArtwork;
+import ExhibitionInfo.SelectInfo;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -182,14 +183,14 @@ public class Customer extends JFrame  {
         jmt13.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                new SelectInformation();
+                new SelectInfo();
             }
         });
 
         jmt14.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                new SelectPlace();
+                new SelectHall();
             }
         });
 
@@ -203,7 +204,7 @@ public class Customer extends JFrame  {
         jmt16.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                new SelectThing();
+                new SelectArtwork();
             }
         });
     }

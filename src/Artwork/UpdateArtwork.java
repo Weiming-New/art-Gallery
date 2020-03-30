@@ -1,4 +1,4 @@
-package HZZX.manager.thing;
+package Artwork;
 
 import javax.swing.*;
 
@@ -12,14 +12,14 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class UpdateThing extends JFrame implements ActionListener {
+public class UpdateArtwork extends JFrame implements ActionListener {
 
     JButton jb1,jb2;
     JPanel jp1,jp2,jp3;
     JLabel jl1,jl2;
     public static JTextField jt1;
 
-    public UpdateThing(){
+    public UpdateArtwork(){
         jb1 = new JButton("确定");
         //jb2 = new JButton("返回");
 
@@ -81,7 +81,7 @@ public class UpdateThing extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if (e.getActionCommand() == "确定") {
             if (verify() == 1) {
-                new UpdateThingInformation();
+                new UpdateArtworkInfo();
                 dispose();
 
             }else {

@@ -1,4 +1,4 @@
-package HZZX.manager.place;
+package Hall;
 
 import javax.swing.*;
 
@@ -12,14 +12,14 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class UpdatePlace extends JFrame implements ActionListener {
+public class UpdateHall extends JFrame implements ActionListener {
 
     JButton jb1, jb2;
     JPanel jp1, jp2, jp3;
     JLabel jl1, jl2;
     public static JTextField jt1;
 
-    public UpdatePlace() {
+    public UpdateHall() {
         jb1 = new JButton("确定");
         //jb2 = new JButton("返回");
 
@@ -85,7 +85,7 @@ public class UpdatePlace extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if (e.getActionCommand() == "确定") {
             if (verify() == 1) {
-                new UpdatePlaceInformation();
+                new UpdateHallInfo();
                 dispose();
 
             } else {

@@ -1,4 +1,4 @@
-package HZZX.manager.meetingInformation;
+package ExhibitionInfo;
 
 import javax.swing.*;
 
@@ -15,7 +15,7 @@ import java.sql.SQLException;
 /*
 删除会展信息
  */
-public class DeleteInformation extends JFrame implements ActionListener {
+public class DeleteInfo extends JFrame implements ActionListener {
    
 	/**
 	 * 
@@ -27,7 +27,7 @@ public class DeleteInformation extends JFrame implements ActionListener {
     JTextField jt1;
     JLabel jl1,jl2;
 
-    public DeleteInformation(){
+    public DeleteInfo(){
         jb1 = new JButton("确定");
         //jb2 = new JButton("返回");
 

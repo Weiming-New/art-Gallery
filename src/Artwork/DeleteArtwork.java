@@ -1,10 +1,12 @@
-package HZZX.manager.thing;
+package Artwork;
 
-import HZZX.manager.place.Place;
 import function.DatabaseConnection;
 import view.Customer;
 
 import javax.swing.*;
+
+import Hall.Hall;
+
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -13,14 +15,14 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class DeleteThing extends JFrame implements ActionListener {
+public class DeleteArtwork extends JFrame implements ActionListener {
 
     JButton jb1,jb2;
     JPanel jp1,jp2,jp3;
     JTextField jt1;
     JLabel jl1,jl2;
 
-    public DeleteThing(){
+    public DeleteArtwork(){
         jb1 = new JButton("取消");
         //jb2 = new JButton("返回");
 

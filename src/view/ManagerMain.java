@@ -1,11 +1,13 @@
 package view;
 
-import HZZX.manager.meetingInformation.Information;
-import HZZX.manager.place.Place;
-import HZZX.manager.thing.Things;
+import Hall.Hall;
 import client.artist.Artist;
 
 import javax.swing.*;
+
+import Artwork.Artwork;
+import ExhibitionInfo.Info;
+
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -110,16 +112,16 @@ public class ManagerMain extends JFrame implements ActionListener {
         if (e.getActionCommand() == "退出"){
             System.exit(0);
         }else if (e.getActionCommand() == "艺术展览信息管理"){
-            new Information();
+            new Info();
             this.dispose();
         }else if (e.getActionCommand() == "艺术家管理"){
             new Artist();
             this.dispose();
         }else if (e.getActionCommand() == "艺术品品管理"){
-            new Things();
+            new Artwork();
             this.dispose();
         }else if (e.getActionCommand() == "展厅管理"){
-            new Place();
+            new Hall();
             this.dispose();
         }
     }

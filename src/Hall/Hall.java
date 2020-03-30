@@ -1,4 +1,4 @@
-package HZZX.manager.thing;
+package Hall;
 
 import javax.swing.*;
 
@@ -8,12 +8,12 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class Things extends JFrame implements ActionListener {
+public class Hall extends JFrame implements ActionListener {
 
     JButton jb1,jb2,jb3,jb4,jb5;
     JPanel jp1,jp2,jp3 = null;
 
-    public Things() {
+    public Hall() {
 
         Font font = new Font("alias", Font.PLAIN, 22);
 
@@ -33,34 +33,35 @@ public class Things extends JFrame implements ActionListener {
         JPanel j = (JPanel) this.getContentPane();
         j.setOpaque(false);
 
-        jb1 = new JButton("添加展品");
-        jb1.setBackground(Color.WHITE);
-        jb1.setFont(font);
-        jb2 = new JButton("删除展品");
-        jb2.setBackground(Color.WHITE);
-        jb2.setFont(font);
-        jb3 = new JButton("查询展品信息");
-        jb3.setBackground(Color.WHITE);
-        jb3.setFont(font);
-        jb4 = new JButton("修改展品信息");
-        jb4.setBackground(Color.WHITE);
-        jb4.setFont(font);
-        jb5 = new JButton("返回");
-        jb5.setBackground(Color.WHITE);
-        jb5.setFont(font);
-
-        jp1 = new JPanel();
-        jp2 = new JPanel();
-        jp3 = new JPanel();
-
         JLabel jl1 = new JLabel("                 ");
         JPanel jp4 = new JPanel();
+        jl1.setFont(font);
+
+        jb1 = new JButton("添加展馆");
+        jb1.setFont(font);
+        jb1.setBackground(Color.WHITE);
+        jb2 = new JButton("删除展馆");
+        jb2.setFont(font);
+        jb2.setBackground(Color.WHITE);
+        jb3 = new JButton("查询展馆信息");
+        jb3.setFont(font);
+        jb3.setBackground(Color.WHITE);
+        jb4 = new JButton("修改展馆信息");
+        jb4.setFont(font);
+        jb4.setBackground(Color.WHITE);
+        jb5 = new JButton("返回");
+        jb5.setFont(font);
+        jb5.setBackground(Color.WHITE);
 
         jb1.addActionListener(this);
         jb2.addActionListener(this);
         jb3.addActionListener(this);
         jb4.addActionListener(this);
         jb5.addActionListener(this);
+
+        jp1 = new JPanel();
+        jp2 = new JPanel();
+        jp3 = new JPanel();
 
 
         jp1.add(jb1);
@@ -88,17 +89,17 @@ public class Things extends JFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if (e.getActionCommand() == "添加展品"){
+        if (e.getActionCommand() == "添加展馆"){
             //dispose();
-            new InsertThing();
-        }else if (e.getActionCommand() == "删除展品"){
+            new InsertHall();
+        }else if (e.getActionCommand() == "删除展馆"){
             //dispose();
-            new DeleteThing();
-        }else if (e.getActionCommand() == "查询展品信息"){
-            new SelectThing();
-        }else if (e.getActionCommand() == "修改展品信息"){
+            new DeleteHall();
+        }else if (e.getActionCommand() == "查询展馆信息"){
+            new SelectHall();
+        }else if (e.getActionCommand() == "修改展馆信息"){
             //dispose();
-            new UpdateThing();
+            new UpdateHall();
         }else if (e.getActionCommand() == "返回"){
             new ManagerMain();
             dispose();

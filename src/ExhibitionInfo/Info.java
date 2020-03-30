@@ -1,8 +1,4 @@
-package HZZX.manager.meetingInformation;
-
-import HZZX.manager.meetingInformation.DeleteInformation;
-import HZZX.manager.meetingInformation.InsertInformations;
-import HZZX.manager.meetingInformation.SelectInformation;
+package ExhibitionInfo;
 
 import client.HallReserve.SelectReserveAll;
 
@@ -12,12 +8,17 @@ import client.trade.SelectThingsAll;
 import view.ManagerMain;
 
 import javax.swing.*;
+
+import ExhibitionInfo.DeleteInfo;
+import ExhibitionInfo.InsertInfo;
+import ExhibitionInfo.SelectInfo;
+
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.*;
 
-public class Information extends JFrame implements ActionListener {
+public class Info extends JFrame implements ActionListener {
 
     /**
 	 * 
@@ -29,7 +30,7 @@ public class Information extends JFrame implements ActionListener {
     ResultSet rs;
     Statement st;
 
-    public Information() {
+    public Info() {
         Font font = new Font("alias", Font.PLAIN, 22);
 
         //加载图片
@@ -124,13 +125,13 @@ public class Information extends JFrame implements ActionListener {
             dispose();
 
         } else if (e.getActionCommand() == "查询会展信息") {
-            new SelectInformation();
+            new SelectInfo();
         } else if (e.getActionCommand() == "发布会展信息") {
             //this.dispose();
-            new InsertInformations();
+            new InsertInfo();
         }else if(e.getActionCommand() == "删除会展信息"){
             //this.dispose();
-            new DeleteInformation();
+            new DeleteInfo();
         }else if (e.getActionCommand() == "购票信息查询"){
             //this.dispose();
             new SelectTicketAll();

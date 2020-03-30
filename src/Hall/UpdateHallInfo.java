@@ -1,4 +1,4 @@
-package HZZX.manager.place;
+package Hall;
 
 import javax.swing.*;
 
@@ -12,7 +12,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class UpdatePlaceInformation extends JFrame implements ActionListener {
+public class UpdateHallInfo extends JFrame implements ActionListener {
 
 
     JTextField jt1, jt2, jt3, jt4, jt5, jt6;
@@ -22,7 +22,7 @@ public class UpdatePlaceInformation extends JFrame implements ActionListener {
     String a, b, c, d, ee, f;
 
 
-    public UpdatePlaceInformation() {
+    public UpdateHallInfo() {
 
 
         jt1 = new JTextField(8);
@@ -39,7 +39,7 @@ public class UpdatePlaceInformation extends JFrame implements ActionListener {
         jl5 = new JLabel("地址");
         jl6 = new JLabel("负责人");
         jl7 = new JLabel("展位数");
-        jLabel = new JLabel(UpdatePlace.jt1.getText());
+        jLabel = new JLabel(UpdateHall.jt1.getText());
 
         jp1 = new JPanel();
         jp2 = new JPanel();
@@ -94,7 +94,7 @@ public class UpdatePlaceInformation extends JFrame implements ActionListener {
         try {
             if (!jt2.getText().isEmpty() && !jt3.getText().isEmpty() && !jt4.getText().isEmpty() && !jt5.getText().isEmpty() && !jt6.getText().isEmpty()) {
                 con = DatabaseConnection.getConnection();
-                PreparedStatement ps = con.prepareStatement("update Place set Pname = ?,Parea = ?, Padd = ?,Ppeo = ?,Pnum = ? where Pno = " + UpdatePlace.jt1.getText());
+                PreparedStatement ps = con.prepareStatement("update Place set Pname = ?,Parea = ?, Padd = ?,Ppeo = ?,Pnum = ? where Pno = " + UpdateHall.jt1.getText());
                 ps.setString(1, jt2.getText());
                 ps.setString(2, jt3.getText());
                 ps.setString(3, jt4.getText());
@@ -124,7 +124,7 @@ public class UpdatePlaceInformation extends JFrame implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getActionCommand() == "返回") {
-            new UpdatePlace();
+            new UpdateHall();
             dispose();
 
         } else if (e.getActionCommand() == "确定") {

@@ -1,4 +1,4 @@
-package HZZX.manager.meetingInformation;
+package ExhibitionInfo;
 
 import client.ticket.BuyTicket;
 import function.DatabaseConnection;
@@ -15,7 +15,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Vector;
 
-public class SelectInformation extends JFrame implements ActionListener{
+public class SelectInfo extends JFrame implements ActionListener{
 
     /**
 	 * 
@@ -32,7 +32,7 @@ public class SelectInformation extends JFrame implements ActionListener{
     JButton jb;
     JPanel jp;
 
-    public SelectInformation() {
+    public SelectInfo() {
 
         columnNames = new Vector();
         rowData = new Vector();

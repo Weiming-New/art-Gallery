@@ -1,4 +1,4 @@
-package HZZX.manager.place;
+package Hall;
 
 import entity.HallInformation;
 import entity.HallReserveInformation;
@@ -13,14 +13,14 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class InsertPlace extends JFrame implements ActionListener {
+public class InsertHall extends JFrame implements ActionListener {
 
     JPanel jp1, jp2, jp3, jp4, jp5, jp6, jp7;
     JButton jb1, jb2;
     JTextField jt1, jt2, jt3, jt4, jt5, jt6;
 
 
-    public InsertPlace() {
+    public InsertHall() {
 
         jb1 = new JButton("开放展馆");
         //jb2 = new JButton("返回");

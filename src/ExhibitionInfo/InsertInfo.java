@@ -1,4 +1,4 @@
-package HZZX.manager.meetingInformation;
+package ExhibitionInfo;
 
 import entity.ExhibitionInformation;
 import function.DatabaseConnection;
@@ -12,14 +12,14 @@ import java.sql.*;
 /*
 添加会展信息
  */
-public class InsertInformations extends JFrame implements ActionListener {
+public class InsertInfo extends JFrame implements ActionListener {
 
     JTextField jtf1, jtf2, jtf3, jtf4, jtf5, jtf6, jtf7, jtf8, jtf9 = null;
     JLabel jl1, jl2, jl3, jl4, jl5, jl6, jl7, jl8, jl9 = null;
     JPanel jp1, jp2, jp3, jp4, jp5, jp6, jp7, jp8 = null;
     JButton jb1, jb2;
 
-    public InsertInformations() {
+    public InsertInfo() {
 
         jl1 = new JLabel(" 展会编号：");
         jl2 = new JLabel(" 展会名称：");

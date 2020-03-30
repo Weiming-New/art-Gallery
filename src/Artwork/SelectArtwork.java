@@ -1,6 +1,6 @@
-package HZZX.manager.place;
+package Artwork;
 
-import client.HallReserve.InsertReserve;
+import client.trade.BuyArtWorks;
 import function.DatabaseConnection;
 
 import javax.swing.*;
@@ -13,7 +13,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Vector;
 
-public class SelectPlace extends JFrame implements ActionListener {
+public class SelectArtwork extends JFrame implements ActionListener {
 
     JTable jt;
     JScrollPane js = new JScrollPane();
@@ -25,22 +25,21 @@ public class SelectPlace extends JFrame implements ActionListener {
     JButton jb;
     JPanel jp;
 
-    public SelectPlace(){
+    public SelectArtwork(){
 
         columnNames = new Vector();
         rowData = new Vector();
-        columnNames.add("展馆编号");
+        columnNames.add("展品编号");
         columnNames.add("名称");
-        columnNames.add("面积");
-        columnNames.add("地址");
-        columnNames.add("负责人");
-        columnNames.add("展位数");
-
+        columnNames.add("类别");
+        columnNames.add("售价");
+        columnNames.add("规格");
+        columnNames.add("是否出售");
 
         try{
             con = DatabaseConnection.getConnection();
             PreparedStatement ps;
-            ps = con.prepareStatement("select * from Place");
+            ps = con.prepareStatement("select * from Thing");
             rs = ps.executeQuery();
             while (rs.next()){
                 Vector vector = new Vector();
@@ -67,7 +66,7 @@ public class SelectPlace extends JFrame implements ActionListener {
         jt = new JTable(rowData,columnNames);
         js = new JScrollPane(jt);
 
-        jb = new JButton("预约");
+        jb = new JButton("购买");
         jb.addActionListener(this);
         jp = new JPanel();
         jp.add(jb);
@@ -77,6 +76,7 @@ public class SelectPlace extends JFrame implements ActionListener {
         this.add(jp);
         this.setTitle("查询");
         this.setLayout(new GridLayout(2,2));
+
         this.setBounds(630,300,850,500);
         this.setVisible(true);
         this.setResizable(false);
@@ -84,8 +84,8 @@ public class SelectPlace extends JFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if (e.getActionCommand() == "预约"){
-            new InsertReserve();
+        if (e.getActionCommand() == "购买"){
+            new BuyArtWorks();
             dispose();
         }
     }
