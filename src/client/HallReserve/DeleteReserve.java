@@ -27,7 +27,7 @@ public class DeleteReserve extends JFrame implements ActionListener {
     public int n;
 
     public DeleteReserve(){
-        jb1 = new JButton("取消");
+        jb1 = new JButton("确定");
         //jb2 = new JButton("返回");
 
         jp1 = new JPanel();
@@ -95,7 +95,7 @@ public class DeleteReserve extends JFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if (e.getActionCommand() == "返回"){
+        if (e.getActionCommand() == "确定"){
 
         }else if (e.getActionCommand() == "取消"){
             if (verify() == 1) {

@@ -40,8 +40,8 @@ CREATE TABLE Artwork(
 AWno INT PRIMARY KEY,-- 艺术品编号
 AWname CHAR(20),-- 艺术品名称
 AWkind CHAR(10),-- 类别
-AWprice INT,-- 售价
-AWSold TINYINT -- 售出状态
+AWprice INT CHECK (AWprice >= 0),-- 售价
+AWsold TINYINT CHECK (AWsold IN (0, 1))-- 售出状态
 );
 
 INSERT INTO `Artwork` VALUES (1,'龙飞凤舞','书法',100,0),(2,'天道酬勤','书法',200,0);
