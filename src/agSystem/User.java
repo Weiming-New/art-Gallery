@@ -6,6 +6,7 @@ import client.artist.SelectArtist;
 import client.artist.SelectArtistName;
 import client.artwork.SelectArtwork;
 import client.artwork.SelectArtworkKind;
+import client.artwork.SelectArtworkPrice;
 import client.ticket.BuyTicket;
 import client.ticket.DeleteTicket;
 import client.ticket.SelectTicket;
@@ -236,5 +237,13 @@ public class User extends JFrame {
 				new SelectArtworkKind();
 			}
 		});
+		
+		jmIt18.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				new SelectArtworkPrice();
+			}
+		});
+		
 	}
 }

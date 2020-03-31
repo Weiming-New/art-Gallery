@@ -10,12 +10,11 @@ import javax.swing.JFrame;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 
-
-public class SelectArtworkKindout extends JFrame {
+public class SelectArtworkPriceout extends JFrame {
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = 3256502555888437533L;
+	private static final long serialVersionUID = 8653743534869325611L;
 	
 	JTable jt;
     JScrollPane js = new JScrollPane();
@@ -24,7 +23,7 @@ public class SelectArtworkKindout extends JFrame {
     Connection con = null;
     ResultSet rs;
 
-    public SelectArtworkKindout(){
+    public SelectArtworkPriceout(){
 
     	//显示的属性
         columnNames = new Vector<String>();
@@ -35,8 +34,9 @@ public class SelectArtworkKindout extends JFrame {
 		columnNames.add("售价");
 		columnNames.add("是否出售");
         
-        try{  
-            rs = SelectArtworkKind.getRs();
+        try{
+            
+            rs = SelectArtworkPrice.getRs();
             Vector<String> vector1 = new Vector<String>();
             vector1.add(rs.getString(1));
             vector1.add(rs.getString(2));

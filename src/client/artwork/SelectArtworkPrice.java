@@ -17,42 +17,45 @@ import javax.swing.JTextField;
 
 import function.DatabaseConnection;
 
-public class SelectArtworkKind extends JFrame implements ActionListener {
-
+public class SelectArtworkPrice  extends JFrame implements ActionListener {
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = -434824014577760142L;
-
+	private static final long serialVersionUID = 6975425788556146894L;
+	
 	JButton jb1, jb2;
 	JPanel jp1, jp2, jp3;
-	JLabel jl1, jl2;
-	static ResultSet rs1;
+	JLabel jl1, jl2,jl3;
+	static ResultSet rs2;
 	
 	public static ResultSet getRs() {
-		return rs1;
+		return rs2;
 	}
 
 
-	public static JTextField jt1;
+	public static JTextField jt1,jt2;
 
-	public SelectArtworkKind() {
+	public SelectArtworkPrice() {
 		jb1 = new JButton("确定");
 
 		jp1 = new JPanel();
 		jp2 = new JPanel();
 		jp3 = new JPanel();
 
-		jl1 = new JLabel("艺术品类别查询系统");
-		jl2 = new JLabel("类别");
+		jl1 = new JLabel("艺术品价格查询系统");
+		jl2 = new JLabel("最低价");
+		jl3 = new JLabel("最高价");
 
 		jt1 = new JTextField(8);
+		jt2 = new JTextField(8);
 
 		jb1.addActionListener(this);
 
 		jp1.add(jl1);
 		jp2.add(jl2);
 		jp2.add(jt1);
+		jp2.add(jl3);
+		jp2.add(jt2);
 
 		jp3.add(jb1);
 
@@ -73,14 +76,15 @@ public class SelectArtworkKind extends JFrame implements ActionListener {
 		try {
 			if (!jt1.getText().isEmpty()) {
 				con = DatabaseConnection.getConnection();
-				PreparedStatement ps = con.prepareStatement("select * from Artwork where AWkind = ?");
+				PreparedStatement ps = con.prepareStatement("select * from Artwork where AWprice between ? and ?");
 				ps.setString(1, jt1.getText());
-				SelectArtworkKind.rs1 = ps.executeQuery();
-				if (rs1.first()) {
-					JOptionPane.showMessageDialog(null, "该类别存在", "提示消息", JOptionPane.WARNING_MESSAGE);
+				ps.setString(2, jt2.getText());
+				SelectArtworkPrice.rs2 = ps.executeQuery();
+				if (rs2.first()) {
+					JOptionPane.showMessageDialog(null, "该区间存在艺术品", "提示消息", JOptionPane.WARNING_MESSAGE);
 					result = 1;
 				} else {
-					JOptionPane.showMessageDialog(null, "该类别不存在，请重新输入", "提示消息", JOptionPane.WARNING_MESSAGE);
+					JOptionPane.showMessageDialog(null, "该区间不存在艺术品，请重新输入", "提示消息", JOptionPane.WARNING_MESSAGE);
 				}
 			} else {
 				JOptionPane.showMessageDialog(null, "请输入完整信息", "提示消息", JOptionPane.WARNING_MESSAGE);
@@ -95,7 +99,7 @@ public class SelectArtworkKind extends JFrame implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		if (e.getActionCommand() == "确定") {
 			if (verify() == 1) {
-				new SelectArtworkKindout(); //调用对应Out类
+				new SelectArtworkPriceout(); //调用对应Out类
 				dispose();
 
 			} else {
