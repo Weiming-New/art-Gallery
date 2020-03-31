@@ -1,4 +1,4 @@
-package ExhibitionInfo;
+package client.exhibitionInfo;
 
 import client.HallReserve.SelectReserveAll;
 
@@ -7,9 +7,6 @@ import client.trade.SelectArtworksAll;
 
 import javax.swing.*;
 
-import ExhibitionInfo.DeleteInfo;
-import ExhibitionInfo.InsertInfo;
-import ExhibitionInfo.SelectInfo;
 import agSystem.AdminRoot;
 
 import java.awt.*;

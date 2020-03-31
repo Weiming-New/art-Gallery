@@ -4,10 +4,9 @@ import client.Hall.Hall;
 import client.artist.Artist;
 import client.artwork.Artwork;
 import client.exhibition.Exhibition;
+import client.exhibitionInfo.Info;
 
 import javax.swing.*;
-
-import ExhibitionInfo.Info;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;

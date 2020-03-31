@@ -116,3 +116,11 @@ CREATE VIEW v_ticket(Tno,Tname,Tsex,Twork,Eno,Tprice) AS SELECT Tno,Tname,Tsex,T
 CREATE VIEW v_TradeInfo (TIno,TIname,TItime,AWname,AWkind,AWprice) AS SELECT TradeInfo.TIno,TradeInfo.TIname,TradeInfo.TItime,Artwork.AWname,Artwork.AWkind,Artwork.AWprice FROM  TradeInfo,Artwork WHERE TradeInfo.AWno = Artwork.AWno;
 
 CREATE VIEW v_reserve(Rno,Hname,Aname,Rtime,Rnum) AS SELECT Reserve.Rno,Hall.Hname,Artist.Aname,Reserve.Rtime,Reserve.Rnum FROM Artist,Hall,Reserve WHERE Artist.Ano = Reserve.Ano and Hall.Hno = Reserve.Hno;
+
+CREATE VIEW v_exhibitionInfo(EIno,Aname,AWname,Hname,Ename,EItime,AWkind,AWprice) AS SELECT EIno,Artist.Aname,Artwork.AWname,Hall.Hname,Exhibition.Ename,EItime,Artwork.AWkind,Artwork.AWprice FROM Artist,Artwork,Place,Exhibition,ExhibitionInfo WHERE ExhibitionInfo.Ano = Artist.Ano and Exhibition.AWno = Artwork.AWno and ExhibitionInfo.Hno = Hall.Hno and ExhibitionInfo.Eno = Exhibition.Eno; 
+
+CREATE INDEX i_name on Artist (Aname);
+
+CREATE INDEX i_kind on Artwork (AWkind);
+
+CREATE INDEX i_price on Artwork (AWprice);

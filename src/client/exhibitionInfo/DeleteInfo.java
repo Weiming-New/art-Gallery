@@ -1,4 +1,4 @@
-package ExhibitionInfo;
+package client.exhibitionInfo;
 
 import javax.swing.*;
 

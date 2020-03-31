@@ -1,4 +1,4 @@
-package ExhibitionInfo;
+package client.exhibitionInfo;
 
 import client.ticket.BuyTicket;
 import function.DatabaseConnection;
@@ -46,7 +46,7 @@ public class SelectInfo extends JFrame implements ActionListener {
 		try {
 			con = DatabaseConnection.getConnection();
 			PreparedStatement ps;
-			String sql = "select Mno,Mname,Artwork.Tname,Artist.Aname,Place.Hname,Mtime,Artwork.Tkind,Mprice from Meeting,Artwork,Place,Artist where Meeting.AWno = Artwork.AWno and Meeting.Hno = Place.Hno and Meeting.Ano = Artist.Ano";
+			String sql = "select * from v_exhibitionInfo";
 			ps = con.prepareStatement(sql);
 			rs = ps.executeQuery();
 			while (rs.next()) {

@@ -1,4 +1,4 @@
-package ExhibitionInfo;
+package client.exhibitionInfo;
 
 import entity.ExhibitionInformation;
 import function.DatabaseConnection;
