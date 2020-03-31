@@ -64,7 +64,7 @@ public class DeleteInfo extends JFrame implements ActionListener {
         int result = 0;
         try {
             con = DatabaseConnection.getConnection();
-            PreparedStatement ps = con.prepareStatement("select * from Meeting where Mno = ?");
+            PreparedStatement ps = con.prepareStatement("select * from Meeting where EIno = ?");
             ps.setString(1,jt1.getText());
             rs = ps.executeQuery();
             if (rs.next()){
@@ -81,7 +81,7 @@ public class DeleteInfo extends JFrame implements ActionListener {
         try {
             if (!jt1.getText().isEmpty()) {
                 con = DatabaseConnection.getConnection();
-                PreparedStatement ps = con.prepareStatement("delete from Meeting where Mno = ?");
+                PreparedStatement ps = con.prepareStatement("delete from Meeting where EIno = ?");
                 ps.setString(1, jt1.getText());
                 ps.executeUpdate();
                 System.out.println("数据删除成功");

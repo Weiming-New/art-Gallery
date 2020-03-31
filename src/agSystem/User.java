@@ -3,6 +3,7 @@ package agSystem;
 import client.Hall.SelectHall;
 import client.HallReserve.*;
 import client.artist.SelectArtist;
+import client.artist.SelectArtistName;
 import client.artwork.SelectArtwork;
 import client.ticket.BuyTicket;
 import client.ticket.DeleteTicket;
@@ -31,7 +32,7 @@ public class User extends JFrame {
 	private static final long serialVersionUID = -4508697313736701899L;
 	JMenuBar jMenuBar;
 	JMenu jm1, jm2, jm3, jm4, jm5;
-	JMenuItem jmt1, jmt2, jmt3, jmt4, jmt5, jmt6, jmt7, jmt8, jmt9, jmt10, jmt11, jmt12, jmt13, jmt14, jmt15, jmt16;
+	JMenuItem jmt1, jmt2, jmt3, jmt4, jmt5, jmt6, jmt7, jmt8, jmt9, jmt10, jmt11, jmt12, jmt13, jmt14, jmt15, jmt16,jmt17;
 	JPanel jp1;
 	JLabel jl1;
 
@@ -79,6 +80,7 @@ public class User extends JFrame {
 		jmt13 = new JMenuItem("展览信息查询");
 		jmt14 = new JMenuItem("展厅查询");
 		jmt15 = new JMenuItem("艺术家查询");
+		jmt17 = new JMenuItem("艺术家姓名查询");
 		jmt16 = new JMenuItem("艺术品查询");
 
 		jm1.add(jmt1);
@@ -99,7 +101,9 @@ public class User extends JFrame {
 		jm4.add(jmt13);
 		jm4.add(jmt14);
 		jm4.add(jmt15);
+		jm4.add(jmt17);
 		jm4.add(jmt16);
+		
 
 		jMenuBar.add(jm1);
 		jMenuBar.add(jm2);
@@ -201,7 +205,14 @@ public class User extends JFrame {
 				new SelectArtist();
 			}
 		});
-
+		
+		jmt17.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				new SelectArtistName();
+			}
+		});
+		
 		jmt16.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
