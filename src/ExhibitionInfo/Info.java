@@ -4,13 +4,13 @@ import client.HallReserve.SelectReserveAll;
 
 import client.ticket.SelectTicketAll;
 import client.trade.SelectArtworksAll;
-import view.Root;
 
 import javax.swing.*;
 
 import ExhibitionInfo.DeleteInfo;
 import ExhibitionInfo.InsertInfo;
 import ExhibitionInfo.SelectInfo;
+import agSystem.AdminRoot;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -120,7 +120,7 @@ public class Info extends JFrame implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getActionCommand() == "返回") {
-            new Root();
+            new AdminRoot();
             dispose();
 
         } else if (e.getActionCommand() == "查询会展信息") {

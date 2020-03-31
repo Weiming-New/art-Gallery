@@ -1,8 +1,9 @@
 package client.artist;
 
-import view.Root;
-
 import javax.swing.*;
+
+import agSystem.AdminRoot;
+
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -105,7 +106,7 @@ public class Artist extends JFrame implements ActionListener {
 		} else if (e.getActionCommand() == "查询艺术家信息") {
 			new SelectArtist();
 		} else if (e.getActionCommand() == "返回") {
-			new Root();
+			new AdminRoot();
 			dispose();
 		}
 	}

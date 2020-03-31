@@ -2,7 +2,7 @@ package client.artwork;
 
 import javax.swing.*;
 
-import view.Root;
+import agSystem.AdminRoot;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -104,7 +104,7 @@ public class Artwork extends JFrame implements ActionListener {
 			// dispose();
 			new UpdateArtwork();
 		} else if (e.getActionCommand() == "返回") {
-			new Root();
+			new AdminRoot();
 			dispose();
 
 		}

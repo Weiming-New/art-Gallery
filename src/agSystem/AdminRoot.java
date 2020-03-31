@@ -1,4 +1,4 @@
-package view;
+package agSystem;
 
 import client.Hall.Hall;
 import client.artist.Artist;
@@ -17,7 +17,7 @@ import java.awt.event.ActionListener;
 管理员主界面
  */
 
-public class Root extends JFrame implements ActionListener {
+public class AdminRoot extends JFrame implements ActionListener {
 
     /**
 	 * 
@@ -28,7 +28,7 @@ public class Root extends JFrame implements ActionListener {
     JPanel jp1,jp2,jp3,jp4,jp5;
     JLabel jl1;
 
-    public Root(){
+    public AdminRoot(){
 
         Font font = new Font("alias", Font.PLAIN, 22);
         Font font1 = new Font("alias", Font.PLAIN, 30);

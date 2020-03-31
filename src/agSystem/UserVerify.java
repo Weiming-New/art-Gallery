@@ -1,4 +1,4 @@
-package view;
+package agSystem;
 
 import function.DatabaseConnection;
 
@@ -12,7 +12,7 @@ import java.sql.*;
 采用单例模式
  */
 
-public class SQLserver {
+public class UserVerify {
 
 	Connection ct;
 	PreparedStatement ps;
@@ -21,7 +21,7 @@ public class SQLserver {
 
 	String a, b, c, d, ee, f;
 
-	public SQLserver() {
+	public UserVerify() {
 	}
 
 	// 注册用户的方法
@@ -62,8 +62,8 @@ public class SQLserver {
 				pwd = rs.getString(2);
 				JOptionPane.showMessageDialog(null, "登录成功！！！", "提示消息", JOptionPane.WARNING_MESSAGE);
 				System.out.println("登录成功");
-				new Root();
-				MainView m = new MainView();
+				new AdminRoot();
+				SystemMain m = new SystemMain();
 				m.dispose();
 			} else {
 				JOptionPane.showMessageDialog(null, "用户名或者密码错误，请重新输入！", "提示消息", JOptionPane.WARNING_MESSAGE);
@@ -93,7 +93,7 @@ public class SQLserver {
 				JOptionPane.showMessageDialog(null, "登录成功！！！", "提示消息", JOptionPane.WARNING_MESSAGE);
 				System.out.println("登录成功");
 				new User();
-				MainView m = new MainView();
+				SystemMain m = new SystemMain();
 				m.dispose();
 			} else {
 				JOptionPane.showMessageDialog(null, "用户名或者密码错误，请重新输入！", "提示消息", JOptionPane.WARNING_MESSAGE);
@@ -116,7 +116,7 @@ public class SQLserver {
 			if (rs.next()) {
 				JOptionPane.showMessageDialog(null, "该用户名已经存在", "提示信息", JOptionPane.WARNING_MESSAGE);
 			} else {
-				this.UserRegis(RegisterView.jtf1.getText(), RegisterView.jtf2.getText());
+				this.UserRegis(RegistRoot.jtf1.getText(), RegistRoot.jtf2.getText());
 			}
 
 		} catch (SQLException e) {

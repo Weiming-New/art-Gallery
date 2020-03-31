@@ -2,7 +2,7 @@ package client.exhibition;
 
 import javax.swing.*;
 
-import view.Root;
+import agSystem.AdminRoot;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -104,7 +104,7 @@ public class Exhibition extends JFrame implements ActionListener {
 			// dispose();
 			new UpdateExhibition();
 		} else if (e.getActionCommand() == "返回") {
-			new Root();
+			new AdminRoot();
 			dispose();
 
 		}

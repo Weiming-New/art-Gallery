@@ -1,4 +1,4 @@
-package view;
+package agSystem;
 
 import javax.swing.*;
 
@@ -13,7 +13,7 @@ import java.awt.event.ActionListener;
 注册界面
  */
 
-public class RegisterView extends JFrame implements ActionListener {
+public class RegistRoot extends JFrame implements ActionListener {
 
     /**
 	 * 
@@ -33,7 +33,7 @@ public class RegisterView extends JFrame implements ActionListener {
     ButtonGroup group;
     JRadioButton jrb1 = null, jrb2 = null;
 
-    public RegisterView() {
+    public RegistRoot() {
         Font font = new Font("alias", Font.PLAIN, 22);
 
         //加载图片
@@ -130,7 +130,7 @@ public class RegisterView extends JFrame implements ActionListener {
 
         if (e.getActionCommand() == "返回") {
             this.dispose();
-            new MainView();
+            new SystemMain();
 
         } else if (e.getActionCommand() == "注册") {
             //调用注册方法
@@ -144,7 +144,8 @@ public class RegisterView extends JFrame implements ActionListener {
     }
 
     //管理员注册方法
-    public void zhuce1() {
+    @SuppressWarnings("static-access")
+	public void zhuce1() {
         String account = "\\w{3,6}"; //管理员用户名必须是3-6位
         boolean flag1 = jtf1.getText().matches(account);
 
@@ -185,7 +186,7 @@ public class RegisterView extends JFrame implements ActionListener {
         } else {
             DatabaseConnection.getConnection();
             fcd.verifyRegister(jtf1.getText());
-            this.jtf1.setText("");
+            RegistRoot.jtf1.setText("");
             this.jrb2.setText("");
         }
     }

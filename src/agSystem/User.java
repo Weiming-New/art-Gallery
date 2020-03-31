@@ -1,4 +1,4 @@
-package view;
+package agSystem;
 
 import client.Hall.SelectHall;
 import client.HallReserve.*;

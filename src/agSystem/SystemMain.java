@@ -1,4 +1,4 @@
-package view;
+package agSystem;
 
 import javax.swing.*;
 
@@ -12,7 +12,7 @@ import java.awt.event.ActionListener;
 登录主界面
  */
 
-public class MainView extends JFrame implements ActionListener {
+public class SystemMain extends JFrame implements ActionListener {
 
 	/**
 	 * 
@@ -37,10 +37,10 @@ public class MainView extends JFrame implements ActionListener {
 	public static void main(String[] args) {
 		// InitGloalFont.InitglobalFont(new Font("alias", Font.PLAIN, 22));
 		@SuppressWarnings("unused")
-		MainView mainView = new MainView();
+		SystemMain systemMain = new SystemMain();
 	}
 
-	public MainView() {
+	public SystemMain() {
 
 		Font font = new Font("alias", Font.PLAIN, 22);
 
@@ -189,7 +189,7 @@ public class MainView extends JFrame implements ActionListener {
 
 	// 注册方法
 	public void Regis() {
-		new RegisterView(); // 打开新界面
+		new RegistRoot(); // 打开新界面
 		this.dispose(); // 关闭当前界面
 
 	}

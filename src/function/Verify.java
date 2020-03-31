@@ -1,10 +1,10 @@
 package function;
 
-import view.SQLserver;
+import agSystem.UserVerify;
 
 public class Verify {
 
-    SQLserver s = new SQLserver();
+    UserVerify s = new UserVerify();
 
     //登录成功与否的验证
     public void verifyRoot(String a, String b) {
