@@ -35,17 +35,16 @@ public class InsertReserve extends JFrame implements ActionListener {
 
         jt1 = new JTextField(8);
         jt2 = new JTextField(8);
+        jt3 = new JTextField(8);
         jt4 = new JTextField(8);
         jt5 = new JTextField(8);
-        jt6 = new JTextField(8);
 
         jl1 = new JLabel("展厅预约");
         jl2 = new JLabel("预约编号");
         jl3 = new JLabel("展厅编号");
-        //jl4 = new JLabel("艺术家编号");
-        jl5 = new JLabel("姓名");
-        jl6 = new JLabel("时间");
-        jl7 = new JLabel("个数");
+        jl4 = new JLabel("艺术家编号");
+        jl5 = new JLabel("时间");
+        jl6 = new JLabel("个数");
 
         jp1 = new JPanel();
         jp2 = new JPanel();
@@ -69,15 +68,13 @@ public class InsertReserve extends JFrame implements ActionListener {
         jp2.add(jl3);
         jp2.add(jt2);
 
-        //jp3.add(jl4);
-        //jp3.add(jt3);
+        jp3.add(jl4);
+        jp3.add(jt3);
         jp3.add(jl5);
         jp3.add(jt4);
-
+        
         jp4.add(jl6);
         jp4.add(jt5);
-        jp4.add(jl7);
-        jp4.add(jt6);
 
         jp5.add(jb1);
         jp5.add(jb2);
@@ -98,10 +95,9 @@ public class InsertReserve extends JFrame implements ActionListener {
     public void clear(){
         jt1.setText("");
         jt2.setText("");
-        //jt3.setText("");
+        jt3.setText("");
         jt4.setText("");
         jt5.setText("");
-        jt6.setText("");
     }
 
     public int verify1(){
@@ -110,7 +106,7 @@ public class InsertReserve extends JFrame implements ActionListener {
         int result = 0;
         try {
             con = DatabaseConnection.getConnection();
-            PreparedStatement ps = con.prepareStatement("select * from client.Hall where Hno = ?");
+            PreparedStatement ps = con.prepareStatement("select * from Hall where Hno = ?");
             ps.setString(1,jt2.getText());
             rs = ps.executeQuery();
             if (rs.next()){
@@ -133,7 +129,7 @@ public class InsertReserve extends JFrame implements ActionListener {
         int num1 = 0;
         try{
             con = DatabaseConnection.getConnection();
-            String sql = "select Hnum from client.Hall where Hno = ?";
+            String sql = "select Hnum from Hall where Hno = ?";
             PreparedStatement ps = con.prepareStatement(sql);
             ps.setString(1,jt2.getText());
             rs = ps.executeQuery();
@@ -157,7 +153,7 @@ public class InsertReserve extends JFrame implements ActionListener {
 		HallReserveInformation pi = new HallReserveInformation();
         try{
             con = DatabaseConnection.getConnection();
-            String sql = "select Rnum from Reserve where RNO = ?";
+            String sql = "select Rnum from Reserve where Rno = ?";
             PreparedStatement ps = con.prepareStatement(sql);
             ps.setString(1,jt1.getText());
             rs = ps.executeQuery();
@@ -177,7 +173,7 @@ public class InsertReserve extends JFrame implements ActionListener {
         int n1 = 0,n2 = 0,n3 = 0;
         try{
             con = DatabaseConnection.getConnection();
-            String sql = "update client.Hall set Hnum = ? where Hno = ?";
+            String sql = "update Hall set Hnum = ? where Hno = ?";
             PreparedStatement ps = con.prepareStatement(sql);
             n1 = this.getHnum();
             n2 = this.getRnum();
@@ -196,26 +192,24 @@ public class InsertReserve extends JFrame implements ActionListener {
         Connection con = null;
         int result = 0;
         try{
-            if (!jt1.getText().isEmpty() && !jt2.getText().isEmpty() && !jt4.getText().isEmpty() && !jt5.getText().isEmpty() && !jt6.getText().isEmpty()) {
+            if (!jt1.getText().isEmpty() && !jt2.getText().isEmpty() && !jt4.getText().isEmpty() && !jt5.getText().isEmpty()) {
                 con = DatabaseConnection.getConnection();
                 String sql = "insert into Reserve values (?,?,?,?,?)";
                 PreparedStatement ps = con.prepareStatement(sql);
                 HallReserveInformation pi = new HallReserveInformation();
 
                 if (verify1() == 1) {
-                    pi.setR_id(jt1.getText());
-                    pi.seth_id(jt2.getText());
-                    //pi.setB_id(jt3.getText());
-                    pi.setA_name(jt4.getText());
-                    pi.setTime(jt5.getText());
-                    pi.setNum((jt6.getText()));
+                    pi.setA_no(jt1.getText());
+                    pi.setH_no(jt2.getText());
+                    pi.setA_no(jt3.getText());
+                    pi.setA_time(jt4.getText());
+                    pi.setR_num((jt5.getText()));
 
-                    ps.setString(1, pi.getR_id());
-                    ps.setString(2, pi.geth_id());
-                    //ps.setString(3,pi.getB_id());
-                    ps.setString(3, pi.getA_name());
-                    ps.setString(4, pi.getTime());
-                    ps.setString(5, pi.getNum());
+                    ps.setString(1, pi.getR_no());
+                    ps.setString(2, pi.getH_no());
+                    ps.setString(3,pi.getA_no());
+                    ps.setString(4, pi.getR_time());
+                    ps.setString(5, pi.getR_num());
 
                     result = ps.executeUpdate();
                 }

@@ -1,6 +1,6 @@
 package client.Hall;
 
-import entity.HallInformation;
+import entity.Hall;
 import function.DatabaseConnection;
 
 import javax.swing.*;
@@ -108,20 +108,20 @@ public class InsertHall extends JFrame implements ActionListener {
             if (!jt1.getText().isEmpty() && !jt2.getText().isEmpty() && !jt3.getText().isEmpty() && !jt4.getText().isEmpty() && !jt5.getText().isEmpty() && !jt6.getText().isEmpty()) {
                     con = DatabaseConnection.getConnection();
                     PreparedStatement ps = con.prepareStatement("insert into Hall values(?,?,?,?,?,?)");
-                    HallInformation b = new HallInformation();
-                    b.setH_id(jt1.getText());
+                    Hall b = new Hall();
+                    b.setH_no(jt1.getText());
                     b.setH_name(jt2.getText());
-                    b.setArea(jt3.getText());
-                    b.setAddress(jt4.getText());
+                    b.setH_area(jt3.getText());
+                    b.setH_address(jt4.getText());
                     b.setPerson_in_charge(jt5.getText());
-                    b.setNum(jt6.getText());
+                    b.setH_num(jt6.getText());
 
-                    ps.setString(1, b.getH_id());
+                    ps.setString(1, b.getH_no());
                     ps.setString(2, b.getH_name());
-                    ps.setString(3, b.getArea());
-                    ps.setString(4, b.getAddress());
+                    ps.setString(3, b.getH_area());
+                    ps.setString(4, b.getH_address());
                     ps.setString(5, b.getPerson_in_charge());
-                    ps.setString(6, b.getNum());
+                    ps.setString(6, b.getH_num());
                     result = ps.executeUpdate();
             } else {
                 JOptionPane.showMessageDialog(null, "请输入完整信息", "提示消息", JOptionPane.WARNING_MESSAGE);

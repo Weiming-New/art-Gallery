@@ -39,7 +39,7 @@ public class SelectReserveAll extends JFrame{
         try{
             con = DatabaseConnection.getConnection();
             PreparedStatement ps;
-            ps = con.prepareStatement("select no,p_name,name,time,num from v_reserve");
+            ps = con.prepareStatement("select * from v_reserve");
             rs = ps.executeQuery();
             while (rs.next()){
                 Vector<String> vector = new Vector<String>();

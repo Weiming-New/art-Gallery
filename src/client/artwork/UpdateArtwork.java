@@ -14,7 +14,11 @@ import java.sql.SQLException;
 
 public class UpdateArtwork extends JFrame implements ActionListener {
 
-    JButton jb1,jb2;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 5138966056918088558L;
+	JButton jb1,jb2;
     JPanel jp1,jp2,jp3;
     JLabel jl1,jl2;
     public static JTextField jt1;

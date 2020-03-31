@@ -9,13 +9,16 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class UpdateArtworkInformation extends JFrame implements ActionListener {
 
 
-    JTextField jt1, jt2, jt3, jt4, jt5, jt6;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = -2563581525940367358L;
+	JTextField jt1, jt2, jt3, jt4, jt5, jt6;
     JLabel jl1, jl2, jl3, jl4, jl5, jl6, jLabel;
     JPanel jp1, jp2, jp3, jp4, jp5, jp6, jp7, jp8;
     JButton jb1, jb2;
@@ -83,8 +86,6 @@ public class UpdateArtworkInformation extends JFrame implements ActionListener {
 
     private void update() {
         Connection con = null;
-        ResultSet rs;
-        int result = 0;
         try {
             if (!jt2.getText().isEmpty() && !jt3.getText().isEmpty() && !jt4.getText().isEmpty() && !jt5.getText().isEmpty()) {
                 con = DatabaseConnection.getConnection();

@@ -5,58 +5,49 @@ package entity;
  */
 public class HallReserveInformation {
 
-    private String r_id;
-    private String h_id;
-    private String a_id;
-    private String a_name;
-    private String time;
-    private String num;
+    private String r_no;
+    private String h_no;
+    private String a_no;
+    private String r_time;
+    private String r_num;
 
-    public String getR_id() {
-        return r_id;
+    public String getR_no() {
+        return r_no;
     }
 
-    public void setR_id(String r_id) {
-        this.r_id = r_id;
+    public void setR_no(String r_no) {
+        this.r_no = r_no;
     }
 
-    public String geth_id() {
-        return h_id;
+    public String getH_no() {
+        return h_no;
     }
 
-    public void seth_id(String h_id) {
-        this.h_id = h_id;
+    public void setH_no(String h_no) {
+        this.h_no = h_no;
     }
 
-    public String getA_id() {
-        return a_id;
+    public String getA_no() {
+        return a_no;
     }
 
-    public void setA_id(String b_id) {
-        this.a_id = b_id;
+    public void setA_no(String b_no) {
+        this.a_no = b_no;
     }
 
-    public String getA_name() {
-        return a_name;
+    public String getR_time() {
+        return r_time;
     }
 
-    public void setA_name(String b_name) {
-        this.a_name = b_name;
+    public void setA_time(String time) {
+        this.r_time = time;
     }
 
-    public String getTime() {
-        return time;
+    public String getR_num() {
+        return r_num;
     }
 
-    public void setTime(String time) {
-        this.time = time;
-    }
-
-    public String getNum() {
-        return num;
-    }
-
-    public void setNum(String num) {
-        this.num = num;
+    public void setR_num(String num) {
+        this.r_num = num;
     }
 }

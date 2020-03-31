@@ -51,7 +51,7 @@ public class DeleteArtist extends JFrame implements ActionListener {
 
         this.setVisible(true);
         this.setBounds(720,320,600,400);
-        this.setTitle("Art Gallery管理系统");
+        this.setTitle("艺术画廊管理系统");
         this.setLayout(new GridLayout(6,4));
     }
 

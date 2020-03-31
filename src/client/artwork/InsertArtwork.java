@@ -31,7 +31,6 @@ public class InsertArtwork extends JFrame implements ActionListener {
 		jl2 = new JLabel(" 名称：");
 		jl3 = new JLabel(" 类别：");
 		jl4 = new JLabel(" 售价：");
-		// jl5 = new JLabel(" 规格：");
 
 		jb1 = new JButton("添加");
 		// jb2 = new JButton("返回");

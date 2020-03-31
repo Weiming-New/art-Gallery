@@ -25,7 +25,7 @@ public class DeleteHall extends JFrame implements ActionListener {
     JLabel jl1,jl2;
 
     public DeleteHall(){
-        jb1 = new JButton("取消");
+        jb1 = new JButton("确定");
         //jb2 = new JButton("返回");
 
         jp1 = new JPanel();
@@ -97,7 +97,7 @@ public class DeleteHall extends JFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-         if (e.getActionCommand() == "取消"){
+         if (e.getActionCommand() == "确定"){
              if (verify() == 1) {
                 delete();
             }else {
