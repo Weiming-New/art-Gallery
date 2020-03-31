@@ -15,7 +15,6 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-import client.trade.SelectArtworks;
 import function.DatabaseConnection;
 
 public class SelectArtistName extends JFrame implements ActionListener{
