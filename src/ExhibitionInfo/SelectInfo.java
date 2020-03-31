@@ -46,7 +46,7 @@ public class SelectInfo extends JFrame implements ActionListener {
 		try {
 			con = DatabaseConnection.getConnection();
 			PreparedStatement ps;
-			String sql = "select EIno,Exhibitino.Ename,Artwork.Tname,Artist.Aname,Place.Hname,Mtime,Artwork.Tkind,Mprice from Meeting,Artwork,Place,Artist where Meeting.AWno = Artwork.AWno and Meeting.Hno = Place.Hno and Meeting.Ano = Artist.Ano";
+			String sql = "select EIno,Exhibitino.Ename,Artwork.Tname,Artist.Aname,Place.Hname,Mtime,Artwork.Tkind,Mprice from ExhibitionInfo,Artwork,Place,Artist where ExhibitionInfo.AWno = Artwork.AWno and ExhibitionInfo.Hno = Place.Hno and ExhibitionInfo.Ano = Artist.Ano";
 			ps = con.prepareStatement(sql);
 			rs = ps.executeQuery();
 			while (rs.next()) {
