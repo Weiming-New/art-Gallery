@@ -88,7 +88,7 @@ public class InsertExhibition extends JFrame implements ActionListener {
 		int result = 0;
 		try {
 			if (!jtf1.getText().isEmpty() && !jtf2.getText().isEmpty() && !jtf3.getText().isEmpty()
-					&& !jtf4.getText().isEmpty()) {
+					) {
 				con = DatabaseConnection.getConnection();
 				String sql = "insert into Exhibition values(?,?,?)";
 				PreparedStatement ps = con.prepareStatement(sql);
