@@ -111,7 +111,7 @@ FOREIGN KEY(Ano) REFERENCES Artist(Ano)
 );
 
 -- 创建视图
-CREATE VIEW v_ticket(Tno,Tname,Tsex,Twork,Ename,Tprice) AS SELECT Tno,Tname,Tsex,Twork,ExhibitionInfo.Ename,Ticket.Tprice FROM Ticket,ExhibitionInfo WHERE Ticket.Eno = ExhibitionInfo.Eno;
+CREATE VIEW v_ticket(Tno,Tname,Tsex,Twork,Eno,Tprice) AS SELECT Tno,Tname,Tsex,Twork,ExhibitionInfo.Eno,Ticket.Tprice FROM Ticket,ExhibitionInfo WHERE Ticket.Eno = ExhibitionInfo.Eno;
 
 CREATE VIEW v_TradeInfo (TIno,TIname,TItime,AWname,AWkind,AWprice) AS SELECT TradeInfo.TIno,TradeInfo.TIname,TradeInfo.TItime,Artwork.AWname,Artwork.AWkind,Artwork.AWprice FROM  TradeInfo,Artwork WHERE TradeInfo.AWno = Artwork.AWno;
 
