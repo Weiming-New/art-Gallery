@@ -37,8 +37,8 @@ INSERT INTO `Artist` VALUES (1,'牛伟明','233233200001011010','书法家','HIT
 
 -- 艺术品表
 CREATE TABLE Artwork(
-AWno INT PRIMARY KEY,-- 展品编号
-AWname CHAR(20),-- 展品名称
+AWno INT PRIMARY KEY,-- 艺术品编号
+AWname CHAR(20),-- 艺术品名称
 AWkind CHAR(10),-- 类别
 AWprice INT,-- 售价
 AWSold TINYINT -- 售出状态
@@ -48,7 +48,7 @@ INSERT INTO `Artwork` VALUES (1,'龙飞凤舞','书法',100,0),(2,'天道酬勤'
 
 -- 展厅表
 CREATE TABLE Hall(
-Hno INT PRIMARY KEY,-- 展馆编号
+Hno INT PRIMARY KEY,-- 展厅编号
 Hname CHAR(20),-- 展厅名称
 Harea INT,-- 面积
 Hadd CHAR(20),-- 地址
@@ -59,20 +59,20 @@ Hnum INT-- 展位数
 INSERT INTO `Hall` VALUES (1,'梅',50,'黄河路1号','Adam',10),(2,'兰',50,'黄河路3号','张六',10);
 
 CREATE TABLE Exhibition(
-Eno INT PRIMARY KEY,-- 展会编号
-Ename CHAR(20),-- 展会名称
+Eno INT PRIMARY KEY,-- 艺术展编号
+Ename CHAR(20),-- 艺术展名称
 Etime DATE-- 举办时间
 );
 
 INSERT INTO `Exhibition` VALUES (1,'哈尔滨书法绘画大会','2020-04-10');
 
--- 展会信息表
+-- 艺术展信息表
 CREATE TABLE ExhibitionInfo(
 EIno INT PRIMARY KEY,-- 信息编号
 Ano INT,-- 艺术家编号
 AWno INT,-- 艺术品编号
-Hno INT,-- 展馆编号
-Eno INT,-- 展会编号
+Hno INT,-- 展厅编号
+Eno INT,-- 艺术展编号
 EItime DATE,-- 时间
 FOREIGN KEY(Ano) REFERENCES Artist(Ano),
 FOREIGN KEY(AWno) REFERENCES ArtWork(AWno),
@@ -87,7 +87,7 @@ Tname CHAR(20),-- 姓名
 Tsex CHAR(5) CHECK (Tsex IN ('男','女')),-- 性别
 Twork CHAR(10),-- 职业
 Tprice INT, -- 价格
-Eno INT-- 展会编号
+Eno INT-- 艺术展编号
 );
 
 -- 购买信息表
@@ -99,13 +99,13 @@ AWno INT,-- 艺术品编号
 FOREIGN KEY(AWno) REFERENCES Artwork(AWno)
 );
 
--- 展馆预定表
+-- 展厅预定表
 CREATE TABLE Reserve(
 Rno INT PRIMARY KEY,-- 订单编号
 Rtime DATE NOT NULL,-- 时间
 Rnum INT NOT NULL,-- 展位数
 Ano INT,-- 艺术家编号
-Hno INT,-- 展馆编号
+Hno INT,-- 展厅编号
 FOREIGN KEY(Hno) REFERENCES Hall(Hno),
 FOREIGN KEY(Ano) REFERENCES Artist(Ano)
 );
