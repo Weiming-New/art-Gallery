@@ -13,7 +13,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 /*
-删除会展信息
+删除艺术展信息
  */
 public class DeleteInfo extends JFrame implements ActionListener {
    
@@ -36,8 +36,8 @@ public class DeleteInfo extends JFrame implements ActionListener {
         jp3 = new JPanel();
 
         jt1 = new JTextField(8);
-        jl1 = new JLabel("会展编号");
-        jl2 = new JLabel("会展信息系统");
+        jl1 = new JLabel("艺术展编号");
+        jl2 = new JLabel("艺术展信息系统");
 
         jb1.addActionListener(this);
         //jb2.addActionListener(this);
@@ -64,7 +64,7 @@ public class DeleteInfo extends JFrame implements ActionListener {
         int result = 0;
         try {
             con = DatabaseConnection.getConnection();
-            PreparedStatement ps = con.prepareStatement("select * from Meeting where Mno = ?");
+            PreparedStatement ps = con.prepareStatement("select * from ExhibitionInfo where EIno = ?");
             ps.setString(1,jt1.getText());
             rs = ps.executeQuery();
             if (rs.next()){
@@ -81,7 +81,7 @@ public class DeleteInfo extends JFrame implements ActionListener {
         try {
             if (!jt1.getText().isEmpty()) {
                 con = DatabaseConnection.getConnection();
-                PreparedStatement ps = con.prepareStatement("delete from Meeting where Mno = ?");
+                PreparedStatement ps = con.prepareStatement("delete from ExhibitionInfo where EIno = ?");
                 ps.setString(1, jt1.getText());
                 ps.executeUpdate();
                 System.out.println("数据删除成功");

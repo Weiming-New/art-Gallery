@@ -48,13 +48,13 @@ public class Info extends JFrame implements ActionListener {
         JPanel jp5 = new JPanel();
         JLabel jl1 = new JLabel("   ");
 
-        jb1 = new JButton("查询会展信息");
+        jb1 = new JButton("查询艺术展信息");
         jb1.setBackground(Color.WHITE);
         jb1.setFont(font);
-        jb2 = new JButton("发布会展信息");
+        jb2 = new JButton("发布艺术展信息");
         jb2.setBackground(Color.WHITE);
         jb2.setFont(font);
-        jb3 = new JButton("删除会展信息");
+        jb3 = new JButton("删除艺术展信息");
         jb3.setBackground(Color.WHITE);
         jb3.setFont(font);
         jb4 = new JButton("返回");
@@ -120,12 +120,12 @@ public class Info extends JFrame implements ActionListener {
             new AdminRoot();
             dispose();
 
-        } else if (e.getActionCommand() == "查询会展信息") {
+        } else if (e.getActionCommand() == "查询艺术展信息") {
             new SelectInfo();
-        } else if (e.getActionCommand() == "发布会展信息") {
+        } else if (e.getActionCommand() == "发布艺术展信息") {
             //this.dispose();
             new InsertInfo();
-        }else if(e.getActionCommand() == "删除会展信息"){
+        }else if(e.getActionCommand() == "删除艺术展信息"){
             //this.dispose();
             new DeleteInfo();
         }else if (e.getActionCommand() == "购票信息查询"){

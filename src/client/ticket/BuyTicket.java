@@ -31,7 +31,7 @@ public class BuyTicket extends JFrame implements ActionListener {
         jl2 = new JLabel(" 姓名：");
         jl3 = new JLabel(" 性别：");
         jl4 = new JLabel(" 职业：");
-        jl5 = new JLabel(" 会展名称：");
+        jl5 = new JLabel(" 艺术展名称：");
         //jl6 = new JLabel(" 售价：");
 
         jb1 = new JButton("购票");
@@ -96,7 +96,7 @@ public class BuyTicket extends JFrame implements ActionListener {
         int result = 0;
         try {
             con = DatabaseConnection.getConnection();
-            PreparedStatement ps = con.prepareStatement("select * from Meeting where Ename = ?");
+            PreparedStatement ps = con.prepareStatement("select * from ExhibitionInfo where Ename = ?");
             ps.setString(1,jtf5.getText());
             rs = ps.executeQuery();
             if (rs.next()){

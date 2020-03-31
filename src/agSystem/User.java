@@ -3,8 +3,12 @@ package agSystem;
 import client.Hall.SelectHall;
 import client.HallReserve.*;
 import client.artist.SelectArtist;
+import client.artist.SelectArtistName;
 import client.artwork.SelectArtwork;
 import client.exhibitionInfo.SelectInfo;
+
+import client.artwork.SelectArtworkKind;
+import client.artwork.SelectArtworkPrice;
 import client.ticket.BuyTicket;
 import client.ticket.DeleteTicket;
 import client.ticket.SelectTicket;
@@ -27,8 +31,9 @@ public class User extends JFrame {
 	 */
 	private static final long serialVersionUID = -4508697313736701899L;
 	JMenuBar jMenuBar;
-	JMenu jm1, jm2, jm3, jm4, jm5;
-	JMenuItem jmt1, jmt2, jmt3, jmt4, jmt5, jmt6, jmt7, jmt8, jmt9, jmt10, jmt11, jmt12, jmt13, jmt14, jmt15, jmt16;
+	JMenu jm1, jm2, jm3, jm4, jm5, jm6;
+	JMenuItem jmIt1, jmIt2, jmIt3, jmIt4, jmIt5, jmIt6, jmIt7, jmIt8, jmIt9, jmIt10, jmIt11, jmIt12, jmIt13, jmIt14,
+			jmIt15, jmIt18, jmIt16, jmIt17;
 	JPanel jp1;
 	JLabel jl1;
 
@@ -56,52 +61,63 @@ public class User extends JFrame {
 		jm2.addSeparator();
 		jm3 = new JMenu("艺术品购买");
 		jm3.addSeparator();
-		jm4 = new JMenu("展览信息查询");
+		jm4 = new JMenu("艺术展信息查询");
+		jm4.addSeparator();
+		jm5 = new JMenu("艺术家信息查询");
+		jm5.addSeparator();
+		jm6 = new JMenu("艺术品信息查询");
 
-		jmt5 = new JMenuItem("预定门票");
-		jmt6 = new JMenuItem("查询门票");
-		jmt7 = new JMenuItem("取消订单");
-		// jmt8 = new JMenuItem("修改门票信息");
+		jmIt5 = new JMenuItem("预定门票");
+		jmIt6 = new JMenuItem("查询门票");
+		jmIt7 = new JMenuItem("取消订单");
 
-		jmt1 = new JMenuItem("预约展厅");
-		jmt2 = new JMenuItem("查询预约信息");
-		jmt3 = new JMenuItem("取消预约");
-		// jmt4 = new JMenuItem("修改预约信息");
+		jmIt1 = new JMenuItem("预约展厅");
+		jmIt2 = new JMenuItem("查询预约信息");
+		jmIt3 = new JMenuItem("取消预约");
 
-		jmt9 = new JMenuItem("艺术品购买");
-		jmt10 = new JMenuItem("查询采购信息");
-		jmt11 = new JMenuItem("取消订单");
-		// jmt12 = new JMenuItem("修改订单信息");
+		jmIt9 = new JMenuItem("艺术品购买");
+		jmIt10 = new JMenuItem("查询采购信息");
+		jmIt11 = new JMenuItem("取消订单");
 
-		jmt13 = new JMenuItem("展览信息查询");
-		jmt14 = new JMenuItem("展厅查询");
-		jmt15 = new JMenuItem("艺术家查询");
-		jmt16 = new JMenuItem("艺术品查询");
+		jmIt13 = new JMenuItem("展览信息查询");
+		jmIt14 = new JMenuItem("展厅查询");
+		jmIt15 = new JMenuItem("所有艺术家查询");
+		jmIt17 = new JMenuItem("艺术家姓名查询");
 
-		jm1.add(jmt1);
-		jm1.add(jmt2);
-		jm1.add(jmt3);
-		// jm1.add(jmt4);
+		jmIt16 = new JMenuItem("所有艺术品查询");
+		jmIt8 = new JMenuItem("艺术品类别查询");
+		jmIt18 = new JMenuItem("艺术品价格查询");
 
-		jm2.add(jmt5);
-		jm2.add(jmt6);
-		jm2.add(jmt7);
-		// jm2.add(jmt8);
+		jm1.add(jmIt1);
+		jm1.add(jmIt2);
+		jm1.add(jmIt3);
 
-		jm3.add(jmt9);
-		jm3.add(jmt10);
-		jm3.add(jmt11);
-		// jm3.add(jmt12);
+		jm2.add(jmIt5);
+		jm2.add(jmIt6);
+		jm2.add(jmIt7);
 
-		jm4.add(jmt13);
-		jm4.add(jmt14);
-		jm4.add(jmt15);
-		jm4.add(jmt16);
+		jm3.add(jmIt9);
+		jm3.add(jmIt10);
+		jm3.add(jmIt11);
+
+		jm4.add(jmIt13);
+		jm4.add(jmIt14);
+
+		// 艺术家
+		jm5.add(jmIt15);
+		jm5.add(jmIt17);
+
+		// 艺术品
+		jm6.add(jmIt16);
+		jm6.add(jmIt8);
+		jm6.add(jmIt18);
 
 		jMenuBar.add(jm1);
 		jMenuBar.add(jm2);
 		jMenuBar.add(jm3);
 		jMenuBar.add(jm4);
+		jMenuBar.add(jm5);
+		jMenuBar.add(jm6);
 		setJMenuBar(jMenuBar);
 
 		click();
@@ -115,95 +131,117 @@ public class User extends JFrame {
 	}
 
 	public void click() {
-		jmt1.addActionListener(new ActionListener() {
+		jmIt1.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				new InsertReserve();
 			}
 		});
 
-		jmt2.addActionListener(new ActionListener() {
+		jmIt2.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				new SelectRno();
 			}
 		});
 
-		jmt3.addActionListener(new ActionListener() {
+		jmIt3.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				new DeleteReserve();
 			}
 		});
 
-		jmt5.addActionListener(new ActionListener() {
+		jmIt5.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				new BuyTicket();
 			}
 		});
 
-		jmt6.addActionListener(new ActionListener() {
+		jmIt6.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				new SelectTicket();
 			}
 		});
 
-		jmt7.addActionListener(new ActionListener() {
+		jmIt7.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				new DeleteTicket();
 			}
 		});
 
-		jmt9.addActionListener(new ActionListener() {
+		jmIt9.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				new BuyArtWorks();
 			}
 		});
 
-		jmt10.addActionListener(new ActionListener() {
+		jmIt10.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				new SelectTIno();
 			}
 		});
 
-		jmt11.addActionListener(new ActionListener() {
+		jmIt11.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				new DeleteTrade();
 			}
 		});
 
-		jmt13.addActionListener(new ActionListener() {
+		jmIt13.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				new SelectInfo();
 			}
 		});
 
-		jmt14.addActionListener(new ActionListener() {
+		jmIt14.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				new SelectHall();
 			}
 		});
 
-		jmt15.addActionListener(new ActionListener() {
+		jmIt15.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				new SelectArtist();
 			}
 		});
 
-		jmt16.addActionListener(new ActionListener() {
+		jmIt17.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				new SelectArtistName();
+			}
+		});
+
+		jmIt16.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				new SelectArtwork();
 			}
 		});
+		
+		jmIt8.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				new SelectArtworkKind();
+			}
+		});
+		
+		jmIt18.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				new SelectArtworkPrice();
+			}
+		});
+		
 	}
 }

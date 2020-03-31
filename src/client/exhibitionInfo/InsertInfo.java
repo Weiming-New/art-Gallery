@@ -10,7 +10,7 @@ import java.awt.event.ActionListener;
 import java.sql.*;
 
 /*
-添加会展信息
+添加艺术展信息
  */
 public class InsertInfo extends JFrame implements ActionListener {
 
@@ -145,7 +145,7 @@ public class InsertInfo extends JFrame implements ActionListener {
         int result = 0;
         try {
             con = DatabaseConnection.getConnection();
-            String sql = "insert into Meeting values(?,?,?,?,?,?,?)";
+            String sql = "insert into ExhibitionInfo values(?,?,?,?,?,?,?)";
             PreparedStatement ps = con.prepareStatement(sql);
             ExhibitionInformation mi = new ExhibitionInformation();
 
