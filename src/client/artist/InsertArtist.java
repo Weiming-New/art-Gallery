@@ -23,7 +23,6 @@ public class InsertArtist extends JFrame implements ActionListener {
     JLabel jl1,jl2,jl3,jl4,jl5,jl6,jl7;
     JPanel jp1,jp2,jp3,jp4,jp5,jp6,jp7,jp8;
     JButton jb1,jb2;
-    private int result1 =0;
 
     public InsertArtist(){
 
