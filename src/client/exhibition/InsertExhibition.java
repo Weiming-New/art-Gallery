@@ -27,7 +27,7 @@ public class InsertExhibition extends JFrame implements ActionListener {
 
 		jl7 = new JLabel(" 艺术画廊管理系统");
 
-		jl1 = new JLabel(" 展会编号：");
+		jl1 = new JLabel(" 艺术展编号：");
 		jl2 = new JLabel(" 名称：");
 		jl3 = new JLabel(" 时间：");
 

@@ -40,8 +40,8 @@ public class Artist {
         return a_major;
     }
 
-    public void setMajor(String work) {
-        this.a_major = work;
+    public void setMajor(String Twork) {
+        this.a_major = Twork;
     }
 
     public String getWorkplace() {

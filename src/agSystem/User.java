@@ -6,7 +6,7 @@ import client.artist.SelectArtist;
 import client.artist.SelectArtistName;
 import client.artwork.SelectArtwork;
 import client.exhibitionInfo.SelectInfo;
-
+import client.exhibitionInfo.SelectInfoArtist;
 import client.artwork.SelectArtworkKind;
 import client.artwork.SelectArtworkPrice;
 import client.ticket.BuyTicket;
@@ -74,13 +74,15 @@ public class User extends JFrame {
 		jmIt1 = new JMenuItem("预约展厅");
 		jmIt2 = new JMenuItem("查询预约信息");
 		jmIt3 = new JMenuItem("取消预约");
+		jmIt14 = new JMenuItem("展厅查询");
 
 		jmIt9 = new JMenuItem("艺术品购买");
 		jmIt10 = new JMenuItem("查询采购信息");
 		jmIt11 = new JMenuItem("取消订单");
 
-		jmIt13 = new JMenuItem("展览信息查询");
-		jmIt14 = new JMenuItem("展厅查询");
+		jmIt13 = new JMenuItem("全部展览信息查询");
+		jmIt12 = new JMenuItem("艺术家展览信息查询");
+		
 		jmIt15 = new JMenuItem("所有艺术家查询");
 		jmIt17 = new JMenuItem("艺术家姓名查询");
 
@@ -91,7 +93,8 @@ public class User extends JFrame {
 		jm1.add(jmIt1);
 		jm1.add(jmIt2);
 		jm1.add(jmIt3);
-
+		jm1.add(jmIt14);
+		
 		jm2.add(jmIt5);
 		jm2.add(jmIt6);
 		jm2.add(jmIt7);
@@ -101,7 +104,8 @@ public class User extends JFrame {
 		jm3.add(jmIt11);
 
 		jm4.add(jmIt13);
-		jm4.add(jmIt14);
+		jm4.add(jmIt12);
+		
 
 		// 艺术家
 		jm5.add(jmIt15);
@@ -198,6 +202,13 @@ public class User extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				new SelectInfo();
+			}
+		});
+		
+		jmIt12.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				new SelectInfoArtist();
 			}
 		});
 

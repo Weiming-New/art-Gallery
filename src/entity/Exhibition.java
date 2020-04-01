@@ -1,7 +1,7 @@
 package entity;
 
 /*
- * 展会信息
+ * 艺术展信息
  */
 public class Exhibition {
 

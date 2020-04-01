@@ -33,7 +33,7 @@ public class DeleteExhibition extends JFrame implements ActionListener {
         jp3 = new JPanel();
 
         jt1 = new JTextField(8);
-        jl1 = new JLabel("展会编号");
+        jl1 = new JLabel("艺术展编号");
         jl2 = new JLabel("艺术品管理系统");
 
         jb1.addActionListener(this);

@@ -7,8 +7,8 @@ public class TicketInformation {
 
     private String id;
     private String name;
-    private String sex;
-    private String work;
+    private String Tsex;
+    private String Twork;
     private String e_name;
     private String price;
 
@@ -29,19 +29,19 @@ public class TicketInformation {
     }
 
     public String getSex() {
-        return sex;
+        return Tsex;
     }
 
-    public void setSex(String sex) {
-        this.sex = sex;
+    public void setSex(String Tsex) {
+        this.Tsex = Tsex;
     }
 
     public String getWork() {
-        return work;
+        return Twork;
     }
 
-    public void setWork(String work) {
-        this.work = work;
+    public void setWork(String Twork) {
+        this.Twork = Twork;
     }
 
     public String getE_name() {

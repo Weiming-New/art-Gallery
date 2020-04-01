@@ -29,7 +29,7 @@ public class SelectArtworksAll extends JFrame{
 
         columnNames = new Vector<String>();
         rowData = new Vector<Vector<String>>();
-        columnNames.add("订单编号");
+        columnNames.add("取票码");
         columnNames.add("姓名");
         columnNames.add("艺术品名称");
         columnNames.add("类别");
@@ -39,7 +39,7 @@ public class SelectArtworksAll extends JFrame{
         try{
             con = DatabaseConnection.getConnection();
             PreparedStatement ps;
-            ps = con.prepareStatement("select no,t_name,aw_name,kind,time,price from v_TradeInfo");
+            ps = con.prepareStatement("select no,Tname,aw_name,kind,time,price from v_TradeInfo");
             rs = ps.executeQuery();
             while (rs.next()){
                 Vector<String> vector = new Vector<String>();

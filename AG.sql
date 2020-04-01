@@ -80,6 +80,8 @@ FOREIGN KEY(Hno) REFERENCES Hall(Hno),
 FOREIGN KEY(Eno) REFERENCES Exhibition(Eno)
 );
 
+INSERT INTO `ExhibitionInfo` VALUES (1,1,2,1,1,'2020-04-10');
+
 -- 门票预定表
 CREATE TABLE Ticket(
 Tno CHAR(6) PRIMARY KEY,-- 取票码
@@ -117,7 +119,7 @@ CREATE VIEW v_TradeInfo (TIno,TIname,TItime,AWname,AWkind,AWprice) AS SELECT Tra
 
 CREATE VIEW v_reserve(Rno,Hname,Aname,Rtime,Rnum) AS SELECT Reserve.Rno,Hall.Hname,Artist.Aname,Reserve.Rtime,Reserve.Rnum FROM Artist,Hall,Reserve WHERE Artist.Ano = Reserve.Ano and Hall.Hno = Reserve.Hno;
 
-CREATE VIEW v_exhibitionInfo(EIno,Aname,AWname,Hname,Ename,EItime,AWkind,AWprice) AS SELECT EIno,Artist.Aname,Artwork.AWname,Hall.Hname,Exhibition.Ename,EItime,Artwork.AWkind,Artwork.AWprice FROM Artist,Artwork,Place,Exhibition,ExhibitionInfo WHERE ExhibitionInfo.Ano = Artist.Ano and Exhibition.AWno = Artwork.AWno and ExhibitionInfo.Hno = Hall.Hno and ExhibitionInfo.Eno = Exhibition.Eno; 
+CREATE VIEW v_exhibitionInfo(EIno,Aname,AWname,Hname,Ename,EItime,AWkind,AWprice) AS SELECT EIno,Artist.Aname,Artwork.AWname,Hall.Hname,Exhibition.Ename,EItime,Artwork.AWkind,Artwork.AWprice FROM Artist,Artwork,Hall,Exhibition,ExhibitionInfo WHERE ExhibitionInfo.Ano = Artist.Ano and ExhibitionInfo.AWno = Artwork.AWno and ExhibitionInfo.Hno = Hall.Hno and ExhibitionInfo.Eno = Exhibition.Eno; 
 
 CREATE INDEX i_name on Artist (Aname);
 

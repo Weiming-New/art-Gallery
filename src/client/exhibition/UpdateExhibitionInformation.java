@@ -33,9 +33,9 @@ public class UpdateExhibitionInformation extends JFrame implements ActionListene
         jt3 = new JTextField(8);
 
         jl1 = new JLabel("艺术家信息修改系统");
-        jl2 = new JLabel("展会编号");
-        jl3 = new JLabel("展会名称");
-        jl4 = new JLabel("展会时间");
+        jl2 = new JLabel("艺术展编号");
+        jl3 = new JLabel("艺术展名称");
+        jl4 = new JLabel("艺术展时间");
         jLabel = new JLabel(UpdateExhibition.jt1.getText());
 
         jp1 = new JPanel();

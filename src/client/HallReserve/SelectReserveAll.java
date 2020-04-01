@@ -29,7 +29,7 @@ public class SelectReserveAll extends JFrame{
 
         columnNames = new Vector<String>();
         rowData = new Vector<Vector<String>>();
-        columnNames.add("订单编号");
+        columnNames.add("取票码");
         columnNames.add("展厅名称");
         columnNames.add("姓名");
         columnNames.add("时间");

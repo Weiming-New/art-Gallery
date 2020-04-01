@@ -30,7 +30,7 @@ public class SelectExhibition extends JFrame {
 
 		columnNames = new Vector<String>();
 		rowData = new Vector<Vector<String>>();
-		columnNames.add("展会编号");
+		columnNames.add("艺术展编号");
 		columnNames.add("名称");
 		columnNames.add("时间");
 

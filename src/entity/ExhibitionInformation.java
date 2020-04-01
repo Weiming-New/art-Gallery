@@ -1,7 +1,7 @@
 package entity;
 
 /*
-展会信息
+艺术展信息
  */
 public class ExhibitionInformation {
 
@@ -9,7 +9,7 @@ public class ExhibitionInformation {
     private String e_name;
     private String a_id;
     private String aw_id;
-    private String t_name;
+    private String Tname;
     private String address;
     private String time;
     private String kind;
@@ -47,12 +47,12 @@ public class ExhibitionInformation {
         this.aw_id = t_id;
     }
 
-    public String getT_name() {
-        return t_name;
+    public String getTname() {
+        return Tname;
     }
 
-    public void setT_name(String t_name) {
-        this.t_name = t_name;
+    public void setTname(String Tname) {
+        this.Tname = Tname;
     }
 
     public String getAddress() {

@@ -21,13 +21,13 @@ public class InsertInfo extends JFrame implements ActionListener {
 
     public InsertInfo() {
 
-        jl1 = new JLabel(" 展会编号：");
-        jl2 = new JLabel(" 展会名称：");
+        jl1 = new JLabel(" 信息编号：");
+        jl2 = new JLabel(" 艺术展编号：");
         jl3 = new JLabel(" 艺术家编号：");
         jl4 = new JLabel(" 艺术品编号：");
         jl6 = new JLabel(" 展厅编号：");
         jl7 = new JLabel(" 时间：");
-        jl9 = new JLabel(" 门票价格");
+        jl9 = new JLabel(" 价格");
 
         jb1 = new JButton("发布");
         jb1.addActionListener(this);
@@ -90,7 +90,7 @@ public class InsertInfo extends JFrame implements ActionListener {
         int result = 0;
         try {
             con = DatabaseConnection.getConnection();
-            PreparedStatement ps = con.prepareStatement("select * from Place where Hno = ?");
+            PreparedStatement ps = con.prepareStatement("select * from Hall where Hno = ?");
             ps.setString(1, jtf6.getText());
             rs = ps.executeQuery();
             if (rs.next()) {
@@ -155,7 +155,7 @@ public class InsertInfo extends JFrame implements ActionListener {
                     mi.setE_name(jtf2.getText());
                     mi.setA_id(jtf3.getText());
                     mi.setAw_id(jtf4.getText());
-                    //mi.setT_name(jtf5.getText());
+                    //mi.setTname(jtf5.getText());
                     mi.setAddress(jtf6.getText());
                     mi.setTime(jtf7.getText());
                     //mi.setKind(jtf8.getText());
@@ -164,7 +164,7 @@ public class InsertInfo extends JFrame implements ActionListener {
                     ps.setString(2, mi.getE_name());
                     ps.setString(3, mi.getA_id());
                     ps.setString(4, mi.getAw_id());
-                    //ps.setString(5,mi.getT_name());
+                    //ps.setString(5,mi.getTname());
                     ps.setString(5, mi.getAddress());
                     ps.setString(6, mi.getTime());
                     //ps.setString(8,mi.getKind());

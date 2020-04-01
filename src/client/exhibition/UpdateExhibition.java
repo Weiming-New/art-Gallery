@@ -33,8 +33,8 @@ public class UpdateExhibition extends JFrame implements ActionListener {
         jp2 = new JPanel();
         jp3 = new JPanel();
 
-        jl1 = new JLabel("展会信息修改系统");
-        jl2 = new JLabel("展会编号");
+        jl1 = new JLabel("艺术展信息修改系统");
+        jl2 = new JLabel("艺术展编号");
 
         jt1 = new JTextField(8);
 

@@ -34,14 +34,14 @@ public class SelectInfo extends JFrame implements ActionListener {
 
 		columnNames = new Vector<String>();
 		rowData = new Vector<Vector<String>>();
-		columnNames.add("展会编号");
-		columnNames.add("展会名称");
+		columnNames.add("艺术展编号");
+		columnNames.add("艺术家名称");
 		columnNames.add("艺术品名称");
-		columnNames.add("艺术家姓名");
-		columnNames.add("地址");
+		columnNames.add("展厅名称");
+		columnNames.add("艺术展名称");
 		columnNames.add("时间");
-		columnNames.add("类别");
-		columnNames.add("门票价格");
+		columnNames.add("艺术品类别");
+		columnNames.add("价格");
 
 		try {
 			con = DatabaseConnection.getConnection();

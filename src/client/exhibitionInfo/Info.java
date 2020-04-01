@@ -22,7 +22,7 @@ public class Info extends JFrame implements ActionListener {
 	private static final long serialVersionUID = 7864382819018546499L;
 	
 	JPanel jp1, jp2 ,jp3,jp4 = null;
-    JButton jb1, jb2, jb3,jb4,jb5,jb6,jb7 = null;
+    JButton jb1, jb2, jb3,jb4,jb5,jb6,jb7,jb8 = null;
     ResultSet rs;
     Statement st;
 
@@ -51,6 +51,9 @@ public class Info extends JFrame implements ActionListener {
         jb1 = new JButton("查询艺术展信息");
         jb1.setBackground(Color.WHITE);
         jb1.setFont(font);
+        jb8 = new JButton("查询艺术家艺术展信息");
+        jb8.setBackground(Color.WHITE);
+        jb8.setFont(font);
         jb2 = new JButton("发布艺术展信息");
         jb2.setBackground(Color.WHITE);
         jb2.setFont(font);
@@ -77,6 +80,7 @@ public class Info extends JFrame implements ActionListener {
         jb5.addActionListener(this);
         jb6.addActionListener(this);
         jb7.addActionListener(this);
+        jb8.addActionListener(this);
 
 
         jp1 = new JPanel();
@@ -85,6 +89,7 @@ public class Info extends JFrame implements ActionListener {
         jp4 = new JPanel();
 
         jp1.add(jb1);
+        jp1.add(jb8);
         jp1.add(jb2);
         jp2.add(jb3);
         jp2.add(jb5);
@@ -136,6 +141,8 @@ public class Info extends JFrame implements ActionListener {
         }
         else if (e.getActionCommand() == "展厅预定信息查询"){
             new SelectReserveAll();
+        }else if (e.getActionCommand() == "查询艺术家艺术展信息"){
+            new SelectInfoArtist();
         }
     }
 }

@@ -40,8 +40,8 @@ public class Trade {
         return aw_name;
     }
 
-    public void setAw_name(String t_name) {
-        this.aw_name = t_name;
+    public void setAw_name(String Tname) {
+        this.aw_name = Tname;
     }
 
     public String getTime() {

@@ -27,12 +27,13 @@ public class BuyTicket extends JFrame implements ActionListener {
     public BuyTicket() {
 
         jl7 = new JLabel(" 艺术画廊购票系统");
-        jl1 = new JLabel(" 订单号：");
+        jl1 = new JLabel(" 取票码：");
         jl2 = new JLabel(" 姓名：");
         jl3 = new JLabel(" 性别：");
         jl4 = new JLabel(" 职业：");
-        jl5 = new JLabel(" 艺术展名称：");
-        //jl6 = new JLabel(" 售价：");
+        jl6 = new JLabel(" 价格：");
+        jl5 = new JLabel(" 艺术展编号：");
+        
 
         jb1 = new JButton("购票");
         //jb2 = new JButton("返回");
@@ -45,7 +46,7 @@ public class BuyTicket extends JFrame implements ActionListener {
         jtf3 = new JTextField(6);
         jtf4 = new JTextField(6);
         jtf5 = new JTextField(6);
-        //jtf6 = new JTextField(6);
+        jtf6 = new JTextField(6);
 
         jp1 = new JPanel();
         jp2 = new JPanel();
@@ -69,8 +70,8 @@ public class BuyTicket extends JFrame implements ActionListener {
 
         jp3.add(jl5);
         jp3.add(jtf5);
-        //jp3.add(jl6);
-        //jp3.add(jtf6);
+        jp3.add(jl6);
+        jp3.add(jtf6);
 
         jp5.add(jb1);
         //jp5.add(jb2);
@@ -96,7 +97,7 @@ public class BuyTicket extends JFrame implements ActionListener {
         int result = 0;
         try {
             con = DatabaseConnection.getConnection();
-            PreparedStatement ps = con.prepareStatement("select * from ExhibitionInfo where Ename = ?");
+            PreparedStatement ps = con.prepareStatement("select * from ExhibitionInfo where Eno = ?");
             ps.setString(1,jtf5.getText());
             rs = ps.executeQuery();
             if (rs.next()){
@@ -116,9 +117,9 @@ public class BuyTicket extends JFrame implements ActionListener {
         Connection con = null;
         int result = 0;
         try {
-            if (!jtf1.getText().isEmpty() && !jtf2.getText().isEmpty() && !jtf3.getText().isEmpty() && !jtf4.getText().isEmpty() && !jtf5.getText().isEmpty()) {
+            if (!jtf1.getText().isEmpty() && !jtf2.getText().isEmpty() && !jtf3.getText().isEmpty() && !jtf4.getText().isEmpty() && !jtf5.getText().isEmpty()&& !jtf6.getText().isEmpty()) {
                 con = DatabaseConnection.getConnection();
-                String sql = "insert into Ticket values(?,?,?,?,?)";
+                String sql = "insert into Ticket values(?,?,?,?,?.?)";
                 PreparedStatement ps = con.prepareStatement(sql);
                 TicketInformation mi = new TicketInformation();
 
