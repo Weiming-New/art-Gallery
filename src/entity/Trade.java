@@ -5,58 +5,40 @@ package entity;
  */
 public class Trade {
 
-    private String ti_id;
-    private String ti_name;
-    private String aw_id;
-    private String aw_name;
-    private String time;
-    private String price;
+	private String ti_no;
+	private String ti_name;
+	private String aw_no;
+	private String ti_time;
 
-    public String getTi_id() {
-        return ti_id;
-    }
+	public String getTi_no() {
+		return ti_no;
+	}
 
-    public void setTi_id(String s_id) {
-        this.ti_id = s_id;
-    }
+	public void setTi_no(String ti_no) {
+		this.ti_no = ti_no;
+	}
 
-    public String getTi_name() {
-        return ti_name;
-    }
+	public String getTi_name() {
+		return ti_name;
+	}
 
-    public void setTi_name(String s_name) {
-        this.ti_name = s_name;
-    }
+	public void setTi_name(String ti_name) {
+		this.ti_name = ti_name;
+	}
 
-    public String getAw_id() {
-        return aw_id;
-    }
+	public String getAw_no() {
+		return aw_no;
+	}
 
-    public void setAw_id(String t_id) {
-        this.aw_id = t_id;
-    }
+	public void setAw_no(String aw_no) {
+		this.aw_no = aw_no;
+	}
 
-    public String getAw_name() {
-        return aw_name;
-    }
+	public String getTi_time() {
+		return ti_time;
+	}
 
-    public void setAw_name(String Tname) {
-        this.aw_name = Tname;
-    }
-
-    public String getTime() {
-        return time;
-    }
-
-    public void setTime(String time) {
-        this.time = time;
-    }
-
-    public String getPrice() {
-        return price;
-    }
-
-    public void setPrice(String price) {
-        this.price = price;
-    }
+	public void setTime(String time) {
+		this.ti_time = time;
+	}
 }

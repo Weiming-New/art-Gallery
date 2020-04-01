@@ -97,7 +97,7 @@ public class BuyTicket extends JFrame implements ActionListener {
         int result = 0;
         try {
             con = DatabaseConnection.getConnection();
-            PreparedStatement ps = con.prepareStatement("select * from ExhibitionInfo where Eno = ?");
+            PreparedStatement ps = con.prepareStatement("select * from Exhibition where Eno = ?");
             ps.setString(1,jtf5.getText());
             rs = ps.executeQuery();
             if (rs.next()){
@@ -124,19 +124,19 @@ public class BuyTicket extends JFrame implements ActionListener {
                 TicketInformation mi = new TicketInformation();
 
                 if (verify1() == 1) {
-                    mi.setId(jtf1.getText());
-                    mi.setName(jtf2.getText());
-                    mi.setSex(jtf3.getText());
-                    mi.setWork(jtf4.getText());
-                    mi.setE_name(jtf5.getText());
+                    mi.setT_no(jtf1.getText());
+                    mi.setT_name(jtf2.getText());
+                    mi.setT_sex(jtf3.getText());
+                    mi.setT_work(jtf4.getText());
+                    mi.setE_no(jtf5.getText());
                     //mi.setPrice(jtf6.getText());
 
 
-                    ps.setString(1, mi.getId());
-                    ps.setString(2, mi.getName());
-                    ps.setString(3, mi.getSex());
-                    ps.setString(4, mi.getWork());
-                    ps.setString(5, mi.getE_name());
+                    ps.setString(1, mi.getT_no());
+                    ps.setString(2, mi.getT_name());
+                    ps.setString(3, mi.getT_sex());
+                    ps.setString(4, mi.getT_work());
+                    ps.setString(5, mi.getE_no());
                     //ps.setString(6,mi.getPrice());
 
                     result = ps.executeUpdate();

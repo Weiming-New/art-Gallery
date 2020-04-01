@@ -40,9 +40,7 @@ public class BuyArtWorks extends JFrame implements ActionListener {
         jl2 = new JLabel("取票码");
         jl3 = new JLabel("姓名");
         jl4 = new JLabel("艺术品编号");
-        //jl5 = new JLabel("艺术品名称");
         jl6 = new JLabel("采购时间");
-        //jl7 = new JLabel("价格");
 
         jp1 = new JPanel();
         jp2 = new JPanel();
@@ -129,7 +127,7 @@ public class BuyArtWorks extends JFrame implements ActionListener {
         Connection con = null;
         try {
             con = DatabaseConnection.getConnection();
-            String sql = "update ArtWork set IsBuy = '1' where AWno = ?";
+            String sql = "update ArtWork set AWsold = '1' where AWno = ?";
             PreparedStatement ps = con.prepareStatement(sql);
             ps.setString(1,jt3.getText());
             ps.executeUpdate();
@@ -149,14 +147,14 @@ public class BuyArtWorks extends JFrame implements ActionListener {
                 PreparedStatement ps = con.prepareStatement(sql);
                 Trade pi = new Trade();
                 if ((verify2() == 1)) {
-                    pi.setTi_id(jt1.getText());
+                    pi.setTi_no(jt1.getText());
                     pi.setTi_name(jt2.getText());
-                    pi.setAw_id(jt3.getText());
+                    pi.setAw_no(jt3.getText());
                     pi.setTime(jt5.getText());
-                    ps.setString(1, pi.getTi_id());
+                    ps.setString(1, pi.getTi_no());
                     ps.setString(2, pi.getTi_name());
-                    ps.setString(3, pi.getAw_id());
-                    ps.setString(4, pi.getTime());
+                    ps.setString(3, pi.getAw_no());
+                    ps.setString(4, pi.getTi_time());
                     result = ps.executeUpdate();
                 }
             }else {

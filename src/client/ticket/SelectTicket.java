@@ -40,7 +40,7 @@ public class SelectTicket extends JFrame {
         try{
             con = DatabaseConnection.getConnection();
             PreparedStatement ps;
-            ps = con.prepareStatement("select Tno,Tname,Tsex,Twork,Eno,Tprice from v_ticket where no = ?");
+            ps = con.prepareStatement("select * from v_ticket where Tno = ?");
             ps.setString(1,SelectTno.jt1.getText());
             rs = ps.executeQuery();
             while (rs.next()){
