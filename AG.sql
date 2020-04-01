@@ -21,6 +21,7 @@ DROP TABLE IF EXISTS `Ticket`;
 DROP VIEW IF EXISTS `v_reserve`;
 DROP VIEW IF EXISTS `v_ticket`;
 DROP VIEW IF EXISTS `v_TradeInfo`;
+DROP VIEW IF EXISTS `v_exhibitionInfo`;
 
 
 -- 艺术家表
