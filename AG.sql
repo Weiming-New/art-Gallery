@@ -57,6 +57,7 @@ Hnum INT-- 展位数
 );
 
 INSERT INTO `Hall` VALUES (1,'梅',50,'黄河路1号','Adam',1000),(2,'兰',50,'黄河路3号','张六',1000);
+INSERT INTO `Hall` VALUES (3,'竹',70,'黄河路5号','王科',1000),(0,'菊',80,'黄河路7号','李达',1000);
 
 CREATE TABLE Exhibition(
 Eno INT PRIMARY KEY,-- 艺术展编号
@@ -64,7 +65,8 @@ Ename CHAR(20),-- 艺术展名称
 Etime DATE-- 举办时间
 );
 
-INSERT INTO `Exhibition` VALUES (1,'哈尔滨书法绘画大会','2020-04-10');
+INSERT INTO `Exhibition` VALUES (1,'哈尔滨书法绘画大会','2020-04-10'),(2,'山水之美','2020-05-10');
+INSERT INTO `Exhibition` VALUES (3,'石头之美','2020-06-10'),(4,'生活中的艺术','2020-07-10');
 
 -- 艺术展信息表
 CREATE TABLE ExhibitionInfo(
