@@ -150,7 +150,7 @@ public class BuyArtWorks extends JFrame implements ActionListener {
                     pi.setTi_no(jt1.getText());
                     pi.setTi_name(jt2.getText());
                     pi.setAw_no(jt3.getText());
-                    pi.setTime(jt5.getText());
+                    pi.setEi_time(jt5.getText());
                     ps.setString(1, pi.getTi_no());
                     ps.setString(2, pi.getTi_name());
                     ps.setString(3, pi.getAw_no());

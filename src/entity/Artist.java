@@ -10,7 +10,7 @@ public class Artist {
     private String a_ID;
     private String a_major;
     private String a_workplace;
-    private String tel;
+    private String a_tel;
 
     public String getA_no() {
         return a_no;
@@ -52,11 +52,11 @@ public class Artist {
         this.a_workplace = workplace;
     }
 
-    public String getTel() {
-        return tel;
+    public String getA_tel() {
+        return a_tel;
     }
 
-    public void setTel(String tel) {
-        this.tel = tel;
+    public void setA_tel(String a_tel) {
+        this.a_tel = a_tel;
     }
 }

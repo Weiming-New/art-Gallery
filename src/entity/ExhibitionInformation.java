@@ -5,78 +5,59 @@ package entity;
  */
 public class ExhibitionInformation {
 
-    private String e_id;
-    private String e_name;
-    private String a_id;
-    private String aw_id;
-    private String Tname;
-    private String address;
-    private String time;
-    private String kind;
-    //private String price;
+	private String ei_no;
+	private String a_no;
+	private String aw_no;
+	private String h_no;
+	private String e_no;
+	private String ei_time;
 
-    public String getE_id() {
-        return e_id;
-    }
+	public String getEi_no() {
+		return ei_no;
+	}
 
-    public void setE_id(String e_id) {
-        this.e_id = e_id;
-    }
+	public void setEi_no(String ei_no) {
+		this.ei_no = ei_no;
+	}
 
-    public String getE_name() {
-        return e_name;
-    }
+	public String getA_no() {
+		return a_no;
+	}
 
-    public void setE_name(String e_name) {
-        this.e_name = e_name;
-    }
+	public void setA_no(String a_no) {
+		this.a_no = a_no;
+	}
 
-    public String getA_id() {
-        return a_id;
-    }
+	public String getAw_no() {
+		return aw_no;
+	}
 
-    public void setA_id(String b_id) {
-        this.a_id = b_id;
-    }
+	public void setAw_no(String aw_no) {
+		this.aw_no = aw_no;
+	}
 
-    public String getAw_id() {
-        return aw_id;
-    }
+	public String getH_no() {
+		return h_no;
+	}
 
-    public void setAw_id(String t_id) {
-        this.aw_id = t_id;
-    }
+	public void setH_no(String h_no) {
+		this.h_no = h_no;
+	}
 
-    public String getTname() {
-        return Tname;
-    }
+	public String getE_no() {
+		return e_no;
+	}
 
-    public void setTname(String Tname) {
-        this.Tname = Tname;
-    }
+	public void setE_no(String e_no) {
+		this.e_no = e_no;
+	}
 
-    public String getAddress() {
-        return address;
-    }
+	public String getEi_time() {
+		return ei_time;
+	}
 
-    public void setAddress(String address) {
-        this.address = address;
-    }
-
-    public String getTime() {
-        return time;
-    }
-
-    public void setTime(String time) {
-        this.time = time;
-    }
-
-    public String getKind() {
-        return kind;
-    }
-
-    public void setKind(String kind) {
-        this.kind = kind;
-    }
+	public void setEi_time(String ei_time) {
+		this.ei_time = ei_time;
+	}
 
 }

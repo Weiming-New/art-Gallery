@@ -38,7 +38,7 @@ public class Trade {
 		return ti_time;
 	}
 
-	public void setTime(String time) {
-		this.ti_time = time;
+	public void setTi_time(String ti_time) {
+		this.ti_time = ti_time;
 	}
 }
