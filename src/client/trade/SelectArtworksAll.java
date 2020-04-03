@@ -39,7 +39,7 @@ public class SelectArtworksAll extends JFrame{
         try{
             con = DatabaseConnection.getConnection();
             PreparedStatement ps;
-            ps = con.prepareStatement("select TIno,TIname,AWname,AWkind,TItime,AWprice from v_TradeInfo");
+            ps = con.prepareStatement("select * from v_TradeInfo");
             rs = ps.executeQuery();
             while (rs.next()){
                 Vector<String> vector = new Vector<String>();

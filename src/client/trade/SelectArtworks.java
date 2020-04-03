@@ -40,7 +40,7 @@ public class SelectArtworks extends JFrame{
         try{
             con = DatabaseConnection.getConnection();
             PreparedStatement ps;
-            ps = con.prepareStatement("select no,Tname,aw_name,kind,time,price from v_TradeInfo where no = ?");
+            ps = con.prepareStatement("select * from v_TradeInfo where TIno = ?");
             ps.setString(1,SelectTIno.jt1.getText());
             rs = ps.executeQuery();
             while (rs.next()){

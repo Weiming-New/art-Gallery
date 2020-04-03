@@ -32,7 +32,7 @@ public class SelectRno extends JFrame implements ActionListener {
         jp3 = new JPanel();
 
         jl1 = new JLabel("预约展厅订单查询系统");
-        jl2 = new JLabel("取票码");
+        jl2 = new JLabel("订单编号：");
 
         jt1 = new JTextField(8);
 

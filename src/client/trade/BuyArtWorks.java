@@ -4,6 +4,7 @@ import entity.Trade;
 import function.DatabaseConnection;
 
 import javax.swing.*;
+
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -11,6 +12,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class BuyArtWorks extends JFrame implements ActionListener {
 
@@ -19,8 +22,10 @@ public class BuyArtWorks extends JFrame implements ActionListener {
 	 */
 	private static final long serialVersionUID = 4154065579756517915L;
 
-	JTextField jt1, jt2, jt3, jt4, jt5, jt6;
-	JLabel jl1, jl2, jl3, jl4, jl5, jl6, jl7;
+//	JTextField jt1, jt2, jt3, jt4, jt5, jt6;
+	JTextField jt1, jt2, jt3;
+//	JLabel jl1, jl2, jl3, jl4, jl5, jl6, jl7;
+	JLabel jl1, jl2, jl3, jl4;
 	JPanel jp1, jp2, jp3, jp4, jp5, jp6, jp7, jp8;
 	JButton jb1, jb2;
 
@@ -29,7 +34,7 @@ public class BuyArtWorks extends JFrame implements ActionListener {
 		jt1 = new JTextField(8);
 		jt2 = new JTextField(8);
 		jt3 = new JTextField(8);
-		jt4 = new JTextField(8);
+//		jt4 = new JTextField(8);
 //        jt5 = new JTextField(8);
 		// jt6 = new JTextField(8);
 
@@ -37,7 +42,7 @@ public class BuyArtWorks extends JFrame implements ActionListener {
 		jl2 = new JLabel("购买订单编号：");
 		jl3 = new JLabel("姓名：");
 		jl4 = new JLabel("艺术品编号：");
-		jl5 = new JLabel("采购时间：");
+//		jl5 = new JLabel("采购时间：");
 
 		jp1 = new JPanel();
 		jp2 = new JPanel();
@@ -62,8 +67,8 @@ public class BuyArtWorks extends JFrame implements ActionListener {
 
 		jp3.add(jl4);
 		jp3.add(jt3);
-		jp3.add(jl5);
-		jp3.add(jt4);
+//		jp3.add(jl5);
+//		jp3.add(jt4);
 
 		jp4.add(jb1);
 		// jp5.add(jb2);
@@ -84,7 +89,7 @@ public class BuyArtWorks extends JFrame implements ActionListener {
 		jt1.setText("");
 		jt2.setText("");
 		jt3.setText("");
-		jt4.setText("");
+//		jt4.setText("");
 //        jt5.setText("");
 		// jt6.setText("");
 	}
@@ -131,23 +136,23 @@ public class BuyArtWorks extends JFrame implements ActionListener {
 
 		int result = 0;
 		try {
-			if (!jt1.getText().isEmpty() && !jt2.getText().isEmpty() && !jt3.getText().isEmpty()
-					&& !jt4.getText().isEmpty()) {
+			if (!jt1.getText().isEmpty() && !jt2.getText().isEmpty() && !jt3.getText().isEmpty()) {
 				con = DatabaseConnection.getConnection();
 				String sql = "insert into TradeInfo values (?,?,?,?)";
 				PreparedStatement ps = con.prepareStatement(sql);
-				Trade pi = new Trade();
-				if ((verify() == 1)) {
-					pi.setTi_no(jt1.getText());
-					pi.setTi_name(jt2.getText());
-					pi.setAw_no(jt3.getText());
-					pi.setTi_time(jt4.getText());
-					ps.setString(1, pi.getTi_no());
-					ps.setString(2, pi.getTi_name());
-					ps.setString(3, pi.getTi_time());
-					ps.setString(4, pi.getAw_no());
-					result = ps.executeUpdate();
-				}
+				Trade trade = new Trade();
+				trade.setTi_no(jt1.getText());
+				trade.setTi_name(jt2.getText());
+				trade.setAw_no(jt3.getText());
+				SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+				String curDate = dateFormat.format(new Date());
+				trade.setTi_time(curDate);
+//					pi.setTi_time(jt4.getText());
+				ps.setString(1, trade.getTi_no());
+				ps.setString(2, trade.getTi_name());
+				ps.setString(3, trade.getTi_time());
+				ps.setString(4, trade.getAw_no());
+				result = ps.executeUpdate();
 			} else {
 				JOptionPane.showMessageDialog(null, "请输入完整信息", "提示消息", JOptionPane.WARNING_MESSAGE);
 
@@ -175,9 +180,7 @@ public class BuyArtWorks extends JFrame implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		if (e.getActionCommand() == "返回") {
-
-		} else if (e.getActionCommand() == "购买") {
+		if (e.getActionCommand() == "购买") {
 			if (verify() == 1) {
 				buyArtworks();
 			} else {

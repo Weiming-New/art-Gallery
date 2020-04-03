@@ -32,7 +32,7 @@ public class SelectTno extends JFrame implements ActionListener {
         jp3 = new JPanel();
 
         jl1 = new JLabel("门票预定订单查询系统");
-        jl2 = new JLabel("票码");
+        jl2 = new JLabel("票码：");
 
         jt1 = new JTextField(8);
 

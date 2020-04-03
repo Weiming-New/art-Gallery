@@ -45,7 +45,6 @@ public class SystemMain extends JFrame implements ActionListener {
 		Font font = new Font("alias", Font.PLAIN, 22);
 
 		// 加载图片
-		// ImageIcon icon = new ImageIcon("image5.png");
 		ImageIcon icon = new ImageIcon("lfg_main.jpg");
 //
 //        //将图片放入label中

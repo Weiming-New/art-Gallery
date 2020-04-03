@@ -93,8 +93,6 @@ public class DeleteTrade extends JFrame implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getActionCommand() == "确定"){
-
-        }else if (e.getActionCommand() == "取消"){
             if (verify() == 1) {
                 delete();
             }else {

@@ -11,7 +11,6 @@ import client.artwork.SelectArtworkKind;
 import client.artwork.SelectArtworkPrice;
 import client.ticket.BuyTicket;
 import client.ticket.DeleteTicket;
-import client.ticket.SelectTicket;
 import client.ticket.SelectTno;
 import client.trade.BuyArtWorks;
 import client.trade.DeleteTrade;

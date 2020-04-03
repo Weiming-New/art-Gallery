@@ -98,7 +98,7 @@ public class UpdateArtistInformation extends JFrame implements ActionListener {
         try {
             if (!jt2.getText().isEmpty() && !jt3.getText().isEmpty() && !jt4.getText().isEmpty() && !jt5.getText().isEmpty() && !jt6.getText().isEmpty()) {
                 con = DatabaseConnection.getConnection();
-                PreparedStatement ps = con.prepareStatement("update Artist set Aname = ?,Aid = ?, Awork = ?,Aworkplace = ?,Atel = ? where Ano = " + UpdateArtist.jt1.getText());
+                PreparedStatement ps = con.prepareStatement("update Artist set Aname = ?,Aid = ?, Aworkplace = ?,Aworkplace = ?,Atel = ? where Ano = " + UpdateArtist.jt1.getText());
                 ps.setString(1, jt2.getText());
                 ps.setString(2, jt3.getText());
                 ps.setString(3, jt4.getText());
