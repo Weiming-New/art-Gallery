@@ -40,7 +40,7 @@ public class SelectTicketAll extends JFrame{
         try{
             con = DatabaseConnection.getConnection();
             PreparedStatement ps;
-            ps = con.prepareStatement("select * from v_ticket");
+            ps = con.prepareStatement("select * from Ticket");
             rs = ps.executeQuery();
             while (rs.next()){
                 Vector<String> vector = new Vector<String>();

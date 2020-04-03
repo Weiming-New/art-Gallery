@@ -1,3 +1,0 @@
-记录一下当前遇到的不太合理的地方：
-1.Exhibition里的Etime和TradeInfo里的TItime都是DATE
-2.没有考虑sql中not null
