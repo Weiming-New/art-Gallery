@@ -39,7 +39,7 @@ public class HallReserveInformation {
         return r_time;
     }
 
-    public void setA_time(String time) {
+    public void setR_time(String time) {
         this.r_time = time;
     }
 

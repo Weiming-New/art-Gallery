@@ -119,7 +119,7 @@ public class BuyTicket extends JFrame implements ActionListener {
         try {
             if (!jtf1.getText().isEmpty() && !jtf2.getText().isEmpty() && !jtf3.getText().isEmpty() && !jtf4.getText().isEmpty() && !jtf5.getText().isEmpty()&& !jtf6.getText().isEmpty()) {
                 con = DatabaseConnection.getConnection();
-                String sql = "insert into Ticket values(?,?,?,?,?.?)";
+                String sql = "insert into Ticket values(?,?,?,?,?,?)";
                 PreparedStatement ps = con.prepareStatement(sql);
                 TicketInformation mi = new TicketInformation();
 
@@ -129,7 +129,7 @@ public class BuyTicket extends JFrame implements ActionListener {
                     mi.setT_sex(jtf3.getText());
                     mi.setT_work(jtf4.getText());
                     mi.setE_no(jtf5.getText());
-                    //mi.setPrice(jtf6.getText());
+                    mi.setT_price(jtf6.getText());
 
 
                     ps.setString(1, mi.getT_no());
@@ -137,7 +137,7 @@ public class BuyTicket extends JFrame implements ActionListener {
                     ps.setString(3, mi.getT_sex());
                     ps.setString(4, mi.getT_work());
                     ps.setString(5, mi.getE_no());
-                    //ps.setString(6,mi.getPrice());
+                    ps.setString(6,mi.getT_price());
 
                     result = ps.executeUpdate();
                 }

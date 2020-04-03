@@ -107,10 +107,10 @@ FOREIGN KEY(AWno) REFERENCES Artwork(AWno)
 -- 展厅预定表
 CREATE TABLE Reserve(
 Rno INT PRIMARY KEY,-- 订单编号
+Hno INT,-- 展厅编号
+Ano INT,-- 艺术家编号
 Rtime DATE NOT NULL,-- 时间
 Rnum INT NOT NULL,-- 展位数
-Ano INT,-- 艺术家编号
-Hno INT,-- 展厅编号
 FOREIGN KEY(Hno) REFERENCES Hall(Hno),
 FOREIGN KEY(Ano) REFERENCES Artist(Ano)
 );

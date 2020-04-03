@@ -12,6 +12,7 @@ import client.artwork.SelectArtworkPrice;
 import client.ticket.BuyTicket;
 import client.ticket.DeleteTicket;
 import client.ticket.SelectTicket;
+import client.ticket.SelectTno;
 import client.trade.BuyArtWorks;
 import client.trade.DeleteTrade;
 import client.trade.SelectTIno;
@@ -166,7 +167,7 @@ public class User extends JFrame {
 		jmIt6.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				new SelectTicket();
+				new SelectTno();
 			}
 		});
 

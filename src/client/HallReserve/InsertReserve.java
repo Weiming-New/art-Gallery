@@ -44,7 +44,7 @@ public class InsertReserve extends JFrame implements ActionListener {
         jl3 = new JLabel("展厅编号");
         jl4 = new JLabel("艺术家编号");
         jl5 = new JLabel("时间");
-        jl6 = new JLabel("个数");
+        jl6 = new JLabel("展位个数");
 
         jp1 = new JPanel();
         jp2 = new JPanel();
@@ -110,10 +110,10 @@ public class InsertReserve extends JFrame implements ActionListener {
             ps.setString(1,jt2.getText());
             rs = ps.executeQuery();
             if (rs.next()){
-                JOptionPane.showMessageDialog(null,"该编号存在","提示消息",JOptionPane.WARNING_MESSAGE);
+                JOptionPane.showMessageDialog(null,"该展厅编号存在","提示消息",JOptionPane.WARNING_MESSAGE);
                 result = 1;
             }else {
-                JOptionPane.showMessageDialog(null,"该编号不存在，请重新输入","提示消息",JOptionPane.WARNING_MESSAGE);
+                JOptionPane.showMessageDialog(null,"该展厅编号不存在，请重新输入","提示消息",JOptionPane.WARNING_MESSAGE);
                 result = 0;
             }
         }catch (SQLException e){
@@ -199,10 +199,10 @@ public class InsertReserve extends JFrame implements ActionListener {
                 HallReserveInformation pi = new HallReserveInformation();
 
                 if (verify1() == 1) {
-                    pi.setA_no(jt1.getText());
+                    pi.setR_no(jt1.getText());
                     pi.setH_no(jt2.getText());
                     pi.setA_no(jt3.getText());
-                    pi.setA_time(jt4.getText());
+                    pi.setR_time(jt4.getText());
                     pi.setR_num((jt5.getText()));
 
                     ps.setString(1, pi.getR_no());

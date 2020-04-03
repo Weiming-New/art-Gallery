@@ -29,7 +29,7 @@ public class SelectReserve extends JFrame{
 
         columnNames = new Vector<String>();
         rowData = new Vector<Vector<String>>();
-        columnNames.add("取票码");
+        columnNames.add("预约单号");
         columnNames.add("展厅名称");
         columnNames.add("姓名");
         columnNames.add("时间");
@@ -39,7 +39,7 @@ public class SelectReserve extends JFrame{
         try{
             con = DatabaseConnection.getConnection();
             PreparedStatement ps;
-            ps = con.prepareStatement("select * from v_reserve where no = ?");
+            ps = con.prepareStatement("select * from v_reserve where Rno = ?");
             ps.setString(1,SelectRno.jt1.getText());
             rs = ps.executeQuery();
             while (rs.next()){
