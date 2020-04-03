@@ -32,7 +32,7 @@ public class SelectArtworkPriceout extends JFrame {
 		columnNames.add("名称");
 		columnNames.add("类别");
 		columnNames.add("售价");
-		columnNames.add("是否出售");
+		columnNames.add("是否已出售");
         
         try{
             

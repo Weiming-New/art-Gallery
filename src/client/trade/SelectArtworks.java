@@ -29,7 +29,7 @@ public class SelectArtworks extends JFrame{
 
         columnNames = new Vector<String>();
         rowData = new Vector<Vector<String>>();
-        columnNames.add("取票码");
+        columnNames.add("购买订单编号");
         columnNames.add("姓名");
         columnNames.add("艺术品名称");
         columnNames.add("类别");

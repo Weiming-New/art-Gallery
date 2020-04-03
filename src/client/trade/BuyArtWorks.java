@@ -34,7 +34,7 @@ public class BuyArtWorks extends JFrame implements ActionListener {
 		// jt6 = new JTextField(8);
 
 		jl1 = new JLabel("艺术品采购");
-		jl2 = new JLabel("订单编号：");
+		jl2 = new JLabel("购买订单编号：");
 		jl3 = new JLabel("姓名：");
 		jl4 = new JLabel("艺术品编号：");
 		jl5 = new JLabel("采购时间：");

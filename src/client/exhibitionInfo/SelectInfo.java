@@ -41,7 +41,7 @@ public class SelectInfo extends JFrame implements ActionListener {
 		columnNames.add("艺术展名称");
 		columnNames.add("时间");
 		columnNames.add("艺术品类别");
-		columnNames.add("价格");
+		columnNames.add("艺术品价格");
 
 		try {
 			con = DatabaseConnection.getConnection();

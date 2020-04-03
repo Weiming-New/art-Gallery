@@ -32,7 +32,7 @@ public class SelectTIno extends JFrame implements ActionListener {
         jp3 = new JPanel();
 
         jl1 = new JLabel("艺术品采购订单查询系统");
-        jl2 = new JLabel("取票码");
+        jl2 = new JLabel("购买订单编号");
 
         jt1 = new JTextField(8);
 

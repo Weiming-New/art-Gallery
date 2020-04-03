@@ -38,7 +38,7 @@ public class SelectArtwork extends JFrame implements ActionListener {
 		columnNames.add("名称");
 		columnNames.add("类别");
 		columnNames.add("售价");
-		columnNames.add("是否出售");
+		columnNames.add("是否已出售");
 
 		try {
 			con = DatabaseConnection.getConnection();

@@ -33,7 +33,7 @@ public class DeleteTrade extends JFrame implements ActionListener {
         jp3 = new JPanel();
 
         jt1 = new JTextField(8);
-        jl1 = new JLabel("取票码");
+        jl1 = new JLabel("购买订单编号");
         jl2 = new JLabel("艺术品采购系统");
 
         jb1.addActionListener(this);
