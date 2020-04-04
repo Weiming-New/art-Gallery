@@ -18,6 +18,8 @@ import client.trade.SelectTIno;
 
 import javax.swing.*;
 
+import java.awt.Color;
+import java.awt.Font;
 import java.awt.Image;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
@@ -27,18 +29,20 @@ import java.awt.event.ActionListener;
 客户主界面
  */
 
-public class User extends JFrame {
+public class User extends JFrame implements ActionListener {
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = -4508697313736701899L;
 	JMenuBar jMenuBar;
-	JMenu jm1, jm2, jm3, jm4, jm5, jm6;
+	JMenu jm1, jm2, jm3, jm4, jm5, jm6,jm7;
 	JMenuItem jmIt1, jmIt2, jmIt3, jmIt4, jmIt5, jmIt6, jmIt7, jmIt8, jmIt9, jmIt10, jmIt11, jmIt12, jmIt13, jmIt14,
-			jmIt15, jmIt18, jmIt16, jmIt17;
+			jmIt15, jmIt18, jmIt16, jmIt17,jmIt19;
 	JPanel jp1;
 	JLabel jl1;
+	JButton jb5;
+    JPanel jp5;
 
 	public User() {
 
@@ -59,6 +63,12 @@ public class User extends JFrame {
 		// 获取frame的顶层容器,并设置为透明
 		JPanel j = (JPanel) this.getContentPane();
 		j.setOpaque(false);
+		
+		Font font = new Font("alias", Font.PLAIN, 22);
+		jb5 = new JButton("退出到主界面");
+        jb5.setBackground(Color.WHITE);
+        jb5.setFont(font);
+        
 		jMenuBar = new JMenuBar();
 		jm1 = new JMenu("展厅预约");
 		jm1.addSeparator();
@@ -71,6 +81,8 @@ public class User extends JFrame {
 		jm5 = new JMenu("艺术家信息查询");
 		jm5.addSeparator();
 		jm6 = new JMenu("艺术品信息查询");
+		jm6.addSeparator();
+		jm7 = new JMenu("退出");
 
 		jmIt5 = new JMenuItem("预定门票");
 		jmIt6 = new JMenuItem("查询门票");
@@ -94,6 +106,8 @@ public class User extends JFrame {
 		jmIt16 = new JMenuItem("所有艺术品查询");
 		jmIt8 = new JMenuItem("艺术品类别查询");
 		jmIt18 = new JMenuItem("艺术品价格查询");
+		
+		jmIt19 = new JMenuItem("退出到主菜单");
 
 		jm1.add(jmIt1);
 		jm1.add(jmIt2);
@@ -121,12 +135,21 @@ public class User extends JFrame {
 		jm6.add(jmIt8);
 		jm6.add(jmIt18);
 
+		jm7.add(jmIt19);
+		
+		jp5 = new JPanel();
+        jb5.addActionListener(this);
+        jp5.add(jb5);
+        jp5.setOpaque(false);
+        this.add(jp5);
+        
 		jMenuBar.add(jm1);
 		jMenuBar.add(jm2);
 		jMenuBar.add(jm3);
 		jMenuBar.add(jm4);
 		jMenuBar.add(jm5);
 		jMenuBar.add(jm6);
+		jMenuBar.add(jm7);
 		setJMenuBar(jMenuBar);
 
 		click();
@@ -259,5 +282,21 @@ public class User extends JFrame {
 			}
 		});
 		
+		jmIt19.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				dispose();
+				new SystemMain();
+			}
+		});
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		// TODO Auto-generated method stub
+		if (e.getActionCommand() == "退出到主界面"){
+        	this.dispose();
+            new SystemMain();
+        }
 	}
 }

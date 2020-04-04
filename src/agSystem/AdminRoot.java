@@ -63,7 +63,7 @@ public class AdminRoot extends JFrame implements ActionListener {
         jb4 = new JButton("艺术品管理");
         jb4.setBackground(Color.WHITE);
         jb4.setFont(font);
-        jb5 = new JButton("退出");
+        jb5 = new JButton("退出到主界面");
         jb5.setBackground(Color.WHITE);
         jb5.setFont(font);
         jb6 = new JButton("艺术展管理");
@@ -115,8 +115,9 @@ public class AdminRoot extends JFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if (e.getActionCommand() == "退出"){
-            System.exit(0);
+        if (e.getActionCommand() == "退出到主界面"){
+        	this.dispose();
+            new SystemMain();
         }else if (e.getActionCommand() == "艺术展信息管理"){
             new Info();
             this.dispose();

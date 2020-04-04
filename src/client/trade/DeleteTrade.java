@@ -55,6 +55,21 @@ public class DeleteTrade extends JFrame implements ActionListener {
         this.setLayout(new GridLayout(6,4));
     }
 
+    
+ // 设置该艺术品的状态
+ 	public void nosold() {
+ 		Connection con = null;
+ 		try {
+ 			con = DatabaseConnection.getConnection();
+ 			String sql = "update ArtWork set AWsold = '0' where AWno = (select AWno from TradeInfo where TIno = ?)";
+ 			PreparedStatement ps = con.prepareStatement(sql);
+ 			ps.setString(1, jt1.getText());
+ 			ps.executeUpdate();
+ 		} catch (SQLException e) {
+ 			e.printStackTrace();
+ 		}
+ 	}
+ 	
     public int verify(){
         Connection con = null;
         ResultSet rs;
@@ -66,6 +81,7 @@ public class DeleteTrade extends JFrame implements ActionListener {
             rs = ps.executeQuery();
             if (rs.next()){
                 result = 1;
+                
             }
         }catch (SQLException e){
             e.printStackTrace();
@@ -82,6 +98,7 @@ public class DeleteTrade extends JFrame implements ActionListener {
             ps.executeUpdate();
             System.out.println("数据删除成功");
             JOptionPane.showMessageDialog(null,"取消成功","提示消息",JOptionPane.WARNING_MESSAGE);
+            
             jt1.setText("");
             con.close();
             System.out.println("数据库关闭成功");
@@ -94,6 +111,7 @@ public class DeleteTrade extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if (e.getActionCommand() == "确定"){
             if (verify() == 1) {
+            	nosold();
                 delete();
             }else {
                 JOptionPane.showMessageDialog(null,"该订单编号不存在，请重新输入","提示消息",JOptionPane.WARNING_MESSAGE);

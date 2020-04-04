@@ -94,10 +94,11 @@ public class BuyArtWorks extends JFrame implements ActionListener {
 		// jt6.setText("");
 	}
 
-	// 判断艺术品编号是否存在
+	// 判断艺术品编号是否存在 是否售出
 	public int verify() {
 		Connection con = null;
-		ResultSet rs;
+		Connection con1 = null;
+		ResultSet rs, rs2;
 		int result = 0;
 		try {
 			con = DatabaseConnection.getConnection();
@@ -110,6 +111,18 @@ public class BuyArtWorks extends JFrame implements ActionListener {
 			} else {
 				JOptionPane.showMessageDialog(null, "该编号不存在，请重新输入", "提示消息", JOptionPane.WARNING_MESSAGE);
 				result = 0;
+			}
+			con1 = DatabaseConnection.getConnection();
+			PreparedStatement ps2 = con1.prepareStatement("select AWsold from ArtWork where AWno = ?");
+			ps2.setString(1, jt3.getText());
+			rs2 = ps2.executeQuery();
+			if (rs2.next()) {
+				String a = rs2.getString(1);
+				System.out.println(a);
+				if (Integer.parseInt(a)==1) {
+					JOptionPane.showMessageDialog(null, "购买失败，该艺术品已售出", "提示消息", JOptionPane.WARNING_MESSAGE);
+					result = 0;
+				}
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -172,7 +185,7 @@ public class BuyArtWorks extends JFrame implements ActionListener {
 			System.out.println("购买成功");
 			clear();
 		} else if (result == 0) {
-			JOptionPane.showMessageDialog(null, "购买失败，艺术品已售出", "提示消息", JOptionPane.WARNING_MESSAGE);
+			JOptionPane.showMessageDialog(null, "购买失败", "提示消息", JOptionPane.WARNING_MESSAGE);
 			System.out.println("购买失败");
 			clear();
 		}

@@ -14,92 +14,91 @@ import java.sql.SQLException;
 
 public class DeleteTicket extends JFrame implements ActionListener {
 
-    /**
+	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 5907390599872288156L;
-	
-	JButton jb1,jb2;
-    JPanel jp1,jp2,jp3;
-    JTextField jt1;
-    JLabel jl1,jl2;
 
-    public DeleteTicket(){
-        jb1 = new JButton("确定");
-        //jb2 = new JButton("返回");
+	JButton jb1, jb2;
+	JPanel jp1, jp2, jp3;
+	JTextField jt1;
+	JLabel jl1, jl2;
 
-        jp1 = new JPanel();
-        jp2 = new JPanel();
-        jp3 = new JPanel();
+	public DeleteTicket() {
+		jb1 = new JButton("确定");
+		// jb2 = new JButton("返回");
 
-        jt1 = new JTextField(8);
-        jl1 = new JLabel("取票码");
-        jl2 = new JLabel("退票系统");
+		jp1 = new JPanel();
+		jp2 = new JPanel();
+		jp3 = new JPanel();
 
-        jb1.addActionListener(this);
-        //jb2.addActionListener(this);
+		jt1 = new JTextField(8);
+		jl1 = new JLabel("取票码");
+		jl2 = new JLabel("退票系统");
 
-        jp1.add(jl2);
-        jp2.add(jl1);
-        jp2.add(jt1);
-        jp3.add(jb1);
+		jb1.addActionListener(this);
+		// jb2.addActionListener(this);
+
+		jp1.add(jl2);
+		jp2.add(jl1);
+		jp2.add(jt1);
+		jp3.add(jb1);
 //        jp3.add(jb2);
 
-        this.add(jp1);
-        this.add(jp2);
-        this.add(jp3);
+		this.add(jp1);
+		this.add(jp2);
+		this.add(jp3);
 
-        this.setVisible(true);
-        this.setBounds(700,300,600,400);
-        this.setTitle("艺术画廊管理系统");
-        this.setLayout(new GridLayout(6,4));
-    }
-    public int verify(){
-        Connection con = null;
-        ResultSet rs;
-        int result = 0;
-        try {
-            con = DatabaseConnection.getConnection();
-            PreparedStatement ps = con.prepareStatement("select * from Ticket where Tno = ?");
-            ps.setString(1,jt1.getText());
-            rs = ps.executeQuery();
-            if (rs.next()){
-                result = 1;
-            }
-        }catch (SQLException e){
-            e.printStackTrace();
-        }
-        return result;
-    }
+		this.setVisible(true);
+		this.setBounds(700, 300, 600, 400);
+		this.setTitle("艺术画廊管理系统");
+		this.setLayout(new GridLayout(6, 4));
+	}
 
-    public void delete(){
-        Connection con = null;
-        try {
-            con = DatabaseConnection.getConnection();
-            PreparedStatement ps = con.prepareStatement("delete from Ticket where Tno = ?");
-            ps.setString(1,jt1.getText());
-            ps.executeUpdate();
-            System.out.println("数据删除成功");
-            JOptionPane.showMessageDialog(null,"取消成功","提示消息",JOptionPane.WARNING_MESSAGE);
-            jt1.setText("");
-            con.close();
-            System.out.println("数据库关闭成功");
-        }catch (SQLException e){
-            e.printStackTrace();
-        }
-    }
+	public int verify() {
+		Connection con = null;
+		ResultSet rs;
+		int result = 0;
+		try {
+			con = DatabaseConnection.getConnection();
+			PreparedStatement ps = con.prepareStatement("select * from Ticket where Tno = ?");
+			ps.setString(1, jt1.getText());
+			rs = ps.executeQuery();
+			if (rs.next()) {
+				result = 1;
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return result;
+	}
 
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        if (e.getActionCommand() == "确定"){
+	public void delete() {
+		Connection con = null;
+		try {
+			con = DatabaseConnection.getConnection();
+			PreparedStatement ps = con.prepareStatement("delete from Ticket where Tno = ?");
+			ps.setString(1, jt1.getText());
+			ps.executeUpdate();
+			System.out.println("数据删除成功");
+			JOptionPane.showMessageDialog(null, "取消成功", "提示消息", JOptionPane.WARNING_MESSAGE);
+			jt1.setText("");
+			con.close();
+			System.out.println("数据库关闭成功");
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
 
-        }else if (e.getActionCommand() == "取消"){
-            if (verify() == 1) {
-                delete();
-            }else {
-                JOptionPane.showMessageDialog(null,"该取票码不存在，请重新输入","提示消息",JOptionPane.WARNING_MESSAGE);
-                jt1.setText("");
-            }
-        }
-    }
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		if (e.getActionCommand() == "确定") {
+			if (verify() == 1) {
+				delete();
+			} else {
+				JOptionPane.showMessageDialog(null, "该取票码不存在，请重新输入", "提示消息", JOptionPane.WARNING_MESSAGE);
+				jt1.setText("");
+			}
+		}
+	}
 }
