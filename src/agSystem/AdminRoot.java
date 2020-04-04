@@ -35,11 +35,13 @@ public class AdminRoot extends JFrame implements ActionListener {
 
         //加载图片
         ImageIcon icon=new ImageIcon("manage.jpg");
-//
-//        //将图片放入label中
+        Image icon2 =  Toolkit.getDefaultToolkit().getImage("huabi.jpg");
+		this.setIconImage(icon2);
+
+    //将图片放入label中
         JLabel label=new JLabel(icon);
-//
-//        //设置label的大小
+
+      //设置label的大小
         label.setBounds(0,0,icon.getIconWidth(),icon.getIconHeight());
 //
 //        //获取窗口的第二层，将label放入

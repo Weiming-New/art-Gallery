@@ -31,6 +31,8 @@ public class Info extends JFrame implements ActionListener {
 
         //加载图片
         ImageIcon icon = new ImageIcon("lfg_main.jpg");
+        Image icon2 =  Toolkit.getDefaultToolkit().getImage("huabi.jpg");
+		this.setIconImage(icon2);
 //
 //        //将图片放入label中
         JLabel label = new JLabel(icon);

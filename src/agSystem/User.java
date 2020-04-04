@@ -17,6 +17,9 @@ import client.trade.DeleteTrade;
 import client.trade.SelectTIno;
 
 import javax.swing.*;
+
+import java.awt.Image;
+import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -41,6 +44,8 @@ public class User extends JFrame {
 
 		// 加载图片
 		ImageIcon icon = new ImageIcon("client1.jpg");
+		Image icon2 =  Toolkit.getDefaultToolkit().getImage("huabi.jpg");
+		this.setIconImage(icon2);
 
 		// 将图片放入label中
 		JLabel label = new JLabel(icon);
