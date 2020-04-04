@@ -286,7 +286,7 @@ public class User extends JFrame implements ActionListener {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				dispose();
-				new SystemMain();
+				//new SystemMain();
 			}
 		});
 	}
@@ -296,7 +296,7 @@ public class User extends JFrame implements ActionListener {
 		// TODO Auto-generated method stub
 		if (e.getActionCommand() == "退出到主界面"){
         	this.dispose();
-            new SystemMain();
+            //new SystemMain();
         }
 	}
 }

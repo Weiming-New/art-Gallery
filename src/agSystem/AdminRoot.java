@@ -117,7 +117,7 @@ public class AdminRoot extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if (e.getActionCommand() == "退出到主界面"){
         	this.dispose();
-            new SystemMain();
+           // new SystemMain();
         }else if (e.getActionCommand() == "艺术展信息管理"){
             new Info();
             this.dispose();
