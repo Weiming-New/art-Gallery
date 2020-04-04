@@ -79,15 +79,18 @@ public class SystemMain extends JFrame implements ActionListener {
 		jb2.addActionListener(this);
 		jb3.addActionListener(this);
 
+		Font font3 = new Font("华文彩云", Font.PLAIN, 28);
 		jlb3 = new JLabel("欢迎使用艺术画廊管理系统");
-		jlb3.setFont(font);
+		jlb3.setFont(font3);
 		jlb3.setForeground(new Color(255, 255, 100));
 
 		Font font2 = new Font("楷体", Font.PLAIN, 20);
 		jrb1 = new JRadioButton("管理员");
 		jrb1.setFont(font2);
+		jrb1.setForeground(new Color(160, 0, 0));
 		jrb2 = new JRadioButton("客户");
 		jrb2.setFont(font2);
+		jrb2.setForeground(new Color(160, 0, 0));
 
 		group = new ButtonGroup();
 		group.add(jrb1);
@@ -97,13 +100,13 @@ public class SystemMain extends JFrame implements ActionListener {
 		// jlb1.setBounds(100,120,200,30);
 		jtf = new JTextField(10);
 		// jtf.setBounds(150,120,150,30);
-		jlb1.setFont(font);
+		jlb1.setFont(font3);
 		jlb1.setForeground(new Color(255, 255, 0));
 		jtf.setFont(font);
 
 		jlb2 = new JLabel("密    码：");
 		// jlb2.setBounds(100,180,200,30);
-		jlb2.setFont(font);
+		jlb2.setFont(font3);
 		jlb2.setForeground(new Color(255, 255, 0));
 		jpf = new JPasswordField(10);
 		// jpf.setBounds(150,180,150,30);

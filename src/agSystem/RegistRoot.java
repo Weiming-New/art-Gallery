@@ -42,7 +42,7 @@ public class RegistRoot extends JFrame implements ActionListener {
 		JLabel label = new JLabel(icon);
 //
 //        //设置label的大小
-		label.setBounds(0, 0, 800, 533);
+		label.setBounds(0,0,icon.getIconWidth(),icon.getIconHeight());
 //
 //        //获取窗口的第二层，将label放入
 		this.getLayeredPane().add(label, Integer.valueOf(Integer.MIN_VALUE));
@@ -63,14 +63,18 @@ public class RegistRoot extends JFrame implements ActionListener {
 		jtf1 = new JTextField(10);
 		jl1.setFont(font);
 		jtf1.setFont(font);
+		jl1.setForeground(new Color(255, 255, 0));
 		jtf1.setToolTipText("用户名必须为3-11位字母_或者数字");
 		jl2 = new JLabel("请输入密码：");
 		jtf2 = new JPasswordField(10);
 		jl2.setFont(font);
 		jtf2.setFont(font);
+		jl2.setForeground(new Color(255, 255, 0));
 		jtf2.setToolTipText("密码必须为6位字母_或者数字");
 
 		jl3 = new JLabel("注册界面");
+		jl3.setFont(font);
+		jl3.setForeground(new Color(255, 255, 0));
 
 		jb1 = new JButton("返回");
 		jb1.setBackground(Color.WHITE);
@@ -82,10 +86,13 @@ public class RegistRoot extends JFrame implements ActionListener {
 		jb1.addActionListener(this);
 		jb2.addActionListener(this);
 
+		Font font2 = new Font("楷体", Font.PLAIN, 20);
 		jrb1 = new JRadioButton("管理员");
-		jrb1.setFont(font);
+		jrb1.setFont(font2);
+		jrb1.setForeground(new Color(160, 0, 0));
 		jrb2 = new JRadioButton("客户");
-		jrb2.setFont(font);
+		jrb2.setFont(font2);
+		jrb2.setForeground(new Color(160, 0, 0));
 		group = new ButtonGroup();
 		group.add(jrb1);
 		group.add(jrb2);
