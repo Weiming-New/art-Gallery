@@ -48,6 +48,7 @@ public class BuyTicket extends JFrame implements ActionListener {
 		jtf4 = new JTextField(6);
 		jtf5 = new JTextField(6);
 		jtf6 = new JTextField(6);
+		jtf6.setEditable(false);
 
 		jp1 = new JPanel();
 		jp2 = new JPanel();
